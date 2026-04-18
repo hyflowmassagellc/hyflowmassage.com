@@ -857,7 +857,7 @@
       <p class="vval">
         <a href="tel:4086686562">(408) 668-6562</a><br>
         <a href="sms:4086686562"><span class="en">Text to Book</span><span class="zh">发短信预约</span></a><br>
-        <a href="mailto:info@hyflowmassage.com">info@hyflowmassage.com</a>
+        <a href="mailto:booking@hyflowmassage.com">booking@hyflowmassage.com</a>
       </p>
       <p class="vnote" style="margin-top:12px">Insurance out-of-network superbill available on request</p>
     </div>
@@ -966,7 +966,7 @@
     const msg=document.getElementById('f-message').value;
     const subject=encodeURIComponent('Senior Care Partnership Inquiry – '+f);
     const body=encodeURIComponent('Facility: '+f+'\nContact: '+n+'\nPhone: '+p+'\nEmail: '+e+'\nPlan: '+plan+'\nResidents: '+document.getElementById('f-residents').value+'\n\nMessage:\n'+msg);
-    window.location.href='mailto:info@hyflowmassage.com?subject='+subject+'&body='+body;
+    window.location.href='mailto:booking@hyflowmassage.com?subject='+subject+'&body='+body;
     document.getElementById('b2bForm').style.display='none';
     document.getElementById('formSuccess').style.display='block';
   }
@@ -991,7 +991,7 @@
     'mobile': 'Yes! We offer mobile massage within 15 miles of Mountain View. Travel fee: +$80 for 90-min, +$150 for 120-min sessions. Available for home, hotel, or office visits.',
     'hour': 'We\'re open daily 9:00 AM – 9:00 PM, 7 days a week. By appointment only.',
     'locat': 'We\'re at 257 Castro St, Ste 214, Mountain View, CA 94041 — on the 2nd floor. Enter through the iron arch, go through the courtyard, take the stairs up, and look for the green door.',
-    'gift': 'Gift cards are available in any amount. Call or text us at (408) 668-6562 or email info@hyflowmassage.com to purchase.',
+    'gift': 'Gift cards are available in any amount. Call or text us at (408) 668-6562 or email booking@hyflowmassage.com to purchase.',
     'cancel': 'We require 24-hour notice for cancellations. Late cancellations may be charged 50% of the service fee. No-shows are charged the full amount.',
     'gratuity': 'Gratuity is appreciated but never required. Suggested: 60 min → $25+, 90 min → $35+, 120 min → $50+.',
   };
@@ -1010,7 +1010,7 @@
     if(m.includes('gift')||m.includes('card')) return KB.gift;
     if(m.includes('cancel')||m.includes('refund')) return KB.cancel;
     if(m.includes('tip')||m.includes('gratuity')) return KB.gratuity;
-    return "Thanks for your question! For the most accurate answer, please call or text us at (408) 668-6562, or email info@hyflowmassage.com. We're happy to help! 🌿";
+    return "Thanks for your question! For the most accurate answer, please call or text us at (408) 668-6562, or email booking@hyflowmassage.com. We're happy to help! 🌿";
   }
 
   function sendChat(){
