@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="shortcut icon" href="favicon.svg">
+  <meta name="color-scheme" content="light only">
+  <meta name="theme-color" content="#f5fbf7">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SOAP Notes – HyFlow Massage LLC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    /* FORCE LIGHT MODE - prevent dark mode override */
+    :root { color-scheme: light only; }
+    html { background: #f5fbf7 !important; color-scheme: light only; }
+    body { background: #f5fbf7 !important; color: #1a2e20 !important; }
+
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--forest:#2d6a4f;--gold:#b5894a;--cream:#eef7f1;--warm:#f5fbf7;--mid:#3d5c4a;--light:#6b8c7a}
+    body{font-family:'Jost',sans-serif;background:var(--warm);color:#1a2e20;min-height:100vh}
+    .header{background:var(--forest);padding:16px 40px;display:flex;align-items:center;justify-content:space-between}
+    .header-logo{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:rgba(245,240,232,0.85)}
+    .header-logo span{color:var(--gold)}
+    .header-sub{font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,240,232,0.4);margin-top:2px}
+    .header-actions{display:flex;gap:10px}
+    .hbtn{padding:8px 16px;font-family:'Jost',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;border:none;transition:all .2s}
+    .hbtn-o{background:none;border:1px solid rgba(245,240,232,0.28);color:rgba(245,240,232,0.65)}
+    .hbtn-o:hover{border-color:var(--gold);color:var(--gold)}
+    .hbtn-g{background:var(--gold);color:var(--forest)}
+    .hbtn-g:hover{background:#c9a058}
+    .main{max-width:960px;margin:0 auto;padding:36px 24px}
+
+    /* LIST VIEW */
+    .list-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+    .list-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--forest)}
+    .search-box{border:1px solid rgba(45,106,79,0.18);padding:8px 14px;font-family:'Jost',sans-serif;font-size:0.82rem;outline:none;width:220px}
+    .search-box:focus{border-color:var(--forest)}
+    .records-list{display:flex;flex-direction:column;gap:6px}
+    .record-item{background:#fff;border:1px solid rgba(45,106,79,0.1);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;transition:all .2s}
+    .record-item:hover{border-color:rgba(181,137,74,0.4);background:var(--cream)}
+    .ri-name{font-size:0.9rem;color:var(--forest);font-weight:400}
+    .ri-meta{font-size:0.7rem;color:var(--light);margin-top:2px}
+    .ri-actions{display:flex;gap:6px}
+    .ri-btn{background:none;border:1px solid rgba(45,106,79,0.18);color:var(--mid);font-size:0.65rem;padding:4px 10px;cursor:pointer;font-family:'Jost',sans-serif;letter-spacing:0.08em;text-transform:uppercase;transition:all .2s}
+    .ri-btn:hover{border-color:var(--gold);color:var(--gold)}
+    .ri-btn.del:hover{border-color:#c0392b;color:#c0392b}
+    .empty{text-align:center;padding:60px;color:var(--light);font-size:0.88rem;line-height:1.8}
+
+    /* FORM */
+    .form-wrap{display:none;background:#fff;border:1px solid rgba(45,106,79,0.12);padding:40px}
+    .form-wrap.active{display:block}
+    .form-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid rgba(45,106,79,0.1)}
+    .form-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--forest)}
+    .form-close{background:none;border:none;font-size:1.5rem;color:var(--light);cursor:pointer;line-height:1}
+    .form-close:hover{color:var(--forest)}
+
+    /* GRID */
+    .g2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+    .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:20px}
+    .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px}
+    .gfull{grid-column:1/-1}
+    .fg{display:flex;flex-direction:column;gap:5px}
+    .fg label{font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--light);font-weight:500}
+    .fg input,.fg select,.fg textarea{border:1px solid rgba(45,106,79,0.18);padding:9px 12px;font-family:'Jost',sans-serif;font-size:0.83rem;color:#1a2e20;outline:none;background:#fff;transition:border .2s}
+    .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--forest)}
+    .fg textarea{resize:vertical;min-height:88px;line-height:1.65}
+
+    /* SOAP LABELS */
+    .soap-sec{margin-bottom:26px}
+    .soap-hdr{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+    .soap-dot{width:30px;height:30px;border-radius:50%;background:var(--forest);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;flex-shrink:0}
+    .soap-lbl{font-size:0.75rem;font-weight:500;color:var(--forest);letter-spacing:0.08em;text-transform:uppercase}
+    .soap-hint{font-size:0.68rem;color:var(--light);margin-left:6px}
+    hr.div{border:none;border-top:1px solid rgba(45,106,79,0.09);margin:24px 0}
+
+    /* TECHNIQUES */
+    .tech-grid{display:flex;flex-wrap:wrap;gap:7px;margin-top:4px}
+    .tc{padding:6px 12px;border:1px solid rgba(45,106,79,0.18);font-size:0.72rem;color:var(--mid);cursor:pointer;transition:all .2s;user-select:none}
+    .tc.on{background:var(--forest);color:#fff;border-color:var(--forest)}
+
+    /* AREAS */
+    .area-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:4px}
+    .area-item{display:flex;align-items:center;gap:6px;font-size:0.76rem;color:var(--mid);cursor:pointer}
+    .area-item input{accent-color:var(--forest)}
+
+    /* FORM ACTIONS */
+    .factions{display:flex;gap:10px;justify-content:flex-end;margin-top:28px;padding-top:18px;border-top:1px solid rgba(45,106,79,0.09)}
+    .btn-save{padding:11px 26px;background:var(--forest);color:#fff;border:none;font-family:'Jost',sans-serif;font-size:0.76rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:background .2s}
+    .btn-save:hover{background:var(--gold)}
+    .btn-pdf{padding:11px 26px;background:none;border:1px solid var(--forest);color:var(--forest);font-family:'Jost',sans-serif;font-size:0.76rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:all .2s}
+    .btn-pdf:hover{background:var(--forest);color:#fff}
+    .btn-cancel{padding:11px 16px;background:none;border:none;color:var(--light);font-family:'Jost',sans-serif;font-size:0.76rem;cursor:pointer}
+
+    /* TOAST */
+    .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--forest);color:#fff;padding:11px 22px;font-size:0.78rem;opacity:0;transition:opacity .3s;pointer-events:none;z-index:999;white-space:nowrap}
+    .toast.show{opacity:1}
+
+    /* PRINT */
+    @media print{
+      .header,.list-header,.hbtn,.ri-actions,.factions,.form-close,.header-actions{display:none!important}
+      .form-wrap{display:block!important;border:none;padding:0;box-shadow:none}
+      .records-list,.main>.list-header{display:none!important}
+      body,html{background:#fff}
+      .main{padding:0}
+      .soap-dot{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    }
+    @media(max-width:680px){
+      .g4,.g3{grid-template-columns:1fr 1fr}
+      .g2{grid-template-columns:1fr}
+      .area-grid{grid-template-columns:repeat(3,1fr)}
+      .header{padding:12px 16px}
+      .main{padding:20px 14px}
+      .form-wrap{padding:22px 16px}
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <div class="header-logo">HyFlow <span>Massage</span> LLC</div>
+    <div class="header-sub">Therapist Portal — Session SOAP Notes</div>
+  </div>
+  <div class="header-actions">
+    <button class="hbtn hbtn-o" onclick="exportJSON()">Export All (JSON)</button>
+    <button class="hbtn hbtn-g" onclick="openNew()">+ New SOAP Note</button>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- LIST VIEW -->
+  <div id="listView">
+    <div class="list-header">
+      <div class="list-title">Session Records</div>
+      <input class="search-box" placeholder="Search by client name..." oninput="filterRecords(this.value)">
+    </div>
+    <div class="records-list" id="recordsList">
+      <div class="empty">No session notes yet.<br>Click <strong>+ New SOAP Note</strong> to get started.</div>
+    </div>
+  </div>
+
+  <!-- SOAP FORM -->
+  <div class="form-wrap" id="soapForm">
+    <div class="form-top">
+      <div class="form-title" id="formTitle">New Session Note</div>
+      <button class="form-close" onclick="closeForm()">×</button>
+    </div>
+
+    <!-- CLIENT INFO -->
+    <div class="g4">
+      <div class="fg"><label>Client Name *</label><input id="f-name" placeholder="Full name"></div>
+      <div class="fg"><label>Date *</label><input id="f-date" type="date"></div>
+      <div class="fg"><label>Duration</label>
+        <select id="f-dur">
+          <option>30 minutes</option><option>45 minutes</option>
+          <option selected>60 minutes</option><option>90 minutes</option>
+          <option>120 minutes</option><option>180 minutes</option>
+        </select>
+      </div>
+      <div class="fg"><label>Visit #</label><input id="f-visit" placeholder="e.g. 1st visit"></div>
+    </div>
+    <div class="g3">
+      <div class="fg"><label>Service</label>
+        <select id="f-service">
+          <option>Lymphatic Drainage</option>
+          <option>Post-Surgical Lymphatic Drainage</option>
+          <option>Deep Bodywork</option>
+          <option>Swedish Relaxation</option>
+          <option>Sports Recovery</option>
+          <option>Myofascial Release</option>
+          <option>Aromatherapy Bodywork</option>
+          <option>CBD Bodywork</option>
+          <option>Tech Neck / Posture Relief</option>
+          <option>Senior Wellness</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="fg"><label>Therapist</label><input id="f-therapist" value="Tina" placeholder="Therapist name"></div>
+      <div class="fg"><label>Client Phone</label><input id="f-phone" placeholder="(xxx) xxx-xxxx"></div>
+    </div>
+
+    <hr class="div">
+
+    <!-- S: SUBJECTIVE -->
+    <div class="soap-sec">
+      <div class="soap-hdr">
+        <div class="soap-dot">S</div>
+        <span class="soap-lbl">Subjective</span>
+        <span class="soap-hint">— Client's reported concerns, symptoms & goals</span>
+      </div>
+      <div class="g2">
+        <div class="fg gfull"><label>Chief Concern / Reason for Visit</label>
+          <textarea id="f-s-complaint" placeholder="e.g. Client reports tightness in left shoulder and upper back. Difficulty rotating neck to the right. Discomfort level 6/10. Goal: reduce tension and improve range of motion."></textarea>
+        </div>
+        <div class="fg"><label>Pain / Discomfort Level (0–10)</label>
+          <select id="f-s-pain">
+            <option value="">— select —</option>
+            <option>0 — None</option><option>1–2 — Minimal</option>
+            <option>3–4 — Mild</option><option>5–6 — Moderate</option>
+            <option>7–8 — Significant</option><option>9–10 — Severe</option>
+          </select>
+        </div>
+        <div class="fg"><label>Onset / Duration of Concern</label>
+          <input id="f-s-onset" placeholder="e.g. 2 weeks, chronic, post-surgery 3 weeks ago">
+        </div>
+        <div class="fg gfull"><label>Relevant Health History / Contraindications</label>
+          <textarea id="f-s-history" style="min-height:70px" placeholder="e.g. Recent surgery (date/type), medications, skin conditions, pregnancy, medical clearance provided (Y/N)"></textarea>
+        </div>
+        <div class="fg gfull"><label>Client Goals for This Session</label>
+          <input id="f-s-goals" placeholder="e.g. Reduce neck tension, improve sleep, post-surgical swelling reduction">
+        </div>
+      </div>
+    </div>
+
+    <hr class="div">
+
+    <!-- O: OBJECTIVE -->
+    <div class="soap-sec">
+      <div class="soap-hdr">
+        <div class="soap-dot">O</div>
+        <span class="soap-lbl">Objective</span>
+        <span class="soap-hint">— Therapist's observations & findings</span>
+      </div>
+
+      <div class="fg" style="margin-bottom:14px">
+        <label>Areas Worked On</label>
+        <div class="area-grid">
+          <label class="area-item"><input type="checkbox" class="area-cb" value="Head / Scalp"> Head / Scalp</label>
+          <label class="area-item"><input type="checkbox" class="area-cb" value="Face / Jaw"> Face / Jaw</label>
+          <label class="area-item"><input type="checkbox" class="area-cb" value="Neck (anterior)"> Neck (anterior)</label>
+          <label class="area-item"><input type="checkbox" class="area-cb" value="Neck (posterior)"> Neck (posterior)</label>
+          <label class="area-item"><input type="checkbox" class="area-cb" value="Shoulders"> Shoulders</label>
+          <label class="area-item"><input type="checkbox" class="area-cb" value="Upper Back"> Upper Back</label>
+          <label class="area-item"><input type="checkbox" class="area-cb" value="Mid Back"> Mid Back</label>
+          <label class="area-item"><input type="checkbox" class="area-cb" value="Lower Back"> Lower Back</label>
+          <label class="area-item"><input type="checkbox" class="area-cb" value="Chest / Sternum"> Chest / Sternum</label>
+          <label class="area-item"><input type="checkbox" class="area-cb" value="Abdomen"> Abdomen</label>
+          <label class="area-item"><input type="checkbox" class="area-cb" value="Arms (bilateral)"> Arms (bilateral)</label>
+          <label class="area-item"><input type="checkbox" class="area-cb" value="Forearms / Wrists"> Forearms / Wrists</label>
+          <label class="area-item"><input type="checkbox" class="area-cb" value="Hands"> Hands</label>
+          <label class="area-item"><input type="checkbox" class="area-cb" value="Hips / Glutes"> Hips / Glutes</label>
+          <label class="area-item"><input type="checkbox" class="area-cb" value="Thighs"> Thighs</label>
+          <label class="area-item"><input type="checkbox" class="area-cb" value="Knees"> Knees</label>
+          <label class="area-item"><input type="checkbox" class="area-cb" value="Lower Legs / Calves"> Lower Legs / Calves</label>
+          <label class="area-item"><input type="checkbox" class="area-cb" value="Ankles / Feet"> Ankles / Feet</label>
+          <label class="area-item"><input type="checkbox" class="area-cb" value="Axillary (lymph nodes)"> Axillary (lymph)</label>
+          <label class="area-item"><input type="checkbox" class="area-cb" value="Inguinal (lymph nodes)"> Inguinal (lymph)</label>
+        </div>
+      </div>
+
+      <div class="fg" style="margin-bottom:14px">
+        <label>Techniques Used</label>
+        <div class="tech-grid">
+          <div class="tc" onclick="toggleTech(this)">Effleurage</div>
+          <div class="tc" onclick="toggleTech(this)">Petrissage</div>
+          <div class="tc" onclick="toggleTech(this)">Tapotement</div>
+          <div class="tc" onclick="toggleTech(this)">Friction</div>
+          <div class="tc" onclick="toggleTech(this)">Vibration</div>
+          <div class="tc" onclick="toggleTech(this)">MLD (Vodder)</div>
+          <div class="tc" onclick="toggleTech(this)">Myofascial Release</div>
+          <div class="tc" onclick="toggleTech(this)">Trigger Point</div>
+          <div class="tc" onclick="toggleTech(this)">Stretching</div>
+          <div class="tc" onclick="toggleTech(this)">Compression</div>
+          <div class="tc" onclick="toggleTech(this)">Hot Stone</div>
+          <div class="tc" onclick="toggleTech(this)">Cupping</div>
+          <div class="tc" onclick="toggleTech(this)">Percussion Tool</div>
+          <div class="tc" onclick="toggleTech(this)">LymphFlow Pro™</div>
+          <div class="tc" onclick="toggleTech(this)">Aromatherapy</div>
+          <div class="tc" onclick="toggleTech(this)">CBD Oil</div>
+        </div>
+      </div>
+
+      <div class="g2">
+        <div class="fg"><label>Pressure Used</label>
+          <select id="f-o-pressure">
+            <option>Light</option><option>Light-Medium</option>
+            <option selected>Medium</option><option>Medium-Deep</option>
+            <option>Deep</option><option>Varied</option>
+          </select>
+        </div>
+        <div class="fg"><label>Client Position</label>
+          <select id="f-o-position">
+            <option>Supine (face up)</option>
+            <option>Prone (face down)</option>
+            <option>Side-lying</option>
+            <option>Seated (chair)</option>
+            <option>Combined positions</option>
+          </select>
+        </div>
+        <div class="fg gfull"><label>Therapist Observations (tissue quality, tension, swelling, etc.)</label>
+          <textarea id="f-o-obs" placeholder="e.g. Significant tension in right trapezius, restricted ROM in cervical rotation, mild swelling noted in left lower extremity, skin appeared normal."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <hr class="div">
+
+    <!-- A: ASSESSMENT -->
+    <div class="soap-sec">
+      <div class="soap-hdr">
+        <div class="soap-dot">A</div>
+        <span class="soap-lbl">Assessment</span>
+        <span class="soap-hint">— Response to session & progress notes</span>
+      </div>
+      <div class="g2">
+        <div class="fg"><label>Client Response During Session</label>
+          <select id="f-a-response">
+            <option>Positive — relaxed and comfortable throughout</option>
+            <option>Good — minor discomfort addressed and resolved</option>
+            <option>Mixed — some areas sensitive, adjusted pressure</option>
+            <option>Cautious — worked conservatively per client request</option>
+          </select>
+        </div>
+        <div class="fg"><label>Pain Level After Session (0–10)</label>
+          <select id="f-a-pain-after">
+            <option value="">— select —</option>
+            <option>0 — None</option><option>1–2 — Minimal</option>
+            <option>3–4 — Mild</option><option>5–6 — Moderate</option>
+            <option>7–8 — Significant</option>
+          </select>
+        </div>
+        <div class="fg gfull"><label>Session Outcome & Progress Notes</label>
+          <textarea id="f-a-outcome" placeholder="e.g. Client reported immediate reduction in neck tension post-session. Range of motion improved. Swelling in left calf visibly reduced. Client expressed satisfaction with pressure and technique."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <hr class="div">
+
+    <!-- P: PLAN -->
+    <div class="soap-sec">
+      <div class="soap-hdr">
+        <div class="soap-dot">P</div>
+        <span class="soap-lbl">Plan</span>
+        <span class="soap-hint">— Recommendations & follow-up</span>
+      </div>
+      <div class="g2">
+        <div class="fg"><label>Recommended Follow-Up</label>
+          <select id="f-p-followup">
+            <option>Within 1 week</option>
+            <option>Every 2 weeks</option>
+            <option>Monthly maintenance</option>
+            <option>As needed</option>
+            <option>Series recommended (3–6 sessions)</option>
+            <option>No follow-up needed at this time</option>
+          </select>
+        </div>
+        <div class="fg"><label>Next Session Focus</label>
+          <input id="f-p-next-focus" placeholder="e.g. Continue lower back work, add stretching">
+        </div>
+        <div class="fg gfull"><label>Home Care Recommendations</label>
+          <textarea id="f-p-homecare" style="min-height:72px" placeholder="e.g. Drink 8+ glasses of water today. Apply ice/heat to lower back 10 min 2x daily. Gentle neck stretches. Avoid strenuous activity for 24 hours. Elevate legs if swelling persists."></textarea>
+        </div>
+        <div class="fg gfull"><label>Additional Notes / Referrals</label>
+          <textarea id="f-p-notes" style="min-height:60px" placeholder="e.g. Suggested client consult physician re: left knee pain. Will monitor lymphatic response over next 3 sessions. Medical clearance on file."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- DISCLAIMER -->
+    <div style="background:rgba(181,137,74,0.07);border:1px solid rgba(181,137,74,0.2);padding:14px 18px;font-size:0.72rem;color:var(--light);line-height:1.65;margin-bottom:20px">
+      <strong style="color:var(--mid)">Professional Note:</strong> These session notes are for internal record-keeping purposes to support continuity of care and professional documentation. They do not constitute a medical diagnosis or clinical evaluation. All post-surgical clients must provide written physician clearance prior to receiving services.
+    </div>
+
+    <div class="factions">
+      <button class="btn-cancel" onclick="closeForm()">Cancel</button>
+      <button class="btn-pdf" onclick="printNote()">🖨 Print / Save PDF</button>
+      <button class="btn-save" onclick="saveNote()">Save Note</button>
+    </div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  const STORE_KEY = 'hyflow_soap_notes';
+  let records = JSON.parse(localStorage.getItem(STORE_KEY) || '[]');
+  let editId = null;
+
+  // Set today's date as default
+  document.getElementById('f-date').value = new Date().toISOString().split('T')[0];
+
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2400);
+  }
+
+  function toggleTech(el) { el.classList.toggle('on'); }
+
+  function getCheckedAreas() {
+    return Array.from(document.querySelectorAll('.area-cb:checked')).map(c => c.value);
+  }
+
+  function getSelectedTechs() {
+    return Array.from(document.querySelectorAll('.tc.on')).map(t => t.textContent);
+  }
+
+  function openNew() {
+    editId = null;
+    document.getElementById('formTitle').textContent = 'New Session Note';
+    resetForm();
+    document.getElementById('listView').style.display = 'none';
+    document.getElementById('soapForm').classList.add('active');
+    window.scrollTo(0, 0);
+  }
+
+  function closeForm() {
+    document.getElementById('soapForm').classList.remove('active');
+    document.getElementById('listView').style.display = 'block';
+    editId = null;
+  }
+
+  function resetForm() {
+    const ids = ['f-name','f-phone','f-visit','f-s-complaint','f-s-onset','f-s-history','f-s-goals','f-o-obs','f-a-outcome','f-p-next-focus','f-p-homecare','f-p-notes'];
+    ids.forEach(id => { const el = document.getElementById(id); if(el) el.value = ''; });
+    document.getElementById('f-date').value = new Date().toISOString().split('T')[0];
+    document.getElementById('f-therapist').value = 'Tina';
+    document.getElementById('f-dur').value = '60 minutes';
+    document.getElementById('f-s-pain').value = '';
+    document.getElementById('f-a-pain-after').value = '';
+    document.querySelectorAll('.area-cb').forEach(c => c.checked = false);
+    document.querySelectorAll('.tc').forEach(t => t.classList.remove('on'));
+  }
+
+  function fillForm(r) {
+    document.getElementById('f-name').value = r.clientName || '';
+    document.getElementById('f-date').value = r.date || '';
+    document.getElementById('f-dur').value = r.duration || '60 minutes';
+    document.getElementById('f-visit').value = r.visitNum || '';
+    document.getElementById('f-service').value = r.service || 'Lymphatic Drainage';
+    document.getElementById('f-therapist').value = r.therapist || 'Tina';
+    document.getElementById('f-phone').value = r.phone || '';
+    document.getElementById('f-s-complaint').value = r.complaint || '';
+    document.getElementById('f-s-pain').value = r.painBefore || '';
+    document.getElementById('f-s-onset').value = r.onset || '';
+    document.getElementById('f-s-history').value = r.history || '';
+    document.getElementById('f-s-goals').value = r.goals || '';
+    document.getElementById('f-o-pressure').value = r.pressure || 'Medium';
+    document.getElementById('f-o-position').value = r.position || 'Supine (face up)';
+    document.getElementById('f-o-obs').value = r.observations || '';
+    document.getElementById('f-a-response').value = r.clientResponse || '';
+    document.getElementById('f-a-pain-after').value = r.painAfter || '';
+    document.getElementById('f-a-outcome').value = r.outcome || '';
+    document.getElementById('f-p-followup').value = r.followup || 'Monthly maintenance';
+    document.getElementById('f-p-next-focus').value = r.nextFocus || '';
+    document.getElementById('f-p-homecare').value = r.homecare || '';
+    document.getElementById('f-p-notes').value = r.additionalNotes || '';
+    document.querySelectorAll('.area-cb').forEach(c => { c.checked = (r.areas || []).includes(c.value); });
+    document.querySelectorAll('.tc').forEach(t => { if ((r.techniques || []).includes(t.textContent)) t.classList.add('on'); else t.classList.remove('on'); });
+  }
+
+  function collectForm() {
+    return {
+      id: editId || Date.now().toString(),
+      clientName: document.getElementById('f-name').value.trim(),
+      date: document.getElementById('f-date').value,
+      duration: document.getElementById('f-dur').value,
+      visitNum: document.getElementById('f-visit').value,
+      service: document.getElementById('f-service').value,
+      therapist: document.getElementById('f-therapist').value,
+      phone: document.getElementById('f-phone').value,
+      complaint: document.getElementById('f-s-complaint').value,
+      painBefore: document.getElementById('f-s-pain').value,
+      onset: document.getElementById('f-s-onset').value,
+      history: document.getElementById('f-s-history').value,
+      goals: document.getElementById('f-s-goals').value,
+      areas: getCheckedAreas(),
+      techniques: getSelectedTechs(),
+      pressure: document.getElementById('f-o-pressure').value,
+      position: document.getElementById('f-o-position').value,
+      observations: document.getElementById('f-o-obs').value,
+      clientResponse: document.getElementById('f-a-response').value,
+      painAfter: document.getElementById('f-a-pain-after').value,
+      outcome: document.getElementById('f-a-outcome').value,
+      followup: document.getElementById('f-p-followup').value,
+      nextFocus: document.getElementById('f-p-next-focus').value,
+      homecare: document.getElementById('f-p-homecare').value,
+      additionalNotes: document.getElementById('f-p-notes').value,
+      savedAt: new Date().toISOString()
+    };
+  }
+
+  function saveNote() {
+    const r = collectForm();
+    if (!r.clientName) { alert('Please enter the client name.'); return; }
+    if (!r.date) { alert('Please select a date.'); return; }
+    if (editId) {
+      const idx = records.findIndex(x => x.id === editId);
+      if (idx >= 0) records[idx] = r;
+    } else {
+      records.unshift(r);
+    }
+    localStorage.setItem(STORE_KEY, JSON.stringify(records));
+    renderList();
+    closeForm();
+    showToast('✓ Session note saved successfully');
+  }
+
+  function editNote(id) {
+    const r = records.find(x => x.id === id);
+    if (!r) return;
+    editId = id;
+    resetForm();
+    fillForm(r);
+    document.getElementById('formTitle').textContent = 'Edit: ' + r.clientName;
+    document.getElementById('listView').style.display = 'none';
+    document.getElementById('soapForm').classList.add('active');
+    window.scrollTo(0, 0);
+  }
+
+  function deleteNote(id) {
+    if (!confirm('Delete this session note? This cannot be undone.')) return;
+    records = records.filter(x => x.id !== id);
+    localStorage.setItem(STORE_KEY, JSON.stringify(records));
+    renderList();
+    showToast('Note deleted');
+  }
+
+  function printNote() {
+    window.print();
+  }
+
+  function renderList(filter) {
+    const list = document.getElementById('recordsList');
+    let filtered = filter ? records.filter(r => r.clientName.toLowerCase().includes(filter.toLowerCase())) : records;
+    document.querySelector('.list-title').nextElementSibling && (document.getElementById('recordsList').previousElementSibling.querySelector('div:last-child') || {textContent:''});
+
+    if (filtered.length === 0) {
+      list.innerHTML = '<div class="empty">' + (filter ? 'No records match your search.' : 'No session notes yet.<br>Click <strong>+ New SOAP Note</strong> to get started.') + '</div>';
+    } else {
+      list.innerHTML = filtered.map(r => `
+        <div class="record-item">
+          <div>
+            <div class="ri-name">${r.clientName} <span style="color:var(--light);font-size:0.78rem;margin-left:8px">${r.service}</span></div>
+            <div class="ri-meta">${r.date} · ${r.duration} · ${r.therapist} · Visit: ${r.visitNum || '—'}</div>
+          </div>
+          <div class="ri-actions">
+            <button class="ri-btn" onclick="editNote('${r.id}')">View / Edit</button>
+            <button class="ri-btn" onclick="printRecord('${r.id}')">Print</button>
+            <button class="ri-btn del" onclick="deleteNote('${r.id}')">Delete</button>
+          </div>
+        </div>`).join('');
+    }
+    // update count
+    const countEl = document.querySelector('.list-header > div:last-child');
+    if (countEl && countEl.id === 'recordCount') countEl.textContent = records.length + ' record' + (records.length !== 1 ? 's' : '') + ' saved';
+  }
+
+  function printRecord(id) {
+    editNote(id);
+    setTimeout(() => window.print(), 400);
+  }
+
+  function filterRecords(val) { renderList(val); }
+
+  function exportJSON() {
+    const blob = new Blob([JSON.stringify(records, null, 2)], {type: 'application/json'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'hyflow-soap-notes-' + new Date().toISOString().split('T')[0] + '.json';
+    a.click();
+    showToast('✓ Exported ' + records.length + ' records');
+  }
+
+  // Init
+  renderList();
+</script>
+</body>
+</html>

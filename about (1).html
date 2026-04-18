@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="shortcut icon" href="favicon.svg">
+  <meta name="color-scheme" content="light only">
+  <meta name="theme-color" content="#f5fbf7">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About HyFlow Massage LLC – Our Story, Mission & Values</title>
+  <meta name="description" content="Learn about HyFlow Massage LLC — the meaning behind our name, our mission, values, and vision for wellness in the Bay Area."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    /* FORCE LIGHT MODE - prevent dark mode override */
+    :root { color-scheme: light only; }
+    html { background: #f5fbf7 !important; color-scheme: light only; }
+    body { background: #f5fbf7 !important; color: #1a2e20 !important; }
+
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;background:#f5fbf7}
+    body{font-family:'Jost',sans-serif;background:#f5fbf7 !important;color:#1a2e20;overflow-x:hidden}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 48px;background:rgba(245,251,247,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(181,137,74,0.2)}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .nav-logo img{height:38px;width:38px;object-fit:contain;border-radius:3px}
+    .nav-logo-text{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:#2d6a4f;letter-spacing:0.04em}
+    .nav-logo-text span{color:#b5894a}
+    .nav-links{display:flex;gap:22px;align-items:center}
+    .nav-links a{font-size:0.72rem;letter-spacing:0.11em;text-transform:uppercase;color:#3d5c4a;text-decoration:none;transition:color .2s}
+    .nav-links a:hover{color:#2d6a4f}
+    .nav-book{background:#2d6a4f!important;color:#eef7f1!important;padding:8px 18px!important}
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px}
+    .nav-toggle span{display:block;width:22px;height:1.5px;background:#2d6a4f}
+
+    /* BUTTONS */
+    .btn-p{display:inline-block;padding:13px 28px;background:#2d6a4f;color:#fff;font-family:'Jost',sans-serif;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all .25s}
+    .btn-p:hover{background:#b5894a}
+    .btn-o{display:inline-block;padding:13px 28px;border:1px solid #2d6a4f;color:#2d6a4f;font-family:'Jost',sans-serif;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all .25s}
+    .btn-o:hover{background:#2d6a4f;color:#fff}
+
+    /* HERO */
+    .about-hero{min-height:60vh;display:grid;grid-template-columns:1fr 1fr;padding-top:72px}
+    .hero-left{display:flex;flex-direction:column;justify-content:center;padding:72px 64px 72px 80px;position:relative;background:#1e4532}
+    .hero-left::before{content:'';position:absolute;left:40px;top:50%;transform:translateY(-50%);width:2px;height:100px;background:linear-gradient(to bottom,transparent,#b5894a,transparent)}
+    .hero-right{overflow:hidden;background:#2d6a4f}
+    .hero-right img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+    .eyebrow{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#b5894a;font-weight:500;margin-bottom:18px;display:block}
+    .hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,4vw,3.6rem);font-weight:300;line-height:1.15;color:#fff;margin-bottom:22px}
+    .hero-title em{font-style:italic;color:#b5894a}
+    .hero-sub{font-size:0.92rem;line-height:1.78;color:rgba(255,255,255,0.82);font-weight:300;max-width:420px}
+
+    /* TINA BIO */
+    .tina-bio{padding:80px;background:#ffffff !important;display:grid;grid-template-columns:1fr 2fr;gap:64px;align-items:center}
+    .tina-quote{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:#b5894a;padding-left:20px;border-left:2px solid #b5894a;line-height:1.65;margin-bottom:24px}
+
+    /* NAME MEANING SECTION */
+    .name-section{background:#1e4532 !important;padding:80px}
+    .name-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:300;color:#fff;line-height:1.2;margin-bottom:40px}
+    .name-title em{font-style:italic;color:#b5894a}
+
+    /* HY MEANINGS GRID */
+    .hy-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;margin-bottom:48px}
+    .hy-card{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);padding:28px 22px;border-top:3px solid transparent;transition:all .3s}
+    .hy-card:nth-child(1){border-top-color:#b5894a}
+    .hy-card:nth-child(2){border-top-color:rgba(181,137,74,0.6)}
+    .hy-card:nth-child(3){border-top-color:rgba(181,137,74,0.4)}
+    .hy-card:nth-child(4){border-top-color:rgba(181,137,74,0.3)}
+    .hy-card:nth-child(5){border-top-color:rgba(181,137,74,0.2)}
+    .hy-card:hover{background:rgba(255,255,255,0.1);transform:translateY(-3px)}
+    .hy-word{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:#b5894a;margin-bottom:6px;font-weight:400}
+    .hy-meaning{font-size:0.76rem;color:rgba(255,255,255,0.55);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px}
+    .hy-desc{font-size:0.82rem;color:rgba(255,255,255,0.82);line-height:1.7;font-weight:300}
+
+    /* FLOW MEANING */
+    .flow-box{background:rgba(181,137,74,0.12);border:1px solid rgba(181,137,74,0.25);padding:36px 40px;margin-bottom:48px;display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center}
+    .flow-letter{font-family:'Cormorant Garamond',serif;font-size:5rem;color:#b5894a;line-height:1;font-weight:300}
+    .flow-content{}
+    .flow-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:#fff;margin-bottom:10px}
+    .flow-desc{font-size:0.88rem;color:rgba(255,255,255,0.80);line-height:1.8;font-weight:300}
+
+    /* BELIEF STATEMENT */
+    .belief{text-align:center;padding:40px;background:rgba(255,255,255,0.04);border:1px solid rgba(181,137,74,0.2)}
+    .belief-text{font-family:'Cormorant Garamond',serif;font-size:clamp(1.2rem,2.2vw,1.7rem);font-style:italic;color:#fff;line-height:1.65;margin-bottom:10px}
+    .belief-zh{font-size:1rem;color:rgba(255,255,255,0.55);font-family:'Jost',sans-serif;font-weight:300}
+
+    /* MISSION VALUES VISION */
+    .mvv-section{padding:80px;background:#f0f9f3 !important}
+    .mvv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:48px}
+    .mvv-card{padding:40px 36px;display:flex;flex-direction:column}
+    .mvv-card:nth-child(1){background:#ffffff !important}
+    .mvv-card:nth-child(2){background:#1e4532 !important}
+    .mvv-card:nth-child(3){background:#ffffff !important}
+    .mvv-tag{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;font-weight:700;margin-bottom:14px}
+    .mvv-card:nth-child(1) .mvv-tag{color:#b5894a}
+    .mvv-card:nth-child(2) .mvv-tag{color:#b5894a}
+    .mvv-card:nth-child(3) .mvv-tag{color:#b5894a}
+    .mvv-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;line-height:1.25;margin-bottom:18px}
+    .mvv-card:nth-child(1) .mvv-title{color:#0f2018}
+    .mvv-card:nth-child(2) .mvv-title{color:#fff}
+    .mvv-card:nth-child(3) .mvv-title{color:#0f2018}
+    .mvv-body{font-size:0.86rem;line-height:1.8;font-weight:300}
+    .mvv-card:nth-child(1) .mvv-body{color:#2a4535}
+    .mvv-card:nth-child(2) .mvv-body{color:rgba(255,255,255,0.82)}
+    .mvv-card:nth-child(3) .mvv-body{color:#2a4535}
+
+    /* VALUES LIST */
+    .values-list{display:flex;flex-direction:column;gap:14px;margin-top:4px}
+    .value-item{display:flex;gap:12px;align-items:flex-start}
+    .value-dot{color:#b5894a;font-size:0.7rem;margin-top:4px;flex-shrink:0}
+    .value-name{font-size:0.84rem;font-weight:600;color:#fff;display:block;margin-bottom:2px}
+    .value-desc{font-size:0.76rem;color:rgba(255,255,255,0.72);line-height:1.55}
+
+    /* TINA PHOTO STRIP */
+    .photo-strip{display:grid;grid-template-columns:1fr 1fr;overflow:hidden;background:#1e4532}
+    .photo-strip-img{overflow:hidden;min-height:400px}
+    .photo-strip-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+    .photo-strip-img:hover img{transform:scale(1.04)}
+    .photo-strip-text{background:#1e4532 !important;padding:64px 56px;display:flex;flex-direction:column;justify-content:center}
+
+    /* FOOTER */
+    footer{background:#132a1e;padding:40px 80px}
+    .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+    .flogo{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:rgba(255,255,255,0.5)}
+    .flinks{display:flex;gap:18px;flex-wrap:wrap}
+    .flinks a{font-size:0.64rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.28);text-decoration:none}
+    .flinks a:hover{color:#b5894a}
+    .fcopy{font-size:0.66rem;color:rgba(255,255,255,0.22)}
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      nav{padding:13px 18px}
+      .nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#f5fbf7;padding:18px;gap:16px;border-bottom:1px solid rgba(181,137,74,0.2)}
+      .nav-links.open{display:flex}
+      .nav-toggle{display:flex}
+      .about-hero{grid-template-columns:1fr;min-height:auto}
+      .hero-left{padding:56px 18px;order:2}
+      .hero-left::before{display:none}
+      .hero-right{min-height:280px;order:1}
+      .tina-bio{grid-template-columns:1fr;padding:48px 18px;gap:32px}
+      .name-section{padding:56px 18px}
+      .hy-grid{grid-template-columns:1fr 1fr}
+      .flow-box{grid-template-columns:1fr;gap:16px;padding:24px}
+      .mvv-section{padding:56px 18px}
+      .mvv-grid{grid-template-columns:1fr}
+      .photo-strip{grid-template-columns:1fr}
+      .photo-strip-img{min-height:240px}
+      .photo-strip-text{padding:44px 18px}
+      footer{padding:28px 18px}
+      .footer-row{flex-direction:column;align-items:flex-start;gap:12px}
+    }
+
+    .fade-up{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
+    .fade-up.visible{opacity:1;transform:translateY(0)}
+  </style>
+  <link rel="canonical" href="https://hyflowmassage.com/about.html">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="logo.jpeg" alt="HyFlow Massage LLC">
+    <span class="nav-logo-text">HyFlow <span>Massage LLC</span></span>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="b2b.html">B2B Programs</a>
+    <a href="#" style="color:#2d6a4f;font-weight:500">About</a>
+    <a href="index.html#visit">Contact</a>
+    <a href="index.html#mobile" class="nav-book">Book Now</a>
+  </div>
+  <button class="nav-toggle" id="nt" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<div class="about-hero">
+  <div class="hero-left">
+    <p class="eyebrow">Our Story</p>
+    <h1 class="hero-title">More Than a<br>Massage Studio.<br><em>A Philosophy of Flow.</em></h1>
+    <p class="hero-sub">HyFlow Massage LLC was built on a simple belief — that when the body moves freely, healing happens naturally. Everything we do, from our name to our methods, flows from this idea.</p>
+  </div>
+  <div class="hero-right">
+    <img src="photo-tina-arm.jpeg" alt="Tina performing bodywork at HyFlow Massage LLC">
+  </div>
+</div>
+
+<!-- TINA BIO -->
+<div class="tina-bio">
+  <div style="text-align:center">
+    <img src="photo-tina-headshot.jpeg" alt="Tina, founder of HyFlow Massage LLC" style="width:100%;max-width:280px;object-fit:cover;aspect-ratio:3/4;display:block;margin:0 auto">
+  </div>
+  <div>
+    <p class="eyebrow">Meet Tina</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:#0f2018;margin-bottom:20px;line-height:1.2">Founder & Lead Therapist<br>HyFlow Massage LLC</h2>
+    <div class="tina-quote">"Every client who walks through our door deserves precision, care, and real results — not just relaxation."</div>
+    <p style="font-size:0.9rem;color:#2a4535;line-height:1.85;margin-bottom:18px;font-weight:300">Tina founded HyFlow Massage LLC in Mountain View with one goal: to bring genuinely effective, professional-grade bodywork to the Bay Area community. With specialized expertise in lymphatic drainage, pain relief, and post-surgical recovery, Tina combines clinical knowledge with a deeply personal approach to care.</p>
+    <p style="font-size:0.9rem;color:#2a4535;line-height:1.85;font-weight:300">Beyond individual clients, Tina's vision extends to senior living communities and corporate teams — bringing the HyFlow Massage LLC experience wherever it's needed most.</p>
+  </div>
+</div>
+
+<!-- PHOTO STRIP -->
+<div class="photo-strip">
+  <div class="photo-strip-img">
+    <img src="photo-tina-back.jpeg" alt="HyFlow Massage LLC session">
+  </div>
+  <div class="photo-strip-text">
+    <p class="eyebrow" style="color:#b5894a">Our Approach</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;color:#fff;line-height:1.3;margin-bottom:20px">Intentional.<br>Precise.<br><em style="font-style:italic;color:#b5894a">Effective.</em></h2>
+    <p style="font-size:0.88rem;color:rgba(255,255,255,0.82);line-height:1.8;font-weight:300;margin-bottom:24px">Every session at HyFlow Massage LLC begins with a thorough assessment. We listen first. Then we work with structured, purposeful technique — not guesswork. Your body tells us what it needs; we know how to respond.</p>
+    <a href="index.html#mobile" class="btn-p">Book a Session</a>
+  </div>
+</div>
+
+<!-- NAME MEANING -->
+<div class="name-section">
+  <div style="max-width:960px;margin:0 auto">
+
+    <p class="eyebrow" style="color:#b5894a;text-align:center">The Name Behind the Brand</p>
+    <h2 class="name-title" style="text-align:center">What Does <em>HyFlow Massage LLC</em> Mean?</h2>
+
+    <!-- HY MEANINGS -->
+    <p style="font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:16px;text-align:center">The five layers of <strong style="color:#b5894a">Hy —</strong></p>
+    <div class="hy-grid">
+      <div class="hy-card fade-up">
+        <div class="hy-word">Hydrodynamics</div>
+        <div class="hy-meaning">The science of flow</div>
+        <div class="hy-desc">The lymphatic system, circulation, and the movement of fluid through your tissues are the foundation of every healing process. We work in harmony with your body's natural hydraulics.</div>
+      </div>
+      <div class="hy-card fade-up">
+        <div class="hy-word">Hi</div>
+        <div class="hy-meaning">A warm welcome</div>
+        <div class="hy-desc">Every person who walks through our door is greeted as a friend. Warmth, openness, and genuine connection are at the heart of the HyFlow Massage LLC experience.</div>
+      </div>
+      <div class="hy-card fade-up">
+        <div class="hy-word">High</div>
+        <div class="hy-meaning">Uncompromising standards</div>
+        <div class="hy-desc">High quality. High standards. High expectations — of ourselves. We refuse to cut corners on technique, hygiene, or care. Our clients deserve nothing less than excellence.</div>
+      </div>
+      <div class="hy-card fade-up">
+        <div class="hy-word">Hygiene</div>
+        <div class="hy-meaning">Health & cleanliness</div>
+        <div class="hy-desc">Rooted in the word "hygiene," we hold cleanliness, safety, and health-centered practice as non-negotiable foundations of every single session and every space we work in.</div>
+      </div>
+      <div class="hy-card fade-up">
+        <div class="hy-word">Hygieia</div>
+        <div class="hy-meaning">Greek goddess of health</div>
+        <div class="hy-desc">Daughter of Asclepius, the god of medicine. Hygieia embodied the philosophy of prevention and everyday health — the belief that wellness is not achieved once, but maintained continuously.</div>
+      </div>
+    </div>
+
+    <!-- FLOW -->
+    <div class="flow-box fade-up">
+      <div class="flow-letter">Flow</div>
+      <div class="flow-content">
+        <div class="flow-title">The State We Help Every Client Achieve</div>
+        <div class="flow-desc">Flow is more than movement — it is the state of a body in balance. Lymph moving freely. Muscles releasing. Pain giving way to ease. Stress dissolving into clarity. When the body flows freely, every system functions better. That is what we are here to restore.</div>
+      </div>
+    </div>
+
+    <!-- CORE BELIEF -->
+    <div class="belief fade-up">
+      <div class="belief-text">"When the body flows freely, healing happens naturally."</div>
+      <div class="belief-zh">身体自由流动，愈合自然发生。</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- MISSION / VALUES / VISION -->
+<div class="mvv-section">
+  <div style="text-align:center;max-width:600px;margin:0 auto 8px">
+    <p class="eyebrow">Who We Are</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3vw,2.6rem);font-weight:300;color:#0f2018;line-height:1.2">Mission, Values & Vision</h2>
+  </div>
+
+  <div class="mvv-grid">
+
+    <!-- MISSION -->
+    <div class="mvv-card fade-up">
+      <div class="mvv-tag">Our Mission</div>
+      <div class="mvv-title">To Restore<br>Natural Flow</div>
+      <div class="mvv-body">To provide every client — individual, senior resident, or corporate employee — with professional, evidence-informed bodywork that supports the body's natural ability to heal, recover, and thrive.<br><br>We bring expertise, intention, and genuine care to every single session. No shortcuts. No compromises.</div>
+    </div>
+
+    <!-- VALUES -->
+    <div class="mvv-card fade-up">
+      <div class="mvv-tag">Our Values</div>
+      <div class="mvv-title" style="color:#fff">What We<br>Stand For</div>
+      <div class="values-list">
+        <div class="value-item">
+          <span class="value-dot">✦</span>
+          <div><span class="value-name">Precision</span><span class="value-desc">Every technique applied with purpose and skill. We know what we are doing, and why.</span></div>
+        </div>
+        <div class="value-item">
+          <span class="value-dot">✦</span>
+          <div><span class="value-name">Integrity</span><span class="value-desc">Honest pricing, transparent communication, no surprises. We say what we mean and do what we say.</span></div>
+        </div>
+        <div class="value-item">
+          <span class="value-dot">✦</span>
+          <div><span class="value-name">Compassion</span><span class="value-desc">Every client treated with dignity and genuine care. Your comfort and wellbeing always come first.</span></div>
+        </div>
+        <div class="value-item">
+          <span class="value-dot">✦</span>
+          <div><span class="value-name">Excellence</span><span class="value-desc">Continuous learning and the highest professional standards. Good enough is never enough.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VISION -->
+    <div class="mvv-card fade-up">
+      <div class="mvv-tag">Our Vision</div>
+      <div class="mvv-title">The Future<br>We're Building</div>
+      <div class="mvv-body">To become the Bay Area's most trusted wellness partner — bringing professional-grade bodywork to every corner of the community.<br><br>We envision a future where skilled, high-quality bodywork is not a luxury reserved for the few, but a regular, accessible part of healthy living for everyone — individuals, aging adults, and working professionals alike.<br><br>HyFlow Massage LLC is building that future, one session at a time.</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-row" style="padding-bottom:20px;border-bottom:1px solid rgba(181,137,74,0.12);margin-bottom:16px">
+    <div class="flogo">HyFlow Massage LLC</div>
+    <div class="flinks">
+      <a href="index.html">Home</a>
+      <a href="index.html#services">Services</a>
+      <a href="b2b.html">B2B Programs</a>
+      <a href="index.html#visit">Contact</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </div>
+  <div class="footer-row">
+    <div class="fcopy">© 2026 HyFlow Massage LLC · Mountain View, CA</div>
+    <div style="font-size:0.66rem;color:rgba(255,255,255,0.28)">257 Castro St, Ste 214, Mountain View, CA 94041 · (408) 668-6562</div>
+  </div>
+</footer>
+
+<script>
+  var nt = document.getElementById('nt');
+  if(nt) nt.addEventListener('click', function(){ document.getElementById('navLinks').classList.toggle('open'); });
+  var obs = new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible'); }); }, {threshold:0.1});
+  document.querySelectorAll('.fade-up').forEach(function(el){ obs.observe(el); });
+</script>
+</body>
+</html>

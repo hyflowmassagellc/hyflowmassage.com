@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="shortcut icon" href="favicon.svg">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="color-scheme" content="light only">
+  <title>Gift Cards – HyFlow Massage LLC</title>
+  <meta name="description" content="Give the gift of wellness. HyFlow Massage LLC gift cards from $750 to $20,000. No expiration. Transferable. Perfect for individuals and corporate gifting."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    /* FORCE LIGHT MODE */
+    :root{color-scheme:light only;--forest:#2d6a4f;--gold:#b5894a;--dark:#1e4532;--cream:#f0faf4;--white:#ffffff;--text:#0f2018;--sub:#2a4535;--mid:#3d5c4a}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{background:#f0faf4 !important;color-scheme:light only}
+    body{font-family:'Jost',sans-serif;background:#f0faf4 !important;color:#0f2018 !important;overflow-x:hidden}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 48px;background:rgba(240,250,244,0.97) !important;backdrop-filter:blur(12px);border-bottom:1px solid rgba(181,137,74,0.2)}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .nav-logo img{height:38px;width:38px;object-fit:contain;border-radius:3px}
+    .nav-logo-text{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:#2d6a4f;letter-spacing:0.04em}
+    .nav-logo-text span{color:#b5894a}
+    .nav-links{display:flex;gap:22px;align-items:center}
+    .nav-links a{font-size:0.72rem;letter-spacing:0.11em;text-transform:uppercase;color:#3d5c4a;text-decoration:none;transition:color .2s}
+    .nav-links a:hover{color:#2d6a4f}
+    .nav-book{background:#2d6a4f !important;color:#fff !important;padding:8px 18px !important}
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px}
+    .nav-toggle span{display:block;width:22px;height:1.5px;background:#2d6a4f}
+
+    /* HERO */
+    .hero{background:#1e4532 !important;padding:100px 80px 80px;margin-top:72px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+    .hero-eyebrow{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#b5894a;font-weight:500;margin-bottom:16px}
+    .hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,4vw,3.6rem);font-weight:300;color:#ffffff;line-height:1.15;margin-bottom:20px}
+    .hero-title em{font-style:italic;color:#b5894a}
+    .hero-sub{font-size:0.9rem;color:rgba(255,255,255,0.82);line-height:1.8;font-weight:300;margin-bottom:32px}
+    .hero-badges{display:flex;gap:12px;flex-wrap:wrap}
+    .badge{padding:8px 18px;border:1px solid rgba(181,137,74,0.4);font-size:0.72rem;color:rgba(255,255,255,0.75);letter-spacing:0.08em;display:flex;align-items:center;gap:7px}
+    .badge::before{color:#b5894a}
+
+    /* GIFT CARD VISUAL */
+    .gc-preview{position:relative}
+    .gc-card{background:linear-gradient(135deg,#1a3828 0%,#2d6a4f 50%,#1a3828 100%);padding:40px;border-radius:4px;box-shadow:0 20px 60px rgba(0,0,0,0.4);position:relative;overflow:hidden;aspect-ratio:1.6/1}
+    .gc-card::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:rgba(181,137,74,0.08)}
+    .gc-card::after{content:'';position:absolute;bottom:-30px;left:-30px;width:150px;height:150px;border-radius:50%;background:rgba(255,255,255,0.04)}
+    .gc-logo-text{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:rgba(255,255,255,0.9);margin-bottom:4px}
+    .gc-logo-text span{color:#b5894a}
+    .gc-tagline{font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:32px}
+    .gc-amount-label{font-size:0.58rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:6px}
+    .gc-amount-value{font-family:'Cormorant Garamond',serif;font-size:2.8rem;color:#b5894a;line-height:1}
+    .gc-footer{position:absolute;bottom:32px;left:40px;right:40px;display:flex;justify-content:space-between;align-items:flex-end}
+    .gc-note{font-size:0.6rem;color:rgba(255,255,255,0.35);letter-spacing:0.06em}
+
+    /* SECTIONS */
+    .section{padding:80px}
+
+    /* INDIVIDUAL CARDS */
+    .individual-section{background:#ffffff !important;padding:80px}
+    .sec-intro{text-align:center;max-width:580px;margin:0 auto 56px}
+    .sec-eyebrow{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#b5894a;font-weight:500;margin-bottom:12px}
+    .sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3vw,2.7rem);font-weight:300;color:#0f2018;line-height:1.2;margin-bottom:14px}
+    .sec-sub{font-size:0.88rem;color:#2a4535;line-height:1.78;font-weight:300}
+
+    /* CARD GRID */
+    .cards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:16px}
+    .cards-grid-2{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .gc-item{background:#f0faf4 !important;border:1px solid rgba(45,106,79,0.15);padding:28px 22px;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;transition:all .3s;cursor:pointer}
+    .gc-item:hover{border-color:#b5894a;transform:translateY(-4px);box-shadow:0 8px 24px rgba(45,106,79,0.1)}
+    .gc-item.popular{border-color:#b5894a;border-width:2px}
+    .gc-item.popular::before{content:'Most Popular';position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:#b5894a;color:#fff;font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;padding:3px 10px;white-space:nowrap}
+    .gc-item.corporate{border-color:#1e4532;background:#f0faf4 !important}
+    .gc-category{font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:#6b8c7a;margin-bottom:10px;font-weight:500}
+    .gc-value{font-family:'Cormorant Garamond',serif;font-size:2rem;color:#0f2018;font-weight:600;margin-bottom:6px;line-height:1}
+    .gc-desc{font-size:0.74rem;color:#2a4535;line-height:1.6;margin-bottom:18px;min-height:52px}
+    .gc-btn{width:100%;padding:11px;background:#2d6a4f;color:#fff;border:none;font-family:'Jost',sans-serif;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:all .2s;text-decoration:none;display:block;text-align:center}
+    .gc-btn:hover{background:#b5894a}
+    .gc-btn.coming-soon{background:#e8f5ec;color:#6b8c7a;cursor:default;font-size:0.68rem}
+    .gc-btn.coming-soon:hover{background:#e8f5ec;color:#6b8c7a}
+
+    /* SECTION DIVIDER */
+    .section-divider{border:none;border-top:1px solid rgba(45,106,79,0.1);margin:40px 0}
+
+    /* CORPORATE SECTION */
+    .corporate-section{background:#1e4532 !important;padding:72px 80px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+    .corp-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,2.8vw,2.4rem);font-weight:300;color:#fff;line-height:1.25;margin-bottom:16px}
+    .corp-title em{font-style:italic;color:#b5894a}
+    .corp-sub{font-size:0.88rem;color:rgba(255,255,255,0.80);line-height:1.8;font-weight:300;margin-bottom:28px}
+    .corp-uses{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
+    .corp-uses li{font-size:0.82rem;color:rgba(255,255,255,0.80);display:flex;align-items:center;gap:10px}
+    .corp-uses li::before{content:'✦';color:#b5894a;font-size:0.6rem;flex-shrink:0}
+    .corp-cards-grid{display:flex;flex-direction:column;gap:10px}
+    .corp-card-row{background:rgba(255,255,255,0.07) !important;border:1px solid rgba(181,137,74,0.2);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;transition:all .2s}
+    .corp-card-row:hover{background:rgba(255,255,255,0.12) !important;border-color:#b5894a}
+    .corp-card-val{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:#ffffff;font-weight:600}
+    .corp-card-desc{font-size:0.76rem;color:rgba(255,255,255,0.65);margin-top:2px}
+    .corp-card-btn{padding:8px 18px;background:#b5894a;color:#1e4532;border:none;font-family:'Jost',sans-serif;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block;white-space:nowrap;font-weight:600}
+    .corp-card-btn:hover{background:#fff}
+    .corp-card-btn.soon{background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.5);cursor:default}
+    .corp-card-btn.soon:hover{background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.5)}
+
+    /* HOW IT WORKS */
+    .how-section{background:#f0faf4 !important;padding:80px}
+    .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:40px}
+    .step-card{background:#ffffff !important;padding:32px 24px;text-align:center}
+    .step-num{font-family:'Cormorant Garamond',serif;font-size:2.4rem;color:rgba(45,106,79,0.2);margin-bottom:10px}
+    .step-title{font-size:0.84rem;color:#0f2018;font-weight:600;margin-bottom:8px}
+    .step-desc{font-size:0.76rem;color:#2a4535;line-height:1.68;font-weight:300}
+
+    /* TERMS */
+    .terms-section{background:#ffffff !important;padding:64px 80px}
+    .terms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:36px}
+    .term-item{display:flex;gap:14px;align-items:flex-start}
+    .term-icon{font-size:1.4rem;flex-shrink:0}
+    .term-title{font-size:0.84rem;color:#0f2018;font-weight:500;margin-bottom:4px}
+    .term-desc{font-size:0.78rem;color:#2a4535;line-height:1.65;font-weight:300}
+
+    /* FOOTER */
+    footer{background:#132a1e !important;padding:36px 80px}
+    .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+    .flogo{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:rgba(255,255,255,0.5)}
+    .flinks{display:flex;gap:18px;flex-wrap:wrap}
+    .flinks a{font-size:0.64rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.28);text-decoration:none}
+    .flinks a:hover{color:#b5894a}
+    .fcopy{font-size:0.66rem;color:rgba(255,255,255,0.22)}
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      nav{padding:13px 18px}
+      .nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#f0faf4 !important;padding:18px;gap:16px;border-bottom:1px solid rgba(181,137,74,0.2)}
+      .nav-links.open{display:flex}
+      .nav-toggle{display:flex}
+      .hero{grid-template-columns:1fr;padding:56px 18px;gap:36px;margin-top:66px}
+      .individual-section,.how-section,.terms-section{padding:56px 18px}
+      .corporate-section{grid-template-columns:1fr;padding:56px 18px;gap:36px}
+      .cards-grid,.cards-grid-2{grid-template-columns:repeat(2,1fr)}
+      .steps-grid{grid-template-columns:repeat(2,1fr)}
+      .terms-grid{grid-template-columns:1fr}
+      footer{padding:28px 18px}
+    }
+
+    .fade-up{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
+    .fade-up.visible{opacity:1;transform:translateY(0)}
+  </style>
+  <link rel="canonical" href="https://hyflowmassage.com/giftcard.html">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="logo.jpeg" alt="HyFlow Massage LLC">
+    <span class="nav-logo-text">HyFlow <span>Massage LLC</span></span>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="b2b.html">B2B Programs</a>
+    <a href="about.html">About</a>
+    <a href="index.html#visit">Contact</a>
+    <a href="index.html#mobile" class="nav-book">Book Now</a>
+  </div>
+  <button class="nav-toggle" id="nt"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <p class="hero-eyebrow">Give the Gift of Wellness</p>
+    <h1 class="hero-title">HyFlow Massage LLC<br><em>Gift Cards</em></h1>
+    <p class="hero-sub">Share the HyFlow Massage LLC experience with someone you love — or reward your team. Gift cards never expire, are fully transferable, and can be used for any service.</p>
+    <div class="hero-badges">
+      <div class="badge">✦ No Expiration Date</div>
+      <div class="badge">✦ Fully Transferable</div>
+      <div class="badge">✦ All Services</div>
+      <div class="badge">✦ Corporate Gifting</div>
+    </div>
+  </div>
+  <div class="gc-preview">
+    <div class="gc-card">
+      <div class="gc-logo-text">HyFlow <span>Massage LLC</span></div>
+      <div class="gc-tagline">Gift of Wellness · Mountain View, CA</div>
+      <div class="gc-amount-label">Gift Value</div>
+      <div class="gc-amount-value" id="previewAmount">$750</div>
+      <div class="gc-footer">
+        <div class="gc-note">No Expiration · Fully Transferable</div>
+        <div class="gc-note">(408) 668-6562</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INDIVIDUAL GIFT CARDS -->
+<div class="individual-section">
+  <div class="sec-intro">
+    <p class="sec-eyebrow">Personal Gift Cards</p>
+    <h2 class="sec-title">For Individuals & Loved Ones</h2>
+    <p class="sec-sub">Perfect for birthdays, recovery support, special occasions, or simply showing someone you care. Every value redeemable for any HyFlow Massage LLC service.</p>
+  </div>
+
+  <div class="cards-grid">
+    <div class="gc-item fade-up" onmouseover="updatePreview('$750')">
+      <div class="gc-category">Personal</div>
+      <div class="gc-value">$750</div>
+      <div class="gc-desc">~5 x 60-min sessions. A wonderful introduction to HyFlow Massage LLC wellness.</div>
+      <!-- TODO: Replace href with your Square gift card link once activated -->
+      <a href="https://app.squareup.com/gift/MLMXHF9ES5B1M/order" class="gc-btn">Buy Now</a>
+    </div>
+    <div class="gc-item popular fade-up" onmouseover="updatePreview('$1,500')">
+      <div class="gc-category">Popular</div>
+      <div class="gc-value">$1,500</div>
+      <div class="gc-desc">~10 x 60-min sessions. A full season of regular wellness care.</div>
+      <a href="https://app.squareup.com/gift/MLMXHF9ES5B1M/order" class="gc-btn">Buy Now</a>
+    </div>
+    <div class="gc-item fade-up" onmouseover="updatePreview('$2,250')">
+      <div class="gc-category">Premium</div>
+      <div class="gc-value">$2,000</div>
+      <div class="gc-desc">~13 sessions. Maximum single eGift card value. Ideal for post-surgical recovery or long-term wellness.</div>
+      <a href="https://app.squareup.com/gift/MLMXHF9ES5B1M/order" class="gc-btn">Buy Now</a>
+    </div>
+    <div class="gc-item fade-up" onmouseover="updatePreview('$3,000+')">
+      <div class="gc-category">Custom Amount</div>
+      <div class="gc-value">$3,000+</div>
+      <div class="gc-desc">~20+ sessions. Custom amount above $2,000. Contact us to arrange payment by invoice.</div>
+      <a href="mailto:info@hyflowmassage.com?subject=Gift Card Purchase - $3000&body=Hi, I would like to purchase a $3,000 HyFlow Massage LLC gift card. Please send me an invoice." class="gc-btn">Contact to Purchase</a>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- CORPORATE INDIVIDUAL -->
+  <div class="sec-intro" style="margin-top:40px">
+    <p class="sec-eyebrow">Corporate & Group Gift Cards</p>
+    <h2 class="sec-title">For Teams & Organizations</h2>
+    <p class="sec-sub">Reward employees, clients, or residents with meaningful wellness gifts. Large-value cards designed for corporate gifting, HR rewards, and institutional purchasing.</p>
+  </div>
+
+  <div class="cards-grid-2">
+    <div class="gc-item corporate fade-up" onmouseover="updatePreview('$5,000')">
+      <div class="gc-category">Corporate</div>
+      <div class="gc-value">$5,000</div>
+      <div class="gc-desc">~33 sessions. Perfect for small team rewards or executive gifting.</div>
+      <a href="mailto:info@hyflowmassage.com?subject=Gift Card Purchase - $20,000&body=Hi, I would like to purchase a $20,000 HyFlow Massage LLC gift card. Please send me an invoice." class="gc-btn">Contact to Purchase</a>
+    </div>
+    <div class="gc-item corporate fade-up" onmouseover="updatePreview('$10,000')">
+      <div class="gc-category">Enterprise</div>
+      <div class="gc-value">$10,000</div>
+      <div class="gc-desc">~66 sessions. Ideal for mid-size team wellness programs or annual HR rewards.</div>
+      <a href="mailto:info@hyflowmassage.com?subject=Gift Card Purchase - $10,000" class="gc-btn">Contact to Purchase</a>
+    </div>
+    <div class="gc-item corporate fade-up" onmouseover="updatePreview('$15,000')">
+      <div class="gc-category">Enterprise</div>
+      <div class="gc-value">$15,000</div>
+      <div class="gc-desc">~100 sessions. Senior living facilities, corporate wellness funds, group gifting.</div>
+      <a href="mailto:info@hyflowmassage.com?subject=Gift Card Purchase - $15,000" class="gc-btn">Contact to Purchase</a>
+    </div>
+    <div class="gc-item corporate fade-up" onmouseover="updatePreview('$20,000')">
+      <div class="gc-category">Institutional</div>
+      <div class="gc-value">$20,000</div>
+      <div class="gc-desc">~133 sessions. Annual wellness fund for organizations, large teams, or senior facilities.</div>
+      <a href="mailto:info@hyflowmassage.com?subject=Gift Card Purchase - $20,000" class="gc-btn">Contact to Purchase</a>
+    </div>
+  </div>
+</div>
+
+<!-- CORPORATE GIFTING SECTION -->
+<div class="corporate-section">
+  <div>
+    <p style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#b5894a;font-weight:500;margin-bottom:14px">Corporate Gifting</p>
+    <h2 class="corp-title">The Perfect<br><em>Corporate Gift</em></h2>
+    <p class="corp-sub">HyFlow Massage LLC gift cards are an exceptional choice for companies that want to give something meaningful — not another generic gift basket. Wellness is the gift that actually gets used.</p>
+    <ul class="corp-uses">
+      <li>Employee appreciation & year-end bonuses</li>
+      <li>Client relationship gifts</li>
+      <li>HR wellness program incentives</li>
+      <li>Senior living resident gifting programs</li>
+      <li>Team milestone celebrations</li>
+      <li>Executive wellness packages</li>
+    </ul>
+    <a href="mailto:info@hyflowmassage.com?subject=Corporate Gift Card Inquiry" class="gc-btn" style="display:inline-block;width:auto;padding:12px 28px">Contact Us for Bulk Orders</a>
+  </div>
+  <div>
+    <p style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#b5894a;font-weight:500;margin-bottom:18px">Quick Order</p>
+    <div class="corp-cards-grid">
+      <div class="corp-card-row">
+        <div><div class="corp-card-val">$5,000</div><div class="corp-card-desc">~33 sessions · Small team</div></div>
+        <a href="mailto:info@hyflowmassage.com?subject=Gift Card Purchase - $5,000&body=Hi, I would like to purchase a $5,000 HyFlow Massage LLC gift card. Please send me an invoice." class="corp-card-btn">Contact to Purchase</a>
+      </div>
+      <div class="corp-card-row">
+        <div><div class="corp-card-val">$10,000</div><div class="corp-card-desc">~66 sessions · Mid-size team</div></div>
+        <a href="mailto:info@hyflowmassage.com?subject=Gift Card Purchase - $10,000&body=Hi, I would like to purchase a $10,000 HyFlow Massage LLC gift card. Please send me an invoice." class="corp-card-btn">Contact to Purchase</a>
+      </div>
+      <div class="corp-card-row">
+        <div><div class="corp-card-val">$15,000</div><div class="corp-card-desc">~100 sessions · Large team</div></div>
+        <a href="mailto:info@hyflowmassage.com?subject=Gift Card Purchase - $15,000&body=Hi, I would like to purchase a $15,000 HyFlow Massage LLC gift card. Please send me an invoice." class="corp-card-btn">Contact to Purchase</a>
+      </div>
+      <div class="corp-card-row">
+        <div><div class="corp-card-val">$20,000</div><div class="corp-card-desc">~133 sessions · Institutional</div></div>
+        <a href="mailto:info@hyflowmassage.com?subject=Gift Card Purchase - $20,000&body=Hi, I would like to purchase a $20,000 HyFlow Massage LLC gift card. Please send me an invoice." class="corp-card-btn">Contact to Purchase</a>
+      </div>
+    </div>
+    <p style="font-size:0.72rem;color:rgba(255,255,255,0.5);margin-top:14px;line-height:1.65">Need a custom amount or bulk invoice? <a href="mailto:info@hyflowmassage.com" style="color:#b5894a">Email us</a> and we'll arrange it directly.</p>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="how-section">
+  <div class="sec-intro">
+    <p class="sec-eyebrow">How It Works</p>
+    <h2 class="sec-title">Simple & Seamless</h2>
+  </div>
+  <div class="steps-grid">
+    <div class="step-card fade-up">
+      <div class="step-num">01</div>
+      <div class="step-title">Choose Your Value</div>
+      <div class="step-desc">Select from $750 to $20,000. Each tier is designed for a specific gifting purpose — personal, premium, or corporate.</div>
+    </div>
+    <div class="step-card fade-up">
+      <div class="step-num">02</div>
+      <div class="step-title">Purchase via Square</div>
+      <div class="step-desc">Secure checkout through Square. You'll receive a digital gift card instantly by email after payment.</div>
+    </div>
+    <div class="step-card fade-up">
+      <div class="step-num">03</div>
+      <div class="step-title">Share the Gift</div>
+      <div class="step-desc">Forward the digital card to the recipient. No physical card needed — just the code. Fully transferable.</div>
+    </div>
+    <div class="step-card fade-up">
+      <div class="step-num">04</div>
+      <div class="step-title">Book & Redeem</div>
+      <div class="step-desc">The recipient books their session online or by text, then redeems the gift card at checkout. No expiration — ever.</div>
+    </div>
+  </div>
+</div>
+
+<!-- TERMS & INFO -->
+<div class="terms-section">
+  <div class="sec-intro" style="margin-bottom:20px">
+    <p class="sec-eyebrow">Gift Card Terms</p>
+    <h2 class="sec-title">Everything You Need to Know</h2>
+  </div>
+  <div class="terms-grid">
+    <div class="term-item">
+      <div class="term-icon">♾️</div>
+      <div><div class="term-title">No Expiration Date</div><div class="term-desc">HyFlow Massage LLC gift cards never expire. Use them whenever the time is right — no rush, no pressure.</div></div>
+    </div>
+    <div class="term-item">
+      <div class="term-icon">🔄</div>
+      <div><div class="term-title">Fully Transferable</div><div class="term-desc">Gift cards are not tied to a specific person. They can be freely transferred or shared with anyone.</div></div>
+    </div>
+    <div class="term-item">
+      <div class="term-icon">✅</div>
+      <div><div class="term-title">Valid for All Services</div><div class="term-desc">Redeemable for any service including lymphatic drainage, deep bodywork, mobile massage, and add-ons.</div></div>
+    </div>
+    <div class="term-item">
+      <div class="term-icon">💳</div>
+      <div><div class="term-title">Digital Delivery</div><div class="term-desc">Gift cards are delivered digitally by email via Square. No physical card required for redemption.</div></div>
+    </div>
+    <div class="term-item">
+      <div class="term-icon">📞</div>
+      <div><div class="term-title">Custom Amounts Available</div><div class="term-desc">eGift cards up to $2,000 available online via Square. For amounts above $2,000, contact us at <a href="tel:4086686562" style="color:#2d6a4f">(408) 668-6562</a> or <a href="mailto:info@hyflowmassage.com" style="color:#2d6a4f">email us</a> — we'll send a Square Invoice.</div></div>
+    </div>
+    <div class="term-item">
+      <div class="term-icon">🏢</div>
+      <div><div class="term-title">Bulk & Invoice Available</div><div class="term-desc">Corporate clients purchasing $5,000+ can request a bulk invoice. Contact us for arrangements.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-row" style="padding-bottom:16px;border-bottom:1px solid rgba(181,137,74,0.12);margin-bottom:14px">
+    <div class="flogo">HyFlow Massage LLC</div>
+    <div class="flinks">
+      <a href="index.html">Home</a>
+      <a href="index.html#services">Services</a>
+      <a href="b2b.html">B2B Programs</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </div>
+  <div class="footer-row">
+    <div class="fcopy">© 2026 HyFlow Massage LLC · Mountain View, CA · (408) 668-6562</div>
+  </div>
+</footer>
+
+<script>
+  var nt = document.getElementById('nt');
+  if(nt) nt.addEventListener('click', function(){ document.getElementById('navLinks').classList.toggle('open'); });
+
+  function updatePreview(amount) {
+    var el = document.getElementById('previewAmount');
+    if(el) el.textContent = amount;
+  }
+
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, {threshold:0.1});
+  document.querySelectorAll('.fade-up').forEach(function(el){ obs.observe(el); });
+</script>
+</body>
+</html>

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="shortcut icon" href="favicon.svg">
+  <meta name="color-scheme" content="light only">
+  <meta name="theme-color" content="#f5fbf7">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>B2B Programs – Senior Care & Corporate Wellness | HyFlow Massage LLC</title>
+  <meta name="description" content="HyFlow Massage LLC B2B programs for senior living communities and Bay Area companies. On-site massage programs from single events to annual contracts."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    /* FORCE LIGHT MODE - prevent dark mode override */
+    :root { color-scheme: light only; }
+    html { background: #f5fbf7 !important; color-scheme: light only; }
+    body { background: #f5fbf7 !important; color: #1a2e20 !important; }
+
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--forest:#2d6a4f;--gold:#b5894a;--cream:#eef7f1;--warm:#f5fbf7;--mid:#3d5c4a;--light:#6b8c7a}
+    html{scroll-behavior:smooth;background:#f5fbf7}
+    body{font-family:'Jost',sans-serif;background:#f5fbf7 !important;color:#1a2e20;overflow-x:hidden}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 48px;background:rgba(245,251,247,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(181,137,74,0.2)}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .nav-logo img{height:38px;width:38px;object-fit:contain;border-radius:3px}
+    .nav-logo-text{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:#2d6a4f;letter-spacing:0.04em}
+    .nav-logo-text span{color:#b5894a}
+    .nav-links{display:flex;gap:22px;align-items:center}
+    .nav-links a{font-size:0.72rem;letter-spacing:0.11em;text-transform:uppercase;color:#3d5c4a;text-decoration:none;transition:color .2s}
+    .nav-links a:hover{color:#2d6a4f}
+    .nav-book{background:#2d6a4f!important;color:#eef7f1!important;padding:8px 18px!important}
+    .nav-book:hover{background:#b5894a!important;color:#2d6a4f!important}
+    .lang-btn{background:none;border:1px solid #b5894a;color:#b5894a;font-family:'Jost',sans-serif;font-size:0.68rem;padding:5px 10px;cursor:pointer;letter-spacing:0.08em;transition:all .2s}
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px}
+    .nav-toggle span{display:block;width:22px;height:1.5px;background:#2d6a4f}
+
+    /* BUTTONS */
+    .btn-p{display:inline-block;padding:13px 28px;background:#2d6a4f;color:#fff;font-family:'Jost',sans-serif;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all .25s}
+    .btn-p:hover{background:#b5894a}
+    .btn-o{display:inline-block;padding:13px 28px;border:1px solid #2d6a4f;color:#2d6a4f;font-family:'Jost',sans-serif;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all .25s}
+    .btn-o:hover{background:#2d6a4f;color:#fff}
+
+    /* HERO */
+    .b2b-hero{background:#1e4532;padding:100px 80px 72px;margin-top:72px}
+    .b2b-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.4rem);font-weight:300;color:#fff;line-height:1.15;margin-bottom:18px}
+    .b2b-hero h1 em{font-style:italic;color:#b5894a}
+    .b2b-hero p{font-size:0.92rem;color:rgba(255,255,255,0.78);line-height:1.8;max-width:580px;margin-bottom:32px}
+    .b2b-eyebrow{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#b5894a;margin-bottom:16px;font-weight:500}
+
+    /* SECTION */
+    .section{padding:80px}
+    .section-cream{background:#e8f5ec !important}
+    .section-white{background:#ffffff !important}
+    .section-warm{background:#f0f9f3 !important}
+    .sec-intro{text-align:center;max-width:640px;margin:0 auto 60px}
+    .sec-eyebrow{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#b5894a;font-weight:500;margin-bottom:12px}
+    .sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3vw,2.8rem);font-weight:300;line-height:1.2;color:#0f2018;margin-bottom:16px}
+    .sec-sub{font-size:0.9rem;line-height:1.78;color:#2a4535;font-weight:300}
+
+    /* PROGRAM CARDS */
+    .prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:48px}
+    .pcard{background:#ffffff !important;border:1px solid rgba(45,106,79,0.15);display:flex;flex-direction:column;overflow:hidden;transition:transform .3s,box-shadow .3s}
+    .pcard:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(45,106,79,0.12)}
+    .pcard-top{height:4px}
+    .pcard-top.gold{background:#b5894a}
+    .pcard-top.green{background:#2d6a4f}
+    .pcard-top.dark{background:#1e4532}
+    .pcard-head{background:#f0f8f2 !important;padding:24px 24px 18px;border-bottom:1px solid rgba(45,106,79,0.1)}
+    .pcard-num{font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;color:#b5894a;font-weight:700;margin-bottom:8px}
+    .pcard-name{font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:#0f2018;font-weight:500;line-height:1.25;margin-bottom:8px}
+    .pcard-desc{font-size:0.78rem;color:#2a4535;line-height:1.6}
+    .pcard-body{padding:20px 24px;flex:1;display:flex;flex-direction:column;background:#ffffff}
+    .price-label{font-size:0.58rem;letter-spacing:0.16em;text-transform:uppercase;color:#2d6a4f;font-weight:700;margin-bottom:10px;margin-top:2px}
+    .price-row{display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px solid rgba(45,106,79,0.08)}
+    .price-row:last-of-type{border-bottom:none}
+    .pr-left{display:flex;flex-direction:column;gap:2px}
+    .pr-name{font-size:0.84rem;color:#0f2018;font-weight:500}
+    .pr-detail{font-size:0.7rem;color:#2d6a4f}
+    .pr-price{font-family:'Cormorant Garamond',serif;font-size:1.12rem;color:#0f2018;font-weight:700;white-space:nowrap}
+    .pr-orig{font-size:0.72rem;color:#7a9a88;text-decoration:line-through;margin-right:5px}
+    .pcard-checks{margin-top:auto;padding-top:14px;border-top:1px solid rgba(45,106,79,0.1);display:flex;flex-direction:column;gap:5px}
+    .pcard-check{font-size:0.74rem;color:#1a3828;display:flex;align-items:center;gap:7px;font-weight:400}
+    .pcard-check::before{content:'✓';color:#2d6a4f;font-weight:700;flex-shrink:0}
+    .pcard-tag{margin-top:12px;font-size:0.69rem;color:#3a5c4a}
+    .pcard-tag strong{color:#0f2018;font-weight:600}
+
+    /* HIGHLIGHT BAR */
+    .highlight-bar{background:#1e4532 !important;padding:44px 56px;display:flex;align-items:center;justify-content:space-between;gap:32px;margin-bottom:48px;flex-wrap:wrap}
+    .hl-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#fff;margin-bottom:8px}
+    .hl-title em{font-style:italic;color:#b5894a}
+    .hl-desc{font-size:0.84rem;color:rgba(255,255,255,0.80);line-height:1.75;max-width:500px}
+    .hl-price-orig{font-size:0.72rem;color:rgba(255,255,255,0.45);text-decoration:line-through;margin-bottom:4px}
+    .hl-price{font-family:'Cormorant Garamond',serif;font-size:3rem;color:#b5894a;line-height:1}
+    .hl-price-sub{font-size:0.68rem;color:rgba(255,255,255,0.55);margin-top:5px}
+
+    /* STEPS */
+    .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:48px}
+    .step{background:#e8f5ec !important;padding:32px 28px;text-align:center}
+    .step-num{font-family:'Cormorant Garamond',serif;font-size:2.6rem;color:rgba(45,106,79,0.25);margin-bottom:10px}
+    .step-title{font-size:0.86rem;color:#0f2018;font-weight:600;margin-bottom:8px}
+    .step-desc{font-size:0.76rem;color:#2a4535;line-height:1.7;font-weight:300}
+
+    /* WHY BOX */
+    .why-box{background:#1e4532 !important;padding:48px 56px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:0}
+    .why-features{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .wf{background:rgba(255,255,255,0.08);padding:18px 16px;border-left:3px solid #b5894a}
+    .wf-icon{font-size:1.3rem;margin-bottom:8px}
+    .wf-title{font-size:0.82rem;color:#fff;margin-bottom:3px;font-weight:500}
+    .wf-desc{font-size:0.7rem;color:rgba(255,255,255,0.72);line-height:1.5}
+
+    /* INQUIRY FORM */
+    .form-section{background:#1e4532 !important;padding:72px 80px}
+    .form-inner{display:grid;grid-template-columns:1fr 1.2fr;gap:72px;align-items:start}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .form-full{grid-column:1/-1}
+    .fg{display:flex;flex-direction:column;gap:5px}
+    .fg label{font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.6);font-weight:500}
+    .fg input,.fg select,.fg textarea{background:rgba(255,255,255,0.1);border:1px solid rgba(181,137,74,0.3);color:#fff;font-family:'Jost',sans-serif;font-size:0.85rem;padding:10px 13px;outline:none;transition:border .2s}
+    .fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,0.35)}
+    .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:#b5894a}
+    .fg select option{background:#1e4532;color:#fff}
+    .fg textarea{resize:vertical;min-height:80px;line-height:1.6}
+    .form-submit{width:100%;padding:13px;background:#b5894a;color:#1e4532;border:none;font-family:'Jost',sans-serif;font-size:0.8rem;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;transition:all .2s;margin-top:6px;font-weight:600}
+    .form-submit:hover{background:#fff;color:#1e4532}
+    .form-success{display:none;text-align:center;padding:32px;color:#b5894a;font-family:'Cormorant Garamond',serif;font-size:1.2rem}
+
+    /* FOOTER */
+    footer{background:#132a1e !important;padding:40px 80px}
+    .footer-top{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:28px;border-bottom:1px solid rgba(181,137,74,0.15);margin-bottom:20px;flex-wrap:wrap;gap:20px}
+    .flogo{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:rgba(255,255,255,0.5)}
+    .fsocial{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+    .fsocial a{font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.35);text-decoration:none}
+    .fsocial a:hover{color:#b5894a}
+    .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+    .fcopy{font-size:0.66rem;color:rgba(255,255,255,0.22);letter-spacing:0.06em}
+    .flinks{display:flex;gap:18px;flex-wrap:wrap}
+    .flinks a{font-size:0.64rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.28);text-decoration:none}
+    .flinks a:hover{color:#b5894a}
+
+    /* DISCLAIMER */
+    .disclaimer{background:#132a1e;padding:24px 80px;border-top:1px solid rgba(181,137,74,0.12)}
+    .disclaimer p{font-size:0.72rem;color:rgba(255,255,255,0.5);line-height:1.8;max-width:900px;margin:0 auto;text-align:center}
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      nav{padding:13px 18px}
+      .nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#f5fbf7;padding:18px;gap:16px;border-bottom:1px solid rgba(181,137,74,0.2)}
+      .nav-links.open{display:flex}
+      .nav-toggle{display:flex}
+      .b2b-hero,.section,.form-section,.disclaimer{padding:56px 18px}
+      .why-box{padding:36px 18px;grid-template-columns:1fr}
+      .prog-grid,.steps-grid,.why-features{grid-template-columns:1fr}
+      .highlight-bar{padding:32px 18px;flex-direction:column;text-align:center}
+      .form-inner{grid-template-columns:1fr;gap:36px}
+      .form-grid{grid-template-columns:1fr}
+      footer,.footer-top,.footer-bottom{padding:28px 18px}
+    }
+  </style>
+  <link rel="canonical" href="https://hyflowmassage.com/b2b.html">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="logo.jpeg" alt="HyFlow Massage LLC">
+    <span class="nav-logo-text">HyFlow <span>Massage LLC</span></span>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="#senior">Senior Care</a>
+    <a href="#corporate">Corporate</a>
+    <a href="about.html">About</a>
+    <a href="index.html#visit">Contact</a>
+    <a href="index.html#mobile" class="nav-book">Book Now</a>
+  </div>
+  <button class="nav-toggle" id="nt" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<div class="b2b-hero">
+  <p class="b2b-eyebrow">Institutional & Corporate Partnerships</p>
+  <h1>HyFlow Massage LLC<br><em>B2B Programs</em></h1>
+  <p>Standardized, professional on-site massage and bodywork programs for senior living communities and Bay Area companies — from single events to year-round contracts.</p>
+  <div style="display:flex;gap:12px;flex-wrap:wrap">
+    <a href="#senior" class="btn-p">Senior Care Programs</a>
+    <a href="#corporate" class="btn-o" style="border-color:rgba(255,255,255,0.4);color:#fff">Corporate Wellness</a>
+    <a href="#inquiry" class="btn-o" style="border-color:#b5894a;color:#b5894a">Request a Proposal</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SENIOR CARE PROGRAM -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="section section-cream" id="senior">
+  <div class="sec-intro">
+    <p class="sec-eyebrow">B2B · Senior Living Facilities</p>
+    <h2 class="sec-title">HyFlow Massage LLC<br>Senior Care Program</h2>
+    <p class="sec-sub">Three distinct program structures for senior living communities across the Bay Area — from flexible single visits to year-round contracts with dedicated teams.</p>
+  </div>
+
+  <div class="prog-grid">
+
+    <!-- P1 -->
+    <div class="pcard">
+      <div class="pcard-top gold"></div>
+      <div class="pcard-head">
+        <div class="pcard-num">Program 01</div>
+        <div class="pcard-name">Single-Visit Resident Wellness</div>
+        <div class="pcard-desc">Flexible on-demand sessions with no contract. Ideal for facilities exploring our services or scheduling occasional visits.</div>
+      </div>
+      <div class="pcard-body">
+        <div class="price-label">On-Site Pricing / Person</div>
+        <div class="price-row">
+          <div class="pr-left"><span class="pr-name">30 minutes</span></div>
+          <span><span class="pr-orig">$175</span><span class="pr-price">$95</span></span>
+        </div>
+        <div class="price-row">
+          <div class="pr-left"><span class="pr-name">45 minutes</span></div>
+          <span><span class="pr-orig">$210</span><span class="pr-price">$130</span></span>
+        </div>
+        <div class="price-row">
+          <div class="pr-left"><span class="pr-name">60 minutes</span></div>
+          <span><span class="pr-orig">$240</span><span class="pr-price">$160</span></span>
+        </div>
+        <div class="pcard-checks">
+          <span class="pcard-check">Minimum 5 residents per visit</span>
+          <span class="pcard-check">72-hour advance scheduling required</span>
+          <span class="pcard-check">Physician clearance required per resident</span>
+          <span class="pcard-check">No long-term commitment</span>
+        </div>
+        <div class="pcard-tag">Best for: <strong>Independent Living · First-time partnerships</strong></div>
+      </div>
+    </div>
+
+    <!-- P2 -->
+    <div class="pcard">
+      <div class="pcard-top green"></div>
+      <div class="pcard-head">
+        <div class="pcard-num">Program 02</div>
+        <div class="pcard-name">Activity & Wellness Events</div>
+        <div class="pcard-desc">Structured on-site wellness events for activity coordinators. Three ready-to-book formats with everything included.</div>
+      </div>
+      <div class="pcard-body">
+        <div class="price-label">Event Packages</div>
+        <div class="price-row">
+          <div class="pr-left"><span class="pr-name">🎯 Wellness Event</span><span class="pr-detail">2 hrs · Chair massage · Up to 10 residents</span></div>
+          <span class="pr-price">$800</span>
+        </div>
+        <div class="price-row">
+          <div class="pr-left"><span class="pr-name">🎯🎯 Health Talk + Massage</span><span class="pr-detail">3 hrs · Wellness talk + massage · Up to 12</span></div>
+          <span class="pr-price">$1,200</span>
+        </div>
+        <div class="price-row">
+          <div class="pr-left"><span class="pr-name">🎯🎯🎯 Full Wellness Day</span><span class="pr-detail">6 hrs · Table + chair · Up to 20 residents</span></div>
+          <span class="pr-price">$2,200</span>
+        </div>
+        <div class="pcard-checks">
+          <span class="pcard-check">Chair massage — no undressing needed</span>
+          <span class="pcard-check">All equipment provided on-site</span>
+          <span class="pcard-check">Customizable to event theme</span>
+          <span class="pcard-check">Book as one-time or recurring event</span>
+        </div>
+        <div class="pcard-tag">Best for: <strong>Activity Coordinators · Holiday events · Health fairs</strong></div>
+      </div>
+    </div>
+
+    <!-- P3 -->
+    <div class="pcard">
+      <div class="pcard-top dark"></div>
+      <div class="pcard-head">
+        <div class="pcard-num">Program 03</div>
+        <div class="pcard-name">Annual Wellness Contract</div>
+        <div class="pcard-desc">Year-round scheduled on-site service with a dedicated team. Four standardized plans — no negotiation needed.</div>
+      </div>
+      <div class="pcard-body">
+        <div class="price-label">Annual Plans</div>
+        <div class="price-row">
+          <div class="pr-left"><span class="pr-name">🌿 Essential</span><span class="pr-detail">Every 2 weeks · 8 residents × 45 min</span></div>
+          <span class="pr-price">$24,960<span style="font-size:0.65rem;color:#3a5c4a;font-family:'Jost',sans-serif">/yr</span></span>
+        </div>
+        <div class="price-row">
+          <div class="pr-left"><span class="pr-name">🌿🌿 Standard</span><span class="pr-detail">Weekly · 10 residents × 45 min</span></div>
+          <span class="pr-price">$67,600<span style="font-size:0.65rem;color:#3a5c4a;font-family:'Jost',sans-serif">/yr</span></span>
+        </div>
+        <div class="price-row">
+          <div class="pr-left"><span class="pr-name">🌿🌿🌿 Premium</span><span class="pr-detail">Twice a week · 12 residents × 60 min</span></div>
+          <span class="pr-price">$199,680<span style="font-size:0.65rem;color:#3a5c4a;font-family:'Jost',sans-serif">/yr</span></span>
+        </div>
+        <div class="price-row">
+          <div class="pr-left"><span class="pr-name">🌿🌿🌿🌿 Elite</span><span class="pr-detail">3× a week · 15 residents × 60 min</span></div>
+          <span class="pr-price">$374,400<span style="font-size:0.65rem;color:#3a5c4a;font-family:'Jost',sans-serif">/yr</span></span>
+        </div>
+        <div class="pcard-checks">
+          <span class="pcard-check">Dedicated therapist team assigned</span>
+          <span class="pcard-check">Monthly wellness reports for management</span>
+          <span class="pcard-check">Simple annual service agreement</span>
+        </div>
+        <div class="pcard-tag">Best for: <strong>Assisted Living · Memory Care · Multi-location chains</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTRO VISIT -->
+  <div class="highlight-bar">
+    <div>
+      <div class="hl-title">Not Sure Where to Start? — <em>Intro Visit $299</em></div>
+      <div class="hl-desc">A low-commitment on-site visit before signing any contract. We serve up to 6 residents (45 min each) so your staff and residents can experience HyFlow Massage LLC quality firsthand.</div>
+    </div>
+    <div style="text-align:center;flex-shrink:0">
+      <div class="hl-price-orig">Regular value $780</div>
+      <div class="hl-price">$299</div>
+      <div class="hl-price-sub">On-site · Up to 6 residents · 45 min each</div>
+      <a href="#inquiry" class="btn-p" style="margin-top:16px;display:inline-block">Inquire Now</a>
+    </div>
+  </div>
+
+  <!-- STEPS -->
+  <p class="sec-eyebrow" style="margin-bottom:0">How to Get Started</p>
+  <div class="steps-grid">
+    <div class="step"><div class="step-num">01</div><div class="step-title">Submit an Inquiry</div><div class="step-desc">Fill out the form below or email us. We respond within 1 business day with a proposal tailored to your facility.</div></div>
+    <div class="step"><div class="step-num">02</div><div class="step-title">Intro Visit ($299)</div><div class="step-desc">Low-cost on-site visit so your staff and residents experience our quality before any commitment is made.</div></div>
+    <div class="step"><div class="step-num">03</div><div class="step-title">Select Your Program</div><div class="step-desc">Choose Program 01, 02, or 03. Sign a simple service agreement and we'll schedule your first official visit.</div></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CORPORATE WELLNESS -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="section section-white" id="corporate">
+  <div class="sec-intro">
+    <p class="sec-eyebrow">B2B · Bay Area Companies</p>
+    <h2 class="sec-title">HyFlow Massage LLC<br>Corporate Wellness Program</h2>
+    <p class="sec-sub">On-site employee wellness programs for Bay Area companies — from one-time team events to year-round contracts. Built for the demands of the modern tech workforce.</p>
+  </div>
+
+  <div class="prog-grid">
+
+    <!-- C1 -->
+    <div class="pcard">
+      <div class="pcard-top gold"></div>
+      <div class="pcard-head">
+        <div class="pcard-num">Program 01</div>
+        <div class="pcard-name">Single Corporate Wellness Event</div>
+        <div class="pcard-desc">Perfect for employee appreciation days, team building, and health fairs. Chair massage — no undressing, no schedule disruption.</div>
+      </div>
+      <div class="pcard-body">
+        <div class="price-label">Event Packages</div>
+        <div class="price-row">
+          <div class="pr-left"><span class="pr-name">Half-Day Event</span><span class="pr-detail">3 hrs · Chair massage · Up to 15 employees</span></div>
+          <span class="pr-price">$1,200</span>
+        </div>
+        <div class="price-row">
+          <div class="pr-left"><span class="pr-name">Full-Day Event</span><span class="pr-detail">6 hrs · Chair + table · Up to 25 employees</span></div>
+          <span class="pr-price">$2,200</span>
+        </div>
+        <div class="price-row">
+          <div class="pr-left"><span class="pr-name">Premium Team Event</span><span class="pr-detail">Full day + wellness talk + table · Up to 30</span></div>
+          <span class="pr-price">$3,200</span>
+        </div>
+        <div class="pcard-checks">
+          <span class="pcard-check">All equipment provided on-site</span>
+          <span class="pcard-check">Chair massage — zero schedule disruption</span>
+          <span class="pcard-check">Expensable as employee benefit</span>
+        </div>
+        <div class="pcard-tag">Best for: <strong>Team events · Offsites · Health fairs · Holiday parties</strong></div>
+      </div>
+    </div>
+
+    <!-- C2 -->
+    <div class="pcard">
+      <div class="pcard-top green"></div>
+      <div class="pcard-head">
+        <div class="pcard-num">Program 02</div>
+        <div class="pcard-name">Monthly Employee Wellness Benefit</div>
+        <div class="pcard-desc">A recurring monthly wellness visit coordinated by HR. Fixed schedule, consistent team, zero administrative burden.</div>
+      </div>
+      <div class="pcard-body">
+        <div class="price-label">Monthly Plans</div>
+        <div class="price-row">
+          <div class="pr-left"><span class="pr-name">Starter</span><span class="pr-detail">2× / month · 8 employees × 30 min</span></div>
+          <span class="pr-price">$1,520<span style="font-size:0.65rem;color:#3a5c4a;font-family:'Jost',sans-serif">/mo</span></span>
+        </div>
+        <div class="price-row">
+          <div class="pr-left"><span class="pr-name">Standard</span><span class="pr-detail">4× / month · 10 employees × 45 min</span></div>
+          <span class="pr-price">$5,200<span style="font-size:0.65rem;color:#3a5c4a;font-family:'Jost',sans-serif">/mo</span></span>
+        </div>
+        <div class="price-row">
+          <div class="pr-left"><span class="pr-name">Premium</span><span class="pr-detail">4× / month · 15 employees × 60 min</span></div>
+          <span class="pr-price">$9,600<span style="font-size:0.65rem;color:#3a5c4a;font-family:'Jost',sans-serif">/mo</span></span>
+        </div>
+        <div class="pcard-checks">
+          <span class="pcard-check">Consistent therapist team assigned</span>
+          <span class="pcard-check">Monthly HR usage report</span>
+          <span class="pcard-check">Cancel or pause with 30-day notice</span>
+        </div>
+        <div class="pcard-tag">Best for: <strong>HR benefits · Mid-size tech teams · Recurring wellness perks</strong></div>
+      </div>
+    </div>
+
+    <!-- C3 -->
+    <div class="pcard">
+      <div class="pcard-top dark"></div>
+      <div class="pcard-head">
+        <div class="pcard-num">Program 03</div>
+        <div class="pcard-name">Annual Corporate Wellness Contract</div>
+        <div class="pcard-desc">Year-round support with a dedicated HyFlow Massage LLC therapist. For companies making employee wellbeing a strategic priority.</div>
+      </div>
+      <div class="pcard-body">
+        <div class="price-label">Annual Plans</div>
+        <div class="price-row">
+          <div class="pr-left"><span class="pr-name">Basic</span><span class="pr-detail">Monthly · 10 employees × 30 min</span></div>
+          <span class="pr-price">$11,400<span style="font-size:0.65rem;color:#3a5c4a;font-family:'Jost',sans-serif">/yr</span></span>
+        </div>
+        <div class="price-row">
+          <div class="pr-left"><span class="pr-name">Standard</span><span class="pr-detail">Bi-weekly · 12 employees × 45 min</span></div>
+          <span class="pr-price">$40,560<span style="font-size:0.65rem;color:#3a5c4a;font-family:'Jost',sans-serif">/yr</span></span>
+        </div>
+        <div class="price-row">
+          <div class="pr-left"><span class="pr-name">Premium</span><span class="pr-detail">Weekly · 15 employees × 45 min</span></div>
+          <span class="pr-price">$101,400<span style="font-size:0.65rem;color:#3a5c4a;font-family:'Jost',sans-serif">/yr</span></span>
+        </div>
+        <div class="price-row">
+          <div class="pr-left"><span class="pr-name">Elite</span><span class="pr-detail">Weekly · 20 employees × 60 min</span></div>
+          <span class="pr-price">$156,000<span style="font-size:0.65rem;color:#3a5c4a;font-family:'Jost',sans-serif">/yr</span></span>
+        </div>
+        <div class="pcard-checks">
+          <span class="pcard-check">Dedicated therapist assigned to your team</span>
+          <span class="pcard-check">Quarterly wellness reports for HR/leadership</span>
+          <span class="pcard-check">Priority fixed weekly slot</span>
+        </div>
+        <div class="pcard-tag">Best for: <strong>Tech companies · Startups with wellness budgets · Growing teams</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY TECH -->
+  <div class="why-box">
+    <div>
+      <p class="sec-eyebrow" style="color:#b5894a">Why Tech Teams Choose HyFlow Massage LLC</p>
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;color:#fff;line-height:1.3;margin-bottom:16px">Built for the<br><em style="font-style:italic;color:#b5894a">Bay Area Workforce</em></h3>
+      <p style="font-size:0.86rem;color:rgba(255,255,255,0.82);line-height:1.8;max-width:400px;margin-bottom:24px">We specialize in Tech-Neck Relief and Tech Worker Wellness — the chronic posture and tension issues that come with long hours at a desk. Your team knows the problem. We know the solution.</p>
+      <a href="#inquiry" class="btn-p">Get a Custom Proposal</a>
+    </div>
+    <div class="why-features">
+      <div class="wf"><div class="wf-icon">💻</div><div class="wf-title">Tech-Neck Specialist</div><div class="wf-desc">Tailored for screen-heavy work environments</div></div>
+      <div class="wf"><div class="wf-icon">⏱</div><div class="wf-title">Zero Downtime</div><div class="wf-desc">Chair sessions fit any work schedule</div></div>
+      <div class="wf"><div class="wf-icon">📊</div><div class="wf-title">Wellness Reports</div><div class="wf-desc">Monthly data delivered to your HR team</div></div>
+      <div class="wf"><div class="wf-icon">🚗</div><div class="wf-title">Fully On-Site</div><div class="wf-desc">We come to your office — Bay Area wide</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- INQUIRY FORM -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="form-section" id="inquiry">
+  <div class="form-inner">
+    <div>
+      <p class="sec-eyebrow" style="color:#b5894a">Partnership Inquiry</p>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:#fff;line-height:1.2;margin-bottom:18px">Let's Build a<br><em style="font-style:italic;color:#b5894a">Wellness Program</em><br>Together</h2>
+      <p style="font-size:0.86rem;color:rgba(255,255,255,0.80);line-height:1.8;max-width:380px;margin-bottom:28px">Whether you're exploring a single wellness event or a full annual contract, we'd love to learn about your community and design the right program.</p>
+      <div style="font-size:0.82rem;color:rgba(255,255,255,0.72);line-height:2.2">
+        <div>📞 <a href="tel:4086686562" style="color:#b5894a;text-decoration:none">(408) 668-6562</a></div>
+        <div>✉️ <a href="mailto:info@hyflowmassage.com" style="color:#b5894a;text-decoration:none">info@hyflowmassage.com</a></div>
+      </div>
+    </div>
+    <div>
+      <div class="form-grid" id="b2bForm">
+        <div class="fg"><label>Facility / Company Name *</label><input type="text" id="f-facility" placeholder="e.g. Sunrise Senior Living"></div>
+        <div class="fg"><label>Contact Name *</label><input type="text" id="f-name" placeholder="Your name"></div>
+        <div class="fg"><label>Phone *</label><input type="tel" id="f-phone" placeholder="(xxx) xxx-xxxx"></div>
+        <div class="fg"><label>Email *</label><input type="email" id="f-email" placeholder="you@company.com"></div>
+        <div class="fg"><label>Estimated Residents / Employees</label><input type="text" id="f-residents" placeholder="e.g. 10–15 people"></div>
+        <div class="fg"><label>Interested In</label>
+          <select id="f-plan">
+            <option>Senior Care — Intro Visit ($299)</option>
+            <option>Senior Care — Single Visit</option>
+            <option>Senior Care — Activity Event</option>
+            <option>Senior Care — Annual Contract</option>
+            <option>Corporate — Single Event</option>
+            <option>Corporate — Monthly Benefit</option>
+            <option>Corporate — Annual Contract</option>
+            <option>Not sure yet — tell me more</option>
+          </select>
+        </div>
+        <div class="fg form-full"><label>Message</label><textarea id="f-message" placeholder="Tell us about your facility, team, and residents' or employees' needs..."></textarea></div>
+        <div class="form-full"><button class="form-submit" onclick="submitForm()">Send Inquiry</button></div>
+      </div>
+      <div class="form-success" id="formSuccess">✦ Thank you! We'll be in touch within 1 business day.</div>
+    </div>
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  <p><strong style="color:rgba(255,255,255,0.6)">Disclaimer:</strong> HyFlow Massage LLC provides professional massage and bodywork services for relaxation and general wellness purposes only. Our services are not a substitute for medical diagnosis, advice, or care from a licensed healthcare provider. All post-surgical clients are required to provide written physician clearance prior to their first session.</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="flogo">HyFlow Massage LLC</div>
+    <div class="fsocial">
+      <a href="https://www.instagram.com/tinazhang777888" target="_blank">📷 Instagram</a>
+      <a href="index.html">Main Site</a>
+      <a href="about.html">About</a>
+      <a href="soap.html">Therapist Portal</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="fcopy">© 2026 HyFlow Massage LLC · Professional Wellness Bodywork · Mountain View, CA</div>
+    <div class="flinks">
+      <a href="#senior">Senior Care</a>
+      <a href="#corporate">Corporate</a>
+      <a href="#inquiry">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var nt = document.getElementById('nt');
+  if(nt) nt.addEventListener('click', function(){ document.getElementById('navLinks').classList.toggle('open'); });
+
+  function submitForm(){
+    var f=document.getElementById('f-facility').value.trim();
+    var n=document.getElementById('f-name').value.trim();
+    var p=document.getElementById('f-phone').value.trim();
+    var e=document.getElementById('f-email').value.trim();
+    if(!f||!n||!p||!e){ alert('Please fill in all required fields.'); return; }
+    var plan=document.getElementById('f-plan').value;
+    var msg=document.getElementById('f-message').value;
+    var res=document.getElementById('f-residents').value;
+    var subject=encodeURIComponent('B2B Partnership Inquiry – '+f);
+    var body=encodeURIComponent('Facility/Company: '+f+'\nContact: '+n+'\nPhone: '+p+'\nEmail: '+e+'\nPlan: '+plan+'\nGroup size: '+res+'\n\nMessage:\n'+msg);
+    window.location.href='mailto:info@hyflowmassage.com?subject='+subject+'&body='+body;
+    document.getElementById('b2bForm').style.display='none';
+    document.getElementById('formSuccess').style.display='block';
+  }
+</script>
+</body>
+</html>
