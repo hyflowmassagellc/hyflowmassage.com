@@ -232,14 +232,8 @@
     .faq-a{display:none;padding:0 28px 22px;font-size:0.82rem;line-height:1.8;color:var(--mid);font-weight:300}
     .faq-item.open .faq-a{display:block}
     /* DIRECTIONS */
-    .dir{padding:96px 80px;background:var(--warm)}
-    .dir-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin:48px 0 36px}
-    .dstep{position:relative;overflow:hidden;aspect-ratio:4/3}
     .dstep img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
     .dstep:hover img{transform:scale(1.04)}
-    .doverlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,46,32,0.85) 0%,transparent 55%)}
-    .dnum{position:absolute;top:12px;left:12px;width:30px;height:30px;border-radius:50%;background:var(--gold);color:var(--forest);font-size:0.82rem;font-weight:500;display:flex;align-items:center;justify-content:center}
-    .dlabel{position:absolute;bottom:14px;left:14px;right:14px;font-size:0.76rem;color:var(--cream);line-height:1.4}
     .dir-note{font-size:0.88rem;line-height:1.78;color:var(--mid);font-weight:300}
     .dir-note a{color:var(--gold)}
     /* VISIT */
@@ -310,7 +304,6 @@
       .senior-steps,.activity-plans{grid-template-columns:1fr}
       .senior-trial{flex-direction:column;text-align:center}
       .form-grid{grid-template-columns:1fr}
-      .dir-grid{grid-template-columns:repeat(2,1fr)}
       footer{padding:32px 18px}
       .footer-top,.footer-bottom{flex-direction:column;align-items:flex-start}
       .hero-info{flex-direction:column;gap:14px}
@@ -828,18 +821,54 @@
   </div>
 </section>
 
-<!-- DIRECTIONS -->
-<section class="dir" id="directions">
-  <p class="ey"><span class="en">How to Find Us</span><span class="zh">如何找到我们</span></p>
-  <h2 class="h2"><span class="en">Step-by-Step<br>Directions to Suite 214</span><span class="zh">分步导航<br>到达214室</span></h2>
-  <div class="dir-grid">
-    <div class="dstep"><img loading="lazy" src="photo-door.jpeg" alt="Building entrance"><div class="doverlay"></div><div class="dnum">1</div><div class="dlabel">Walk through the glass double doors at the building entrance</div></div>
-    <div class="dstep"><img loading="lazy" src="photo-plants.jpeg" alt="Courtyard with fountain"><div class="doverlay"></div><div class="dnum">2</div><div class="dlabel">You'll enter a charming courtyard with a stone fountain and lush greenery</div></div>
-    <div class="dstep"><img loading="lazy" src="photo-hallway.jpeg" alt="Second floor hallway"><div class="doverlay"></div><div class="dnum">3</div><div class="dlabel">Take the staircase up to the 2nd floor, then walk down the hallway</div></div>
-    <div class="dstep"><img loading="lazy" src="photo-room1.jpeg" alt="Suite 214 door"><div class="doverlay"></div><div class="dnum">4</div><div class="dlabel">Look for the green door with the HyFlow Massage LLC sign — Suite 214</div></div>
-    <div class="dstep"><img loading="lazy" src="photo-room2.jpeg" alt="HyFlow Massage LLC session room"><div class="doverlay"></div><div class="dnum">5</div><div class="dlabel">You've arrived! Please wait by the door — your therapist will greet you</div></div>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <p class="ey">Frequently Asked Questions</p>
+  <h2 class="h2">Common Questions<br>Answered</h2>
+  <div class="faq-grid">
+    <div class="faq-item"><button class="faq-q">What should I expect during my first visit?</button><div class="faq-a">Before your session, Tina will ask detailed questions about your health history, areas of concern, and goals. This helps customize the session to your specific needs. Please arrive a few minutes early. Wear comfortable clothing.</div></div>
+    <div class="faq-item"><button class="faq-q">Do you accept insurance?</button><div class="faq-a">We accept out-of-network insurance benefits. Upon request, we provide a superbill (detailed itemized receipt) that you can submit to your insurance provider for potential reimbursement. Please check your plan's out-of-network coverage before booking.</div></div>
+    <div class="faq-item"><button class="faq-q">When can I start lymphatic drainage after surgery?</button><div class="faq-a"><strong>It depends on your surgery type:</strong><br><br>• <strong>Cosmetic surgery</strong> (liposuction, plastic surgery): Often 3–7 days post-op once the wound is closed. Many surgeons recommend starting within 48–72 hours for early gentle drainage.<br><br>• <strong>Cancer/tumor surgery</strong> (lymph node removal): Usually 2–4 weeks after drains are removed and incision is stable. Must be performed by a therapist with oncology rehab credentials.<br><br>• <strong>Abdominal/pelvic surgery</strong> (C-section, hysterectomy): Generally 4–6 weeks after physician confirms internal healing.<br><br><strong>Requirements before starting:</strong> Wound must be closed with no open incisions, no acute infection or fever, and physician clearance is required. We ask all post-surgical clients to provide written medical clearance (doctor's note) before booking — this protects both you and your therapist.</div></div>
+    <div class="faq-item"><button class="faq-q">What is the cancellation policy?</button><div class="faq-a">We require 24-hour notice for cancellations. Late cancellations (less than 24 hours) may be charged 50% of the service fee. No-shows will be charged the full amount. We understand emergencies happen — please contact us as soon as possible.</div></div>
+    <div class="faq-item"><button class="faq-q">How do I find Suite 214?</button><div class="faq-a">We're on the 2nd floor of 257 Castro St, Mountain View. Enter through the front glass doors, walk through the courtyard, take the stairs to the 2nd floor, and look for the green door labeled "HyFlow Massage LLC — 214." See our step-by-step photo guide below, or call/text us at (408) 668-6562 if you need help finding us.</div></div>
+    <div class="faq-item"><button class="faq-q">What is the suggested gratuity?</button><div class="faq-a">Gratuity is appreciated but never required. Suggested amounts: 60 min → $25+, 90 min → $35+, 120 min → $50+. Thank you for supporting our therapists!</div></div>
+    <div class="faq-item"><button class="faq-q">Do you offer mobile massage?</button><div class="faq-a">Yes! We offer mobile massage services within 15 miles of Mountain View, including Sunnyvale, Cupertino, Palo Alto, Santa Clara, and Los Altos. Travel fees apply: +$80 for 90-min sessions, +$150 for 120-min sessions. 90 and 120-minute sessions only for mobile.</div></div>
+    <div class="faq-item"><button class="faq-q">How do I book and pay?</button><div class="faq-a">All appointments must be booked and paid in advance — we do not accept walk-ins. You can book online via our Square Appointments link, or text us at (408) 668-6562. We accept all major credit cards, Apple Pay, Google Pay, and more via Square.</div></div>
   </div>
-  <p class="dir-note">📍 <strong>257 Castro St, Ste 214, Mountain View, CA 94041</strong> · Private 2nd-floor studio · By appointment only. Can't find us? Call or text <a href="tel:4086686562">(408) 668-6562</a>.</p>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <p class="ey">Frequently Asked Questions</p>
+  <h2 class="h2">Common Questions<br>Answered</h2>
+  <div class="faq-grid">
+    <div class="faq-item"><button class="faq-q">What should I expect during my first visit?</button><div class="faq-a">Before your session, Tina will ask detailed questions about your health history, areas of concern, and goals. This helps customize the session to your specific needs. Please arrive a few minutes early. Wear comfortable clothing.</div></div>
+    <div class="faq-item"><button class="faq-q">Do you accept insurance?</button><div class="faq-a">We accept out-of-network insurance benefits. Upon request, we provide a superbill (detailed itemized receipt) that you can submit to your insurance provider for potential reimbursement. Please check your plan's out-of-network coverage before booking.</div></div>
+    <div class="faq-item"><button class="faq-q">When can I start lymphatic drainage after surgery?</button><div class="faq-a"><strong>It depends on your surgery type:</strong><br><br>• <strong>Cosmetic surgery</strong> (liposuction, plastic surgery): Often 3–7 days post-op once the wound is closed. Many surgeons recommend starting within 48–72 hours for early gentle drainage.<br><br>• <strong>Cancer/tumor surgery</strong> (lymph node removal): Usually 2–4 weeks after drains are removed and incision is stable. Must be performed by a therapist with oncology rehab credentials.<br><br>• <strong>Abdominal/pelvic surgery</strong> (C-section, hysterectomy): Generally 4–6 weeks after physician confirms internal healing.<br><br><strong>Requirements before starting:</strong> Wound must be closed with no open incisions, no acute infection or fever, and physician clearance is required. We ask all post-surgical clients to provide written medical clearance (doctor's note) before booking — this protects both you and your therapist.</div></div>
+    <div class="faq-item"><button class="faq-q">What is the cancellation policy?</button><div class="faq-a">We require 24-hour notice for cancellations. Late cancellations (less than 24 hours) may be charged 50% of the service fee. No-shows will be charged the full amount. We understand emergencies happen — please contact us as soon as possible.</div></div>
+    <div class="faq-item"><button class="faq-q">How do I find Suite 214?</button><div class="faq-a">We're on the 2nd floor of 257 Castro St, Mountain View. Enter through the front glass doors, walk through the courtyard, take the stairs to the 2nd floor, and look for the green door labeled "HyFlow Massage LLC — 214." See our step-by-step photo guide below, or call/text us at (408) 668-6562 if you need help finding us.</div></div>
+    <div class="faq-item"><button class="faq-q">What is the suggested gratuity?</button><div class="faq-a">Gratuity is appreciated but never required. Suggested amounts: 60 min → $25+, 90 min → $35+, 120 min → $50+. Thank you for supporting our therapists!</div></div>
+    <div class="faq-item"><button class="faq-q">Do you offer mobile massage?</button><div class="faq-a">Yes! We offer mobile massage services within 15 miles of Mountain View, including Sunnyvale, Cupertino, Palo Alto, Santa Clara, and Los Altos. Travel fees apply: +$80 for 90-min sessions, +$150 for 120-min sessions. 90 and 120-minute sessions only for mobile.</div></div>
+    <div class="faq-item"><button class="faq-q">How do I book and pay?</button><div class="faq-a">All appointments must be booked and paid in advance — we do not accept walk-ins. You can book online via our Square Appointments link, or text us at (408) 668-6562. We accept all major credit cards, Apple Pay, Google Pay, and more via Square.</div></div>
+  </div>
+</section>
+
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <p class="ey">Frequently Asked Questions</p>
+  <h2 class="h2">Common Questions<br>Answered</h2>
+  <div class="faq-grid">
+    <div class="faq-item"><button class="faq-q">What should I expect during my first visit?</button><div class="faq-a">Before your session, Tina will ask detailed questions about your health history, areas of concern, and goals. This helps customize the session to your specific needs. Please arrive a few minutes early. Wear comfortable clothing.</div></div>
+    <div class="faq-item"><button class="faq-q">Do you accept insurance?</button><div class="faq-a">We accept out-of-network insurance benefits. Upon request, we provide a superbill (detailed itemized receipt) that you can submit to your insurance provider for potential reimbursement. Please check your plan's out-of-network coverage before booking.</div></div>
+    <div class="faq-item"><button class="faq-q">When can I start lymphatic drainage after surgery?</button><div class="faq-a"><strong>It depends on your surgery type:</strong><br><br>• <strong>Cosmetic surgery</strong> (liposuction, plastic surgery): Often 3–7 days post-op once the wound is closed. Many surgeons recommend starting within 48–72 hours for early gentle drainage.<br><br>• <strong>Cancer/tumor surgery</strong> (lymph node removal): Usually 2–4 weeks after drains are removed and incision is stable. Must be performed by a therapist with oncology rehab credentials.<br><br>• <strong>Abdominal/pelvic surgery</strong> (C-section, hysterectomy): Generally 4–6 weeks after physician confirms internal healing.<br><br><strong>Requirements before starting:</strong> Wound must be closed with no open incisions, no acute infection or fever, and physician clearance is required. We ask all post-surgical clients to provide written medical clearance (doctor's note) before booking — this protects both you and your therapist.</div></div>
+    <div class="faq-item"><button class="faq-q">What is the cancellation policy?</button><div class="faq-a">We require 24-hour notice for cancellations. Late cancellations (less than 24 hours) may be charged 50% of the service fee. No-shows will be charged the full amount. We understand emergencies happen — please contact us as soon as possible.</div></div>
+    <div class="faq-item"><button class="faq-q">How do I find Suite 214?</button><div class="faq-a">We're on the 2nd floor of 257 Castro St, Mountain View. Enter through the front glass doors, walk through the courtyard, take the stairs to the 2nd floor, and look for the green door labeled "HyFlow Massage LLC — 214." See our step-by-step photo guide below, or call/text us at (408) 668-6562 if you need help finding us.</div></div>
+    <div class="faq-item"><button class="faq-q">What is the suggested gratuity?</button><div class="faq-a">Gratuity is appreciated but never required. Suggested amounts: 60 min → $25+, 90 min → $35+, 120 min → $50+. Thank you for supporting our therapists!</div></div>
+    <div class="faq-item"><button class="faq-q">Do you offer mobile massage?</button><div class="faq-a">Yes! We offer mobile massage services within 15 miles of Mountain View, including Sunnyvale, Cupertino, Palo Alto, Santa Clara, and Los Altos. Travel fees apply: +$80 for 90-min sessions, +$150 for 120-min sessions. 90 and 120-minute sessions only for mobile.</div></div>
+    <div class="faq-item"><button class="faq-q">How do I book and pay?</button><div class="faq-a">All appointments must be booked and paid in advance — we do not accept walk-ins. You can book online via our Square Appointments link, or text us at (408) 668-6562. We accept all major credit cards, Apple Pay, Google Pay, and more via Square.</div></div>
+  </div>
 </section>
 
 <!-- VISIT -->
