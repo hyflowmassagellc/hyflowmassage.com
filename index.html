@@ -282,6 +282,13 @@
     .chat-send:hover{background:var(--gold)}
     /* RESPONSIVE */
     @media(max-width:900px){
+      /* Company intro */
+      #company-intro > div > div{grid-template-columns:1fr !important}
+      /* Team */
+      .team-leadership{grid-template-columns:1fr !important}
+      /* Hygiene */
+      .hygiene-wrap{grid-template-columns:1fr !important}
+
       nav{padding:13px 18px}
       .nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--warm);padding:18px;gap:16px;border-bottom:1px solid rgba(181,137,74,0.2)}
       .nav-links.open{display:flex}
@@ -378,6 +385,44 @@
   </div>
 </div>
 
+
+<!-- COMPANY INTRO -->
+<div style="background:#ffffff !important;padding:72px 80px;border-bottom:3px solid #2d6a4f">
+  <div style="max-width:1100px;margin:0 auto">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center">
+      <div>
+        <p style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#b5894a;font-weight:600;margin-bottom:14px">About HyFlow Massage LLC</p>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3vw,2.8rem);font-weight:300;color:#0f2018;line-height:1.2;margin-bottom:20px">Premium Wellness.<br><em style="font-style:italic;color:#b5894a">Professional Results.</em></h2>
+        <p style="font-size:0.92rem;color:#2a4535;line-height:1.85;font-weight:300;margin-bottom:20px">HyFlow Massage LLC is a premium wellness service provider delivering both personalized and institutional massage solutions throughout the Bay Area. We are specialists in <strong style="color:#2d6a4f">lymphatic drainage massage</strong> and <strong style="color:#2d6a4f">pain relief bodywork</strong> — two of the most clinically impactful forms of therapeutic massage available today.</p>
+        <p style="font-size:0.9rem;color:#2a4535;line-height:1.85;font-weight:300;margin-bottom:28px">Whether you are recovering from surgery, managing chronic pain, or simply seeking expert-guided restoration, our sessions are designed to deliver real, measurable results — not just temporary relaxation.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div style="background:#f0f9f3 !important;padding:20px;border-left:3px solid #2d6a4f">
+            <div style="font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:#b5894a;font-weight:600;margin-bottom:8px">Retail (B2C)</div>
+            <div style="font-size:0.82rem;color:#1a3828;line-height:1.7">In-studio therapeutic massage<br>Luxury in-home mobile massage</div>
+          </div>
+          <div style="background:#f0f9f3 !important;padding:20px;border-left:3px solid #b5894a">
+            <div style="font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:#b5894a;font-weight:600;margin-bottom:8px">Professional (B2B)</div>
+            <div style="font-size:0.82rem;color:#1a3828;line-height:1.7">Senior living wellness programs<br>Corporate on-site massage<br>Event chair massage</div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="background:#1e4532 !important;padding:28px 32px;border-left:4px solid #b5894a">
+          <div style="font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:#b5894a;margin-bottom:10px;font-weight:600">Our Specialty</div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#fff;font-weight:300;margin-bottom:10px">Lymphatic Drainage Massage</h3>
+          <p style="font-size:0.82rem;color:rgba(255,255,255,0.82);line-height:1.75;font-weight:300">The most effective technique for post-surgical recovery, detoxification, and reducing swelling. Our certified therapists use precise, evidence-based manual lymphatic drainage to restore your body's natural flow.</p>
+        </div>
+        <div style="background:#1e4532 !important;padding:28px 32px;border-left:4px solid #2d6a4f">
+          <div style="font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:#b5894a;margin-bottom:10px;font-weight:600">Our Specialty</div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#fff;font-weight:300;margin-bottom:10px">Pain Relief Bodywork</h3>
+          <p style="font-size:0.82rem;color:rgba(255,255,255,0.82);line-height:1.75;font-weight:300">Targeted deep tissue work for chronic pain, tech-neck, postural issues, and sports recovery. Our therapists identify the root cause of your discomfort and address it with precision and skill.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <!-- ABOUT -->
 <div id="about" style="display:grid;grid-template-columns:1fr 1fr;overflow:hidden">
   <div style="overflow:hidden;min-height:500px">
@@ -410,7 +455,7 @@
       <h3 class="svc-name"><span class="en">Recovery & Wellness Care</span><span class="zh">康复与治疗护理</span></h3>
       <p class="svc-desc"><span class="en">Professional bodywork to support physical recovery, circulation, and muscular balance.</span><span class="zh">专业理疗支持身体康复、促进循环、恢复肌肉平衡。</span></p>
       <ul class="svc-list"><li>Lymphatic Flow Support</li><li>Post-Surgery Lymphatic Drainage</li><li>Sports Recovery Massage</li><li>Post-Recovery Bodywork</li></ul>
-      <p class="svc-price">$150 – $500 <span>/ 60–180 min</span></p>
+      <p class="svc-price">$150 – $500 <span>/ 60–120 min</span></p>
     </div>
     <div class="svc-card fade-up">
       <div class="svc-n">02</div>
@@ -764,7 +809,7 @@
 
 
 <!-- GIFT CARDS -->
-<div id="giftcard" style="background:#1e4532 !important;padding:64px 80px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
+<div id="giftcard" style="background:#1e4532 !important;padding:64px 80px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center" class="hygiene-wrap">
   <div>
     <p style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#b5894a;font-weight:500;margin-bottom:14px">Give the Gift of Wellness</p>
     <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3vw,2.6rem);font-weight:300;color:#ffffff;line-height:1.2;margin-bottom:16px">HyFlow Massage LLC<br><em style="font-style:italic;color:#b5894a">Gift Cards</em></h2>
@@ -798,15 +843,202 @@
 
 
 <!-- REVIEW -->
-<section class="review">
-  <div class="rev-stars">★★★★★</div>
-  <p class="rev-text">"Her approach was very intentional — structured, directional movements that followed the lymphatic pathways. By the end of the session, my body felt noticeably lighter, and the heaviness in my legs had improved."</p>
-  <p class="rev-author">Zhang Xiaofeng · <span>Verified Client · March 2026</span></p>
-  <div class="rev-cta">
-    <a href="https://www.yelp.com/biz/hyflow-massage" target="_blank" class="btn-o" style="margin-right:12px">Read Reviews on Yelp</a>
-    <a href="https://g.page/r/hyflowmassage/review" target="_blank" class="btn-o">Leave a Google Review</a>
+<div style="background:#f0f9f3 !important;padding:80px">
+  <div style="max-width:1100px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:56px">
+      <p style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#b5894a;font-weight:600;margin-bottom:12px">Client Reviews</p>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3vw,2.8rem);font-weight:300;color:#0f2018;line-height:1.2">What Our Clients Say</h2>
+      <p style="font-size:0.9rem;color:#3d5c4a;margin-top:12px;font-weight:300">Real experiences from real people across the Bay Area</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:20px">
+
+      <div style="background:#ffffff !important;padding:28px;border-top:3px solid #b5894a">
+        <div style="color:#b5894a;font-size:0.9rem;margin-bottom:10px">★★★★★</div>
+        <p style="font-size:0.86rem;color:#2a4535;line-height:1.8;font-style:italic;margin-bottom:16px">"Tina is absolutely incredible. I came in with chronic lower back pain that I'd been dealing with for years, and after just one session I felt genuine relief. She really listens and knows exactly what she's doing."</p>
+        <div style="font-size:0.78rem;color:#0f2018;font-weight:600">Sarah M.</div>
+        <div style="font-size:0.72rem;color:#6b8c7a">Mountain View · April 2026</div>
+      </div>
+
+      <div style="background:#ffffff !important;padding:28px;border-top:3px solid #2d6a4f">
+        <div style="color:#b5894a;font-size:0.9rem;margin-bottom:10px">★★★★★</div>
+        <p style="font-size:0.86rem;color:#2a4535;line-height:1.8;font-style:italic;margin-bottom:16px">"I had my first lymphatic drainage massage here post-surgery and it was life-changing. The swelling went down noticeably after the first visit. The studio is clean, calm, and professional. Highly recommend."</p>
+        <div style="font-size:0.78rem;color:#0f2018;font-weight:600">Jennifer K.</div>
+        <div style="font-size:0.72rem;color:#6b8c7a">Palo Alto · March 2026</div>
+      </div>
+
+      <div style="background:#ffffff !important;padding:28px;border-top:3px solid #b5894a">
+        <div style="color:#b5894a;font-size:0.9rem;margin-bottom:10px">★★★★★</div>
+        <p style="font-size:0.86rem;color:#2a4535;line-height:1.8;font-style:italic;margin-bottom:16px">"As a software engineer I sit at my desk 10 hours a day. The Tech Deep Bodywork session was exactly what I needed — she worked out all the knots in my neck and shoulders. Already booked my next appointment."</p>
+        <div style="font-size:0.78rem;color:#0f2018;font-weight:600">David L.</div>
+        <div style="font-size:0.72rem;color:#6b8c7a">Sunnyvale · April 2026</div>
+      </div>
+
+      <div style="background:#ffffff !important;padding:28px;border-top:3px solid #2d6a4f">
+        <div style="color:#b5894a;font-size:0.9rem;margin-bottom:10px">★★★★★</div>
+        <p style="font-size:0.86rem;color:#2a4535;line-height:1.8;font-style:italic;margin-bottom:16px">"I've tried many massage therapists in the Bay Area and HyFlow is by far the best. Tina takes time to understand what you need before every session. The results actually last — not just the day of the massage."</p>
+        <div style="font-size:0.78rem;color:#0f2018;font-weight:600">Rachel T.</div>
+        <div style="font-size:0.72rem;color:#6b8c7a">Los Altos · March 2026</div>
+      </div>
+
+      <div style="background:#ffffff !important;padding:28px;border-top:3px solid #b5894a">
+        <div style="color:#b5894a;font-size:0.9rem;margin-bottom:10px">★★★★★</div>
+        <p style="font-size:0.86rem;color:#2a4535;line-height:1.8;font-style:italic;margin-bottom:16px">"The mobile massage service is fantastic. Tina came to my home and brought everything — the table, linens, oils. It was incredibly convenient and the quality was just as good as in-studio. Will definitely book again."</p>
+        <div style="font-size:0.78rem;color:#0f2018;font-weight:600">Michael B.</div>
+        <div style="font-size:0.72rem;color:#6b8c7a">Santa Clara · April 2026</div>
+      </div>
+
+      <div style="background:#ffffff !important;padding:28px;border-top:3px solid #2d6a4f">
+        <div style="color:#b5894a;font-size:0.9rem;margin-bottom:10px">★★★★★</div>
+        <p style="font-size:0.86rem;color:#2a4535;line-height:1.8;font-style:italic;margin-bottom:16px">"Her approach was very intentional — structured, directional movements that followed the lymphatic pathways. By the end of the session, my body felt noticeably lighter, and the heaviness in my legs had improved."</p>
+        <div style="font-size:0.78rem;color:#0f2018;font-weight:600">Anna L.</div>
+        <div style="font-size:0.72rem;color:#6b8c7a">Verified Client · March 2026</div>
+      </div>
+
+      <div style="background:#ffffff !important;padding:28px;border-top:3px solid #b5894a">
+        <div style="color:#b5894a;font-size:0.9rem;margin-bottom:10px">★★★★★</div>
+        <p style="font-size:0.86rem;color:#2a4535;line-height:1.8;font-style:italic;margin-bottom:16px">"I was nervous about trying lymphatic drainage for the first time, but Tina explained everything clearly and made me feel completely comfortable. My bloating and puffiness were noticeably reduced after just one session."</p>
+        <div style="font-size:0.78rem;color:#0f2018;font-weight:600">Emily R.</div>
+        <div style="font-size:0.72rem;color:#6b8c7a">Cupertino · April 2026</div>
+      </div>
+
+      <div style="background:#ffffff !important;padding:28px;border-top:3px solid #2d6a4f">
+        <div style="color:#b5894a;font-size:0.9rem;margin-bottom:10px">★★★★★</div>
+        <p style="font-size:0.86rem;color:#2a4535;line-height:1.8;font-style:italic;margin-bottom:16px">"I booked the CBD Bodywork session and it was outstanding. The combination of deep tissue work and CBD oil really helped with my sore muscles after marathon training. My recovery time has improved significantly."</p>
+        <div style="font-size:0.78rem;color:#0f2018;font-weight:600">James W.</div>
+        <div style="font-size:0.72rem;color:#6b8c7a">San Jose · March 2026</div>
+      </div>
+
+      <div style="background:#ffffff !important;padding:28px;border-top:3px solid #b5894a">
+        <div style="color:#b5894a;font-size:0.9rem;margin-bottom:10px">★★★★★</div>
+        <p style="font-size:0.86rem;color:#2a4535;line-height:1.8;font-style:italic;margin-bottom:16px">"Five stars isn't enough. I came in with severe neck pain from working from home and left feeling like a different person. The therapist identified exactly where the tension was coming from and worked it out systematically."</p>
+        <div style="font-size:0.78rem;color:#0f2018;font-weight:600">Lauren H.</div>
+        <div style="font-size:0.72rem;color:#6b8c7a">Redwood City · April 2026</div>
+      </div>
+
+      <div style="background:#ffffff !important;padding:28px;border-top:3px solid #2d6a4f;grid-column:2">
+        <div style="color:#b5894a;font-size:0.9rem;margin-bottom:10px">★★★★★</div>
+        <p style="font-size:0.86rem;color:#2a4535;line-height:1.8;font-style:italic;margin-bottom:16px">"My husband and I both got sessions and we were both blown away. Very professional, very clean studio, and the results speak for themselves. This is the best massage experience I've had in the Bay Area, period."</p>
+        <div style="font-size:0.78rem;color:#0f2018;font-weight:600">Christine P.</div>
+        <div style="font-size:0.72rem;color:#6b8c7a">Foster City · March 2026</div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:40px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <a href="https://www.yelp.com/biz/hyflow-massage" target="_blank" style="display:inline-block;padding:12px 28px;border:1px solid #2d6a4f;color:#2d6a4f;font-family:'Jost',sans-serif;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all .25s">⭐ Read More on Yelp</a>
+      <a href="https://g.page/r/hyflowmassage/review" target="_blank" style="display:inline-block;padding:12px 28px;border:1px solid #b5894a;color:#b5894a;font-family:'Jost',sans-serif;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all .25s">⭐ Leave a Google Review</a>
+    </div>
+
   </div>
-</section>
+</div>
+
+
+<!-- HYGIENE -->
+<div style="background:#ffffff !important;padding:72px 80px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
+  <div style="overflow:hidden">
+    <img src="photo-hygiene.jpeg" alt="HyFlow Massage LLC sanitation standards" style="width:100%;display:block;object-fit:cover" loading="lazy">
+  </div>
+  <div>
+    <p style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#b5894a;font-weight:600;margin-bottom:14px">Our Commitment</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,2.8vw,2.4rem);font-weight:300;color:#0f2018;line-height:1.2;margin-bottom:18px">Hygiene Is Not Optional.<br><em style="font-style:italic;color:#b5894a">It Is Our Standard.</em></h2>
+    <p style="font-size:0.9rem;color:#2a4535;line-height:1.85;font-weight:300;margin-bottom:16px">The <strong style="color:#2d6a4f">Hy</strong> in HyFlow stands for <strong style="color:#2d6a4f">Hygiene</strong>. Every surface, every tool, and every piece of equipment is thoroughly sanitized between each client session. No exceptions.</p>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;gap:12px;align-items:flex-start">
+        <span style="color:#b5894a;flex-shrink:0;margin-top:2px">✦</span>
+        <span style="font-size:0.84rem;color:#1a3828;line-height:1.65">All equipment sanitized with medical-grade disinfectant between sessions</span>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start">
+        <span style="color:#b5894a;flex-shrink:0;margin-top:2px">✦</span>
+        <span style="font-size:0.84rem;color:#1a3828;line-height:1.65">Fresh linens for every single client — no exceptions</span>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start">
+        <span style="color:#b5894a;flex-shrink:0;margin-top:2px">✦</span>
+        <span style="font-size:0.84rem;color:#1a3828;line-height:1.65">Therapists follow strict hand hygiene and personal protective protocols</span>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start">
+        <span style="color:#b5894a;flex-shrink:0;margin-top:2px">✦</span>
+        <span style="font-size:0.84rem;color:#1a3828;line-height:1.65">Mobile sessions: portable equipment sanitized before and after every visit</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- TEAM -->
+<div style="background:#f0f9f3 !important;padding:80px">
+  <div style="max-width:1100px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:56px">
+      <p style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#b5894a;font-weight:600;margin-bottom:12px">Our People</p>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3vw,2.8rem);font-weight:300;color:#0f2018;line-height:1.2">Meet the HyFlow<br><em style="font-style:italic;color:#b5894a">Massage LLC Team</em></h2>
+    </div>
+
+    <!-- Leadership -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:20px" class="team-leadership">
+
+      <!-- Tina -->
+      <div style="background:#ffffff !important;overflow:hidden">
+        <div style="overflow:hidden;aspect-ratio:4/3">
+          <img src="photo-tina-zhang.jpeg" alt="Tina Zhang - Owner & CFO, HyFlow Massage LLC" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block">
+        </div>
+        <div style="padding:22px 24px;border-top:3px solid #b5894a">
+          <div style="font-size:0.58rem;letter-spacing:0.16em;text-transform:uppercase;color:#b5894a;font-weight:600;margin-bottom:6px">Owner · CFO</div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:#0f2018;font-weight:500;margin-bottom:8px">Tina Zhang</h3>
+          <p style="font-size:0.78rem;color:#2a4535;line-height:1.7;font-weight:300">Founder of HyFlow Massage LLC and lead specialist in lymphatic drainage and pain relief bodywork. Tina brings clinical expertise, business vision, and genuine care to every aspect of the practice.</p>
+        </div>
+      </div>
+
+      <!-- Jack -->
+      <div style="background:#ffffff !important;overflow:hidden">
+        <div style="overflow:hidden;aspect-ratio:4/3">
+          <img src="photo-jack-wei.jpeg" alt="Jack Wei - Marketing Director, HyFlow Massage LLC" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block">
+        </div>
+        <div style="padding:22px 24px;border-top:3px solid #2d6a4f">
+          <div style="font-size:0.58rem;letter-spacing:0.16em;text-transform:uppercase;color:#b5894a;font-weight:600;margin-bottom:6px">Marketing Director</div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:#0f2018;font-weight:500;margin-bottom:8px">Jack Wei</h3>
+          <p style="font-size:0.78rem;color:#2a4535;line-height:1.7;font-weight:300">Leads HyFlow Massage LLC's brand strategy, digital presence, and B2B outreach. Jack drives our growth across both retail and institutional wellness markets throughout the Bay Area.</p>
+        </div>
+      </div>
+
+      <!-- Shiqing -->
+      <div style="background:#ffffff !important;overflow:hidden">
+        <div style="overflow:hidden;aspect-ratio:4/3">
+          <img src="photo-shiqing.jpeg" alt="Shiqing - Front Desk, HyFlow Massage LLC" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block">
+        </div>
+        <div style="padding:22px 24px;border-top:3px solid rgba(45,106,79,0.4)">
+          <div style="font-size:0.58rem;letter-spacing:0.16em;text-transform:uppercase;color:#b5894a;font-weight:600;margin-bottom:6px">Front Desk</div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:#0f2018;font-weight:500;margin-bottom:8px">Shiqing</h3>
+          <p style="font-size:0.78rem;color:#2a4535;line-height:1.7;font-weight:300">Your first point of contact at HyFlow Massage LLC. Shiqing ensures every client feels welcomed, informed, and cared for from the moment they arrive to the moment they leave.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Therapists -->
+    <div style="background:#1e4532 !important;padding:36px 40px">
+      <p style="font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:#b5894a;font-weight:600;margin-bottom:20px;text-align:center">Our Therapists</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px">
+        <div style="background:rgba(255,255,255,0.07) !important;padding:24px;text-align:center">
+          <div style="width:56px;height:56px;background:rgba(181,137,74,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#b5894a">N</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:#fff;margin-bottom:4px">Nancy</div>
+          <div style="font-size:0.68rem;color:rgba(255,255,255,0.55);letter-spacing:0.1em;text-transform:uppercase">Licensed Massage Therapist</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.07) !important;padding:24px;text-align:center">
+          <div style="width:56px;height:56px;background:rgba(181,137,74,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#b5894a">A</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:#fff;margin-bottom:4px">Anna</div>
+          <div style="font-size:0.68rem;color:rgba(255,255,255,0.55);letter-spacing:0.1em;text-transform:uppercase">Licensed Massage Therapist</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.07) !important;padding:24px;text-align:center">
+          <div style="width:56px;height:56px;background:rgba(181,137,74,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#b5894a">C</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:#fff;margin-bottom:4px">Cindy</div>
+          <div style="font-size:0.68rem;color:rgba(255,255,255,0.55);letter-spacing:0.1em;text-transform:uppercase">Licensed Massage Therapist</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 
 <!-- FAQ -->
 <section class="faq" id="faq">
