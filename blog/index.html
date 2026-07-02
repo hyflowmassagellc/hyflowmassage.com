@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.svg">
+  <meta name="color-scheme" content="light only">
+  <meta name="theme-color" content="#f5fbf7">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog | HyFlow Massage LLC — Lymphatic Drainage & Therapeutic Massage Mountain View CA</title>
+  <meta name="description" content="Expert articles on lymphatic drainage, post-surgery recovery, therapeutic massage, and wellness — from HyFlow Massage LLC in Mountain View, CA."/>
+  <link rel="canonical" href="https://hyflowmassage.com/blog/"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{color-scheme:light only}
+    html{background:#f5fbf7!important;color-scheme:light only}
+    body{background:#f5fbf7!important;color:#1a2e20!important}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--forest:#2d6a4f;--gold:#b5894a;--cream:#eef7f1;--warm:#f5fbf7;--mid:#3d5c4a;--light:#6b8c7a}
+    html{scroll-behavior:smooth}
+    body{font-family:'Jost',sans-serif;background:var(--warm);color:#1a2e20;overflow-x:hidden}
+    /* TOP BAR */
+    .top-bar{position:fixed;top:0;left:0;right:0;z-index:101;background:#1a3828;padding:9px 48px;display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
+    /* NAV */
+    nav{position:fixed;top:38px;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 48px;background:rgba(245,251,247,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(181,137,74,0.2)}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .nav-logo img{height:38px;width:38px;object-fit:contain;border-radius:3px}
+    .nav-logo-text{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--forest);letter-spacing:0.04em}
+    .nav-logo-text span{color:var(--gold)}
+    .nav-links{display:flex;gap:22px;align-items:center}
+    .nav-links a{font-size:0.72rem;letter-spacing:0.11em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color .2s}
+    .nav-links a:hover,.nav-links a.active{color:var(--forest)}
+    .nav-book{background:var(--forest)!important;color:var(--cream)!important;padding:8px 18px!important}
+    .nav-book:hover{background:var(--gold)!important;color:var(--forest)!important}
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px}
+    .nav-toggle span{display:block;width:22px;height:1.5px;background:var(--forest)}
+    /* PAGE */
+    .page-wrap{padding-top:110px}
+    /* BLOG HERO */
+    .blog-hero{background:#1a3828;padding:72px 80px 60px;position:relative;overflow:hidden}
+    .blog-hero::before{content:'';position:absolute;left:36px;top:50%;transform:translateY(-50%);width:2px;height:110px;background:linear-gradient(to bottom,transparent,var(--gold),transparent)}
+    .blog-hero-inner{max-width:700px}
+    .blog-ey{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:14px}
+    .blog-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:300;line-height:1.2;color:#fff;margin-bottom:16px}
+    .blog-h1 em{font-style:italic;color:var(--gold)}
+    .blog-sub{font-size:0.9rem;line-height:1.75;color:rgba(245,240,232,0.6);max-width:520px;font-weight:300}
+    /* TOPICS */
+    .topics{background:#234d38;padding:18px 80px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+    .topics-label{font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(245,240,232,0.4);flex-shrink:0}
+    .topic-tag{font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;padding:5px 12px;border:1px solid rgba(181,137,74,0.3);color:rgba(245,240,232,0.55);text-decoration:none;transition:all .2s}
+    .topic-tag:hover{background:var(--gold);color:#fff;border-color:var(--gold)}
+    /* BLOG GRID */
+    .blog-section{padding:72px 80px}
+    .section-ey{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:32px;padding-bottom:14px;border-bottom:1px solid rgba(181,137,74,0.2)}
+    /* FEATURED */
+    .featured-post{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:2px}
+    .feat-img{overflow:hidden;position:relative;min-height:360px}
+    .feat-img img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:transform .4s}
+    .feat-img:hover img{transform:scale(1.03)}
+    .feat-cat{position:absolute;top:18px;left:18px;background:var(--forest);color:#fff;font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;padding:4px 10px}
+    .feat-badge{position:absolute;top:18px;right:18px;background:var(--gold);color:#fff;font-size:0.56rem;letter-spacing:0.12em;text-transform:uppercase;padding:4px 10px}
+    .feat-body{background:#fff;padding:48px 40px;display:flex;flex-direction:column;justify-content:center}
+    .feat-meta{font-size:0.64rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--light);margin-bottom:14px}
+    .feat-title{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:300;color:var(--forest);line-height:1.3;margin-bottom:14px}
+    .feat-excerpt{font-size:0.84rem;color:var(--mid);line-height:1.8;font-weight:300;margin-bottom:28px}
+    .feat-read{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);text-decoration:none;font-weight:500}
+    .feat-read:hover{color:var(--forest)}
+    /* POST GRID */
+    .posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+    .post-card{background:#fff;display:flex;flex-direction:column}
+    .post-img{height:200px;overflow:hidden;position:relative}
+    .post-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+    .post-card:hover .post-img img{transform:scale(1.04)}
+    .post-cat{position:absolute;top:14px;left:14px;background:var(--gold);color:#fff;font-size:0.56rem;letter-spacing:0.12em;text-transform:uppercase;padding:3px 9px}
+    .post-body{padding:26px 22px 22px;display:flex;flex-direction:column;flex:1}
+    .post-meta{font-size:0.64rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--light);margin-bottom:10px}
+    .post-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:300;color:var(--forest);line-height:1.35;margin-bottom:10px}
+    .post-excerpt{font-size:0.78rem;color:var(--mid);line-height:1.8;font-weight:300;margin-bottom:18px;flex:1}
+    .post-read{font-size:0.66rem;letter-spacing:0.13em;text-transform:uppercase;color:var(--gold);text-decoration:none;font-weight:500;margin-top:auto}
+    .post-read:hover{color:var(--forest)}
+    /* CTA STRIP */
+    .blog-cta{background:#234d38;padding:56px 80px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+    .blog-cta-text h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:#fff;margin-bottom:8px}
+    .blog-cta-text h3 em{font-style:italic;color:var(--gold)}
+    .blog-cta-text p{font-size:0.84rem;color:rgba(245,240,232,0.55);line-height:1.7;font-weight:300}
+    .btn-p{display:inline-block;padding:13px 30px;background:var(--forest);color:var(--cream);font-family:'Jost',sans-serif;font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;transition:all .25s}
+    .btn-p:hover{background:var(--gold);color:var(--forest)}
+    /* FOOTER */
+    footer{background:#1a3828;padding:40px 80px}
+    .footer-top{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:32px;border-bottom:1px solid rgba(181,137,74,0.15);margin-bottom:24px;flex-wrap:wrap;gap:24px}
+    .flogo{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:rgba(245,240,232,0.5)}
+    .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+    .fcopy{font-size:0.66rem;color:rgba(245,240,232,0.22);letter-spacing:0.06em}
+    .flinks{display:flex;gap:20px;flex-wrap:wrap}
+    .flinks a{font-size:0.64rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(245,240,232,0.28);text-decoration:none}
+    .flinks a:hover{color:var(--gold)}
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      .top-bar{padding:7px 12px;gap:10px;font-size:0.62rem}
+      nav{padding:13px 18px;top:36px}
+      .page-wrap{padding-top:100px}
+      .blog-hero{padding:48px 18px 40px}
+      .topics{padding:14px 18px}
+      .blog-section{padding:44px 18px}
+      .featured-post{grid-template-columns:1fr}
+      .feat-img{min-height:240px}
+      .feat-body{padding:32px 22px}
+      .posts-grid{grid-template-columns:1fr}
+      .blog-cta{padding:44px 18px;flex-direction:column}
+      footer{padding:32px 18px}
+      .footer-top{flex-direction:column}
+      .nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--warm);padding:18px;gap:16px;border-bottom:1px solid rgba(181,137,74,0.2)}
+      .nav-links.open{display:flex}
+      .nav-toggle{display:flex}
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <span style="font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,240,232,0.55)">⚠ By Appointment Only · No Walk-Ins Accepted</span>
+  <span style="color:rgba(181,137,74,0.4);font-size:0.6rem">|</span>
+  <a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);text-decoration:none;font-weight:500">Book Online →</a>
+  <span style="color:rgba(181,137,74,0.4);font-size:0.6rem">|</span>
+  <a href="https://wa.me/14086686562" target="_blank" style="font-size:0.68rem;letter-spacing:0.1em;color:rgba(245,240,232,0.55);text-decoration:none">💬 WhatsApp</a>
+  <span style="color:rgba(181,137,74,0.4);font-size:0.6rem">|</span>
+  <a href="tel:4086686562" style="font-size:0.68rem;letter-spacing:0.1em;color:rgba(245,240,232,0.55);text-decoration:none">(408) 668-6562</a>
+</div>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="/logo.jpeg" alt="HyFlow Massage LLC">
+    <span class="nav-logo-text">HyFlow <span>Massage LLC</span></span>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="/#services">Services</a>
+    <a href="/#pricing">Pricing</a>
+    <a href="/services-corporate.html">Corporate Wellness</a>
+    <a href="/about.html">About</a>
+    <a href="/blog/" class="active">Blog</a>
+    <a href="/#directions">Find Us</a>
+    <a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" class="nav-book">Book Now</a>
+  </div>
+  <button class="nav-toggle" id="nt" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page-wrap">
+
+<!-- BLOG HERO -->
+<section class="blog-hero">
+  <div class="blog-hero-inner">
+    <p class="blog-ey">HyFlow Massage · Expert Insights</p>
+    <h1 class="blog-h1">Wellness Knowledge.<br><em>Straight from the Studio.</em></h1>
+    <p class="blog-sub">Evidence-based articles on lymphatic drainage, post-surgery recovery, therapeutic massage, and body wellness — written by Mountain View's licensed massage therapy specialists.</p>
+  </div>
+</section>
+
+<!-- TOPICS -->
+<div class="topics">
+  <span class="topics-label">Topics ·</span>
+  <a href="#" class="topic-tag">Lymphatic Drainage</a>
+  <a href="#" class="topic-tag">Post-Surgery Recovery</a>
+  <a href="#" class="topic-tag">Deep Tissue</a>
+  <a href="#" class="topic-tag">Therapeutic Massage</a>
+  <a href="#" class="topic-tag">Corporate Wellness</a>
+  <a href="#" class="topic-tag">HSA & Insurance</a>
+</div>
+
+<!-- ARTICLES -->
+<section class="blog-section">
+  <p class="section-ey">Latest Articles</p>
+
+  <!-- FEATURED -->
+  <div class="featured-post">
+    <div class="feat-img">
+      <img src="/photo-tina-arm.jpeg" alt="Lymphatic drainage massage post surgery recovery Mountain View CA">
+      <span class="feat-cat">Post-Surgery Recovery</span>
+      <span class="feat-badge">★ Featured</span>
+    </div>
+    <div class="feat-body">
+      <p class="feat-meta">June 2025 · 8 min read</p>
+      <h2 class="feat-title">What to Expect from Lymphatic Drainage After BBL, Liposuction & Tummy Tuck</h2>
+      <p class="feat-excerpt">Post-surgical swelling is one of the most uncomfortable parts of cosmetic surgery recovery — and one of the most manageable with the right care. Learn when to start, how many sessions you need, and what MLD actually does for your recovery timeline.</p>
+      <a href="/blog/lymphatic-drainage-after-surgery.html" class="feat-read">Read Article →</a>
+    </div>
+  </div>
+
+  <!-- GRID -->
+  <div class="posts-grid">
+    <div class="post-card">
+      <div class="post-img">
+        <img src="/photo-tina-back.jpeg" alt="Therapeutic deep tissue massage Mountain View">
+        <span class="post-cat">Therapeutic Massage</span>
+      </div>
+      <div class="post-body">
+        <p class="post-meta">May 2025 · 6 min read</p>
+        <h3 class="post-title">Deep Tissue vs. Therapeutic Massage: Which One Do You Actually Need?</h3>
+        <p class="post-excerpt">Two of our most requested services — but they're not the same. Understanding the difference helps you book the right session and get better results.</p>
+        <a href="/blog/deep-tissue-vs-therapeutic-massage.html" class="post-read">Read Article →</a>
+      </div>
+    </div>
+    <div class="post-card">
+      <div class="post-img">
+        <img src="/svc-brand-hero.png" alt="HSA FSA insurance massage therapy Mountain View">
+        <span class="post-cat">Insurance & Payment</span>
+      </div>
+      <div class="post-body">
+        <p class="post-meta">April 2025 · 5 min read</p>
+        <h3 class="post-title">Can You Use HSA or FSA for Massage Therapy? Yes — Here's How</h3>
+        <p class="post-excerpt">Your Health Savings Account or Flexible Spending Account may cover professional massage therapy. We break down what's required, which CPT codes apply, and how to get reimbursed.</p>
+        <a href="/blog/hsa-fsa-massage-therapy.html" class="post-read">Read Article →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="blog-cta">
+  <div class="blog-cta-text">
+    <h3>Ready to Book Your<br><em>Session?</em></h3>
+    <p>Open daily 9 AM – 9 PM · By appointment only · Mountain View, CA<br>HSA · FSA · Insurance Out-of-Network Accepted</p>
+  </div>
+  <a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" class="btn-p">Book Online Now →</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="flogo">HyFlow Massage LLC</div>
+      <p style="font-size:0.72rem;color:rgba(245,240,232,0.45);margin-top:8px;line-height:1.7">257 Castro St, Ste 214<br>Mountain View, CA 94041<br>Daily 9 AM – 9 PM · By Appointment Only</p>
+      <p style="margin-top:12px"><a href="tel:4086686562" style="font-size:0.78rem;color:var(--gold);text-decoration:none">(408) 668-6562</a><br><a href="mailto:booking@hyflowmassage.com" style="font-size:0.72rem;color:rgba(245,240,232,0.45);text-decoration:none">booking@hyflowmassage.com</a></p>
+    </div>
+    <div>
+      <p style="font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px">Blog Articles</p>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <a href="/blog/lymphatic-drainage-after-surgery.html" style="font-size:0.75rem;color:rgba(245,240,232,0.55);text-decoration:none">Lymphatic Drainage After Surgery</a>
+        <a href="/blog/deep-tissue-vs-therapeutic-massage.html" style="font-size:0.75rem;color:rgba(245,240,232,0.55);text-decoration:none">Deep Tissue vs Therapeutic Massage</a>
+        <a href="/blog/hsa-fsa-massage-therapy.html" style="font-size:0.75rem;color:rgba(245,240,232,0.55);text-decoration:none">HSA & FSA for Massage Therapy</a>
+        <a href="/blog/corporate-wellness-massage-bay-area.html" style="font-size:0.75rem;color:rgba(245,240,232,0.55);text-decoration:none">Corporate Wellness Bay Area</a>
+      </div>
+    </div>
+    <div>
+      <p style="font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(181,137,74,0.6);margin-bottom:10px">Quick Links</p>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <a href="/" style="font-size:0.75rem;color:rgba(245,240,232,0.55);text-decoration:none">Home</a>
+        <a href="/#services" style="font-size:0.75rem;color:rgba(245,240,232,0.55);text-decoration:none">Services</a>
+        <a href="/#pricing" style="font-size:0.75rem;color:rgba(245,240,232,0.55);text-decoration:none">Pricing</a>
+        <a href="/services-corporate.html" style="font-size:0.75rem;color:rgba(245,240,232,0.55);text-decoration:none">Corporate Wellness</a>
+        <a href="/about.html" style="font-size:0.75rem;color:rgba(245,240,232,0.55);text-decoration:none">About Us</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="fcopy">© 2026 HyFlow Massage LLC · Mountain View, CA · Licensed CMT #100739</div>
+    <div class="flinks">
+      <a href="/">Home</a>
+      <a href="/#services">Services</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#directions">Find Us</a>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<script>
+  document.getElementById('nt').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('open'));
+</script>
+</body>
+</html>
