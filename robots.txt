@@ -1,3 +1,32 @@
 User-agent: *
 Allow: /
+Disallow: /soap.html
+Disallow: /index%20(1).html
+Disallow: /privacy%20(1).html
+
+# AI search and assistant crawlers are welcome
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
 Sitemap: https://hyflowmassage.com/sitemap.xml
