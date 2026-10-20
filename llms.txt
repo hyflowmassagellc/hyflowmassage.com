@@ -32,7 +32,7 @@ All mobile prices include travel — there is no separate travel fee.
 - $300 / 90 min, $400 / 120 min (minimum 90 minutes, 24-hour advance booking)
 - Post-op lymphatic drainage at home: $400 / 90 min, $600 / 120 min
 - Mother & Baby Bonding Package at home: $400 / 120 min
-- Service area: within 60 km of the studio — Mountain View, Los Altos, Palo Alto, Sunnyvale, Santa Clara, Cupertino, San Jose, Milpitas, Fremont, Foster City, Redwood City, Menlo Park, San Francisco, Los Gatos, Santa Cruz, Los Altos Hills, Atherton, Woodside
+- Service area: within 60 km of the studio — Mountain View, Los Altos, Los Altos Hills, Palo Alto, Sunnyvale, Santa Clara, Cupertino, San Jose, Campbell, Saratoga, Milpitas, Fremont, Menlo Park, Atherton, Woodside, Redwood City, San Mateo, Foster City, Los Gatos, San Francisco, Santa Cruz
 - Mobile packages: 10 × 90 min $2,500; 10 × 120 min $3,400
 
 ## Key pages
@@ -57,3 +57,12 @@ All mobile prices include travel — there is no separate travel fee.
 - [Redwood City](https://hyflowmassage.com/mobile-massage-redwood-city.html)
 - [San Jose](https://hyflowmassage.com/mobile-massage-san-jose.html)
 - [Los Gatos](https://hyflowmassage.com/mobile-massage-los-gatos.html)
+- [Saratoga](https://hyflowmassage.com/mobile-massage-saratoga.html)
+- [Atherton](https://hyflowmassage.com/mobile-massage-atherton.html)
+- [Los Altos Hills](https://hyflowmassage.com/mobile-massage-los-altos-hills.html)
+- [Woodside](https://hyflowmassage.com/mobile-massage-woodside.html)
+- [Campbell](https://hyflowmassage.com/mobile-massage-campbell.html)
+- [Milpitas](https://hyflowmassage.com/mobile-massage-milpitas.html)
+- [Fremont](https://hyflowmassage.com/mobile-massage-fremont.html)
+- [San Mateo](https://hyflowmassage.com/mobile-massage-san-mateo.html)
+- [Foster City](https://hyflowmassage.com/mobile-massage-foster-city.html)
