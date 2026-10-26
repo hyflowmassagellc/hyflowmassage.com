@@ -507,6 +507,13 @@
       .ins-bar,.services,.pricing,.senior,.b2b-form,.mobile-s,.giftcard,.review,.faq,.dir,.visit{padding:56px 18px}
       .ins-bar{flex-direction:column;gap:16px}
       .about{grid-template-columns:1fr}
+      .co-intro{padding:56px 18px!important}
+      .co-intro-grid{grid-template-columns:1fr!important;gap:36px!important}
+      #about{grid-template-columns:1fr!important}
+      #about .about-photo{min-height:320px!important}
+      #about .about-text{padding:48px 18px!important}
+      .sec-pad80{padding:56px 18px!important}
+      .rev-grid{grid-template-columns:1fr!important}
       .about-vis{min-height:260px}
       .about-content{padding:44px 18px}
       .svc-header{flex-direction:column;align-items:flex-start;gap:18px}
@@ -646,9 +653,9 @@
 
 
 <!-- COMPANY INTRO -->
-<div style="background:#ffffff !important;padding:72px 80px;border-bottom:3px solid #2d6a4f">
+<div class="co-intro" style="background:#ffffff !important;padding:72px 80px;border-bottom:3px solid #2d6a4f">
   <div style="max-width:1100px;margin:0 auto">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center">
+    <div class="co-intro-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center">
       <div>
         <p style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#b5894a;font-weight:600;margin-bottom:14px">Mountain View, CA · Serving the Bay Area</p>
         <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3vw,2.8rem);font-weight:300;color:#0f2018;line-height:1.2;margin-bottom:20px">Professional Wellness.<br><em style="font-style:italic;color:#b5894a">Delivered.</em></h2>
@@ -691,10 +698,10 @@
 
 <!-- ABOUT -->
 <div id="about" style="display:grid;grid-template-columns:1fr 1fr;overflow:hidden">
-  <div style="overflow:hidden;min-height:500px">
+  <div class="about-photo" style="overflow:hidden;min-height:500px">
     <img src="photo-tina-headshot.jpeg" alt="Tina Zhang, certified massage therapist and founder of HyFlow Massage LLC, Mountain View CA" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block" loading="lazy">
   </div>
-  <div style="padding:80px 68px;display:flex;flex-direction:column;justify-content:center;background:#eef7f1">
+  <div class="about-text" style="padding:80px 68px;display:flex;flex-direction:column;justify-content:center;background:#eef7f1">
     <p style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#b5894a;font-weight:500;margin-bottom:14px">About HyFlow Massage LLC</p>
     <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3vw,2.8rem);font-weight:300;line-height:1.2;color:#0f2018;margin-bottom:18px">Precision. Care.<br><em style="font-style:italic;color:#b5894a">Real Results.</em></h2>
     <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:#b5894a;margin-bottom:22px;padding-left:18px;border-left:2px solid #b5894a;line-height:1.65">"Not just relaxation — a truly effective session."</div>
@@ -1257,7 +1264,7 @@
 
 
 <!-- REVIEW -->
-<div style="background:#f0f9f3 !important;padding:80px">
+<div class="sec-pad80" style="background:#f0f9f3 !important;padding:80px">
   <div style="max-width:1100px;margin:0 auto">
     <div style="text-align:center;margin-bottom:56px">
       <p style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#b5894a;font-weight:600;margin-bottom:12px">Client Reviews</p>
@@ -1265,7 +1272,7 @@
       <p style="font-size:0.9rem;color:#3d5c4a;margin-top:12px;font-weight:300">Real experiences from real people across the Bay Area</p>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:20px">
+    <div class="rev-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:20px">
 
       <div style="background:#ffffff !important;padding:28px;border-top:3px solid #b5894a">
         <div style="color:#b5894a;font-size:0.9rem;margin-bottom:10px">★★★★★</div>
@@ -1457,7 +1464,7 @@
 
 
 <!-- TEAM -->
-<div style="background:#f0f9f3 !important;padding:80px">
+<div class="sec-pad80" style="background:#f0f9f3 !important;padding:80px">
   <div style="max-width:1100px;margin:0 auto">
     <div style="text-align:center;margin-bottom:56px">
       <p style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#b5894a;font-weight:600;margin-bottom:12px">Our People</p>
@@ -1519,7 +1526,7 @@
     <div class="faq-item"><button class="faq-q">How soon after BBL can I get lymphatic drainage?</button><div class="faq-a">After BBL, lymphatic drainage can typically begin <strong>3–7 days post-op</strong> once the wound is closed and your surgeon provides clearance. Early sessions help reduce swelling, prevent fibrosis, and support fat cell survival. Written physician clearance required before first session.</div></div>
     <div class="faq-item"><button class="faq-q">Which surgeries benefit from lymphatic drainage massage?</button><div class="faq-a">We provide post-operative lymphatic drainage for:<br><br><strong>Cosmetic surgery:</strong> BBL · Liposuction · Tummy Tuck · Mommy Makeover · Breast Augmentation/Reduction · Arm Lift · Thigh Lift · Facelift · Rhinoplasty<br><br><strong>OB-GYN surgery:</strong> C-Section · Hysterectomy · Myomectomy<br><br><strong>Other surgery:</strong> Mastectomy · Knee/Hip Replacement · Hernia Repair · Abdominal Surgery<br><br>Timing varies by surgery type. Written physician clearance required for all post-surgical clients.</div></div>
     <div class="faq-item"><button class="faq-q">When can I start lymphatic drainage after surgery?</button><div class="faq-a"><strong>It depends on your surgery type:</strong><br><br>• <strong>Cosmetic surgery</strong> (liposuction, BBL, tummy tuck): Often 3–7 days post-op once the wound is closed.<br><br>• <strong>Cancer/tumor surgery</strong> (lymph node removal): Usually 2–4 weeks after drains are removed and incision is stable.<br><br>• <strong>Abdominal/pelvic surgery</strong> (C-section, hysterectomy): Generally 4–6 weeks after physician confirms internal healing.<br><br><strong>Requirements:</strong> Wound must be closed, no open incisions, no acute infection or fever. Written physician clearance required for all post-surgical clients.</div></div>
-    <div class="faq-item"><button class="faq-q">Do you offer corporate wellness or event massage?</button><div class="faq-a">Yes! Our Corporate Wellness Program includes on-site chair massage events, employee wellness days, and recurring workplace massage programs for Bay Area businesses of all sizes and industries — not just tech companies.<br><br><strong>Pricing:</strong> Single event from $299 · Monthly program from $1,500/month · Annual contract from $5,000/year (save 20%).<br><br>Corporate massage is tax-deductible as an employee benefit. $24,960/year).<br><br>Text or email booking@hyflowmassage.com for a free quote within 24 hours.</div></div>
+    <div class="faq-item"><button class="faq-q">Do you offer corporate wellness or event massage?</button><div class="faq-a">Yes! Our Corporate Wellness Program includes on-site chair massage events, employee wellness days, and recurring workplace massage programs for Bay Area businesses of all sizes and industries — not just tech companies.<br><br><strong>Pricing:</strong> Single event from $299 · Monthly program from $1,500/month · Annual contract from $5,000/year (save 20%).<br><br>Corporate massage is tax-deductible as an employee benefit.<br><br>Text or email booking@hyflowmassage.com for a free quote within 24 hours.</div></div>
     <div class="faq-item"><button class="faq-q">What is the cancellation policy?</button><div class="faq-a">We require 24-hour notice for cancellations. Late cancellations (less than 24 hours) may be charged 50% of the service fee. No-shows will be charged the full amount. We understand emergencies happen — please contact us as soon as possible.</div></div>
     <div class="faq-item"><button class="faq-q">How do I find Suite 214?</button><div class="faq-a">We're on the 2nd floor of 257 Castro St, Mountain View. Enter through the front glass doors, walk through the courtyard, take the stairs to the 2nd floor, and look for the green door labeled "HyFlow Massage LLC — 214." See our step-by-step photo guide below, or call/text us at (408) 668-6562 if you need help finding us.</div></div>
     <div class="faq-item"><button class="faq-q">What is the suggested gratuity?</button><div class="faq-a">Gratuity is appreciated but never required. Suggested amounts: 60 min → $25+, 90 min → $35+, 120 min → $50+. Thank you for supporting our therapists!</div></div>
