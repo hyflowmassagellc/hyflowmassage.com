@@ -420,7 +420,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .ul{list-style:none;display:flex;flex-direction:column;gap:7px;margin:4px 0 16px}
 .ul li{font-size:0.83rem;color:#1a3828;display:flex;gap:9px;align-items:flex-start;line-height:1.6}
 .ul li:before{content:'✦';color:var(--gold);flex-shrink:0;font-size:0.75rem;margin-top:2px}
-.prices{display:flex;gap:10px;flex-wrap:wrap;margin:auto 0 16px;padding-top:6px}
+.prices{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 16px;padding-top:6px}
+.plabel{font-size:0.66rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-top:10px}
 .pt{background:var(--light) !important;padding:10px 16px;text-align:center;flex:1;min-width:110px}
 .pt-dur{font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--forest);font-weight:600}
 .pt-price{font-family:'Cormorant Garamond',serif;font-size:1.45rem;color:var(--gold)}
@@ -491,6 +492,18 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
 .prog-grid span{font-size:0.78rem;color:var(--mid);line-height:1.6;font-weight:300}
 .prog-grid em{font-style:normal;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-top:auto}
 @media(max-width:1000px){.prog-grid{grid-template-columns:repeat(2,1fr)}}
+.sig{background:var(--forest)}
+.sig .h2,.sig .lead{color:#fff}.sig .lead{opacity:.8}
+.sig-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+.sig-grid a{display:flex;flex-direction:column;gap:8px;padding:22px;background:#fff;border-top:4px solid var(--gold);text-decoration:none;color:var(--black)}
+.sig-grid a:hover{background:var(--cream)}
+.sig-grid b{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;color:var(--forest);line-height:1.25}
+.sig-grid span{font-size:0.8rem;color:var(--mid);line-height:1.6;font-weight:300}
+.sig-grid strong{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--gold);font-weight:500}
+.sig-grid em{font-style:normal;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--forest);margin-top:auto}
+.sig-grid em.sg-tag{margin-top:0;color:var(--gold);font-weight:600}
+@media(max-width:1000px){.sig-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.sig-grid{grid-template-columns:1fr}}
 @media(max-width:560px){.prog-grid{grid-template-columns:1fr}.ptab{min-width:0}.ptab th,.ptab td{padding:10px 6px;font-size:0.78rem}.ptab th{font-size:0.58rem;letter-spacing:0.06em}.ptab .pc{font-size:1.1rem}.ptab .pc small{font-size:0.62rem}}
 </style>
 <script src="tracking.js" defer></script>
@@ -595,13 +608,13 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
   <p class="lead">Every program is delivered to your home, hotel or office, with travel included. Choose the one that fits you best.</p>
   <div class="prog-grid">
     <a href="in-home-mother-baby-massage.html"><span class="pi">👩‍🍼</span><b>Mother & Baby at Home</b><span>90-minute postpartum care for mom plus 30 minutes of gentle infant massage, in your own home.</span><em>Learn more →</em></a>
+    <a href="in-home-cancer-recovery-care.html"><span class="pi">🌸</span><b>Cancer Recovery Care at Home</b><span>Two hours of gentle Tai Chi breathing and light lymphatic drainage for people during or after cancer treatment — at home.</span><em>Learn more →</em></a>
+    <a href="vip-wellness-ritual-at-home.html"><span class="pi">☯️</span><b>VIP Wellness Ritual</b><span>Guided Tai Chi, lymphatic drainage and neck &amp; shoulder release in one private in-home ritual — for one or two.</span><em>Learn more →</em></a>
     <a href="corporate-chair-massage.html"><span class="pi">🏢</span><b>Corporate Chair Massage</b><span>On-site chair massage for offices and events — $150 per therapist hour, 4-hour minimum.</span><em>Learn more →</em></a>
     <a href="in-home-tech-professional-massage.html"><span class="pi">💻</span><b>Tech Professional Reset</b><span>Focused deep tissue work for tech neck, shoulders and low back — at home or at the office.</span><em>Learn more →</em></a>
     <a href="couples-massage-at-home.html"><span class="pi">💞</span><b>Couples Massage at Home</b><span>Two therapists, two tables, at the same time — a private couples massage in your own home.</span><em>Learn more →</em></a>
     <a href="in-home-senior-massage.html"><span class="pi">🌿</span><b>Senior Gentle Care at Home</b><span>Gentle, unhurried massage for older adults at home — family members welcome to stay.</span><em>Learn more →</em></a>
     <a href="hotel-massage-jet-lag-recovery.html"><span class="pi">✈️</span><b>Hotel & Jet-Lag Recovery</b><span>In-room massage at your hotel — lymphatic drainage for flight swelling, deep tissue or Swedish.</span><em>Learn more →</em></a>
-    <a href="vip-wellness-ritual-at-home.html"><span class="pi">☯️</span><b>VIP Wellness Ritual</b><span>Guided Tai Chi, lymphatic drainage and neck &amp; shoulder release in one private in-home ritual — for one or two.</span><em>Learn more →</em></a>
-    <a href="in-home-cancer-recovery-care.html"><span class="pi">🌸</span><b>Cancer Recovery Care at Home</b><span>Two hours of gentle Tai Chi breathing and light lymphatic drainage for people during or after cancer treatment — at home.</span><em>Learn more →</em></a>
   </div>
  </div>
 </section>

@@ -289,7 +289,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .ul{list-style:none;display:flex;flex-direction:column;gap:7px;margin:4px 0 16px}
 .ul li{font-size:0.83rem;color:#1a3828;display:flex;gap:9px;align-items:flex-start;line-height:1.6}
 .ul li:before{content:'✦';color:var(--gold);flex-shrink:0;font-size:0.75rem;margin-top:2px}
-.prices{display:flex;gap:10px;flex-wrap:wrap;margin:auto 0 16px;padding-top:6px}
+.prices{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 16px;padding-top:6px}
+.plabel{font-size:0.66rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-top:10px}
 .pt{background:var(--light) !important;padding:10px 16px;text-align:center;flex:1;min-width:110px}
 .pt-dur{font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--forest);font-weight:600}
 .pt-price{font-family:'Cormorant Garamond',serif;font-size:1.45rem;color:var(--gold)}
@@ -360,6 +361,18 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
 .prog-grid span{font-size:0.78rem;color:var(--mid);line-height:1.6;font-weight:300}
 .prog-grid em{font-style:normal;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-top:auto}
 @media(max-width:1000px){.prog-grid{grid-template-columns:repeat(2,1fr)}}
+.sig{background:var(--forest)}
+.sig .h2,.sig .lead{color:#fff}.sig .lead{opacity:.8}
+.sig-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+.sig-grid a{display:flex;flex-direction:column;gap:8px;padding:22px;background:#fff;border-top:4px solid var(--gold);text-decoration:none;color:var(--black)}
+.sig-grid a:hover{background:var(--cream)}
+.sig-grid b{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;color:var(--forest);line-height:1.25}
+.sig-grid span{font-size:0.8rem;color:var(--mid);line-height:1.6;font-weight:300}
+.sig-grid strong{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--gold);font-weight:500}
+.sig-grid em{font-style:normal;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--forest);margin-top:auto}
+.sig-grid em.sg-tag{margin-top:0;color:var(--gold);font-weight:600}
+@media(max-width:1000px){.sig-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.sig-grid{grid-template-columns:1fr}}
 @media(max-width:560px){.prog-grid{grid-template-columns:1fr}.ptab{min-width:0}.ptab th,.ptab td{padding:10px 6px;font-size:0.78rem}.ptab th{font-size:0.58rem;letter-spacing:0.06em}.ptab .pc{font-size:1.1rem}.ptab .pc small{font-size:0.62rem}}
 </style>
 <script src="tracking.js" defer></script>
@@ -390,6 +403,21 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
 </header>
 
 <div class="crumbs"><a href="index.html">Home</a> › <a href="services-mobile.html">Mobile Massage</a> › San Jose</div>
+
+<section class="section sig" id="signature">
+ <div class="wrap">
+  <p class="ey">Signature In-Home Programs in San Jose</p>
+  <h2 class="h2">Recovery &amp; Care <em>We Bring to Your Door</em></h2>
+  <p class="lead">Our four most-requested programs, delivered at home by Tina Zhang (Klose-certified manual lymphatic drainage) or a licensed therapist on her team. 15- and 20-visit packages available · travel included.</p>
+  <div class="sig-grid">
+    <a href="in-home-post-op-recovery.html"><em class="sg-tag">Signature</em><b>Post-Op Lymphatic Drainage at Home</b><span>After liposuction, Lipo 360, BBL, tummy tuck, breast or facial surgery. Surgeon clearance required.</span><strong>$400 / 90 min · $600 / 120 min</strong><em>Learn more &amp; book →</em></a>
+    <a href="in-home-mother-baby-massage.html"><em class="sg-tag">Signature</em><b>Mother &amp; Baby Bonding at Home</b><span>90 min postpartum massage or lymphatic drainage for mom + 30 min therapist-guided infant massage.</span><strong>$400 / 120 min</strong><em>Learn more &amp; book →</em></a>
+    <a href="in-home-cancer-recovery-care.html"><em class="sg-tag">Signature</em><b>Cancer Recovery Care at Home</b><span>Gentle Tai Chi + light lymphatic drainage and relaxation massage. Oncologist clearance required.</span><strong>$500 / 120 min</strong><em>Learn more &amp; book →</em></a>
+    <a href="vip-wellness-ritual-at-home.html"><em class="sg-tag">Signature</em><b>VIP Wellness Ritual at Home</b><span>Guided Tai Chi + manual lymphatic drainage + neck and shoulder release. Couples VIP available.</span><strong>$500 / 120 min · $600 / 150 min</strong><em>Learn more &amp; book →</em></a>
+  </div>
+ </div>
+</section>
+
 <section class="section">
  <div class="wrap">
   <p class="ey">Serving San Jose</p>
@@ -404,9 +432,10 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
   <div class="pb-grid">
     <div class="pb-item"><div class="pb-dur">90 Minutes</div><div class="pb-price">$300</div><div class="pb-note">travel included</div></div>
     <div class="pb-item"><div class="pb-dur">120 Minutes</div><div class="pb-price">$400</div><div class="pb-note">travel included</div></div>
+    <div class="pb-item"><div class="pb-dur">Post-Op Lymphatic · 90 / 120 min</div><div class="pb-price">$400 / $600</div><div class="pb-note">travel included</div></div>
     <div class="pb-item"><div class="pb-dur">Mother &amp; Baby · 120 min</div><div class="pb-price">$400</div><div class="pb-note">travel included</div></div>
   </div>
-  <p style="font-size:0.78rem;color:rgba(255,255,255,0.55)">Bay Area core service area: all prices include travel · Minimum 90 minutes · 24-hour advance booking · Post-op lymphatic drainage $400 / 90 min · $600 / 120 min</p>
+  <p style="font-size:0.78rem;color:rgba(255,255,255,0.55)">Bay Area core service area: all prices include travel · Minimum 90 minutes · 24-hour advance booking · Wellness lymphatic drainage $300 / 90 min · $400 / 120 min</p>
 
   <p style="font-size:0.9rem;color:#fff;margin-top:18px">No extra travel fee for San Jose — the price you see is the price you pay (plus any add-ons).</p>
 </div>
@@ -426,8 +455,11 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
         <li>Wellness MLD for puffiness, fluid retention, travel swelling and sluggish circulation</li>
         <li>We work around your compression garments, drains schedule and surgeon's instructions</li>
       </ul>
-      <div class="warn"><strong>Post-op clients:</strong> written physician clearance required. Post-op MLD at home: $400 / 90 min · $600 / 120 min (travel included).</div>
+      <div class="plabel">Wellness lymphatic drainage · travel included</div>
       <div class="prices"><div class="pt"><div class="pt-dur">Wellness MLD · 90 min</div><div class="pt-price">$300</div></div><div class="pt"><div class="pt-dur">Wellness MLD · 120 min</div><div class="pt-price">$400</div></div></div>
+      <div class="plabel">Post-op lymphatic drainage · after surgery · travel included</div>
+      <div class="prices"><div class="pt"><div class="pt-dur">Post-Op MLD · 90 min</div><div class="pt-price">$400</div></div><div class="pt"><div class="pt-dur">Post-Op MLD · 120 min</div><div class="pt-price">$600</div></div></div>
+      <div class="warn"><strong>Post-op clients:</strong> written physician clearance required. Post-op packages: 15 visits $380 / $570 each · 20 visits $350 / $525 each (90 / 120 min). <a href="in-home-post-op-recovery.html">Post-Op Recovery at Home →</a></div>
       <a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" rel="noopener" class="btn-g">Book Mobile Lymphatic Drainage</a>
     </div>
     <div class="card hl">
@@ -507,13 +539,13 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
   <div class="prog-grid">
     <a href="in-home-post-op-recovery.html"><span class="pi">🩹</span><b>Post-Op Recovery at Home</b><span>Certified lymphatic drainage at home after BBL, liposuction, tummy tuck and other surgeries.</span><em>Learn more →</em></a>
     <a href="in-home-mother-baby-massage.html"><span class="pi">👩‍🍼</span><b>Mother & Baby at Home</b><span>90-minute postpartum care for mom plus 30 minutes of gentle infant massage, in your own home.</span><em>Learn more →</em></a>
+    <a href="in-home-cancer-recovery-care.html"><span class="pi">🌸</span><b>Cancer Recovery Care at Home</b><span>Two hours of gentle Tai Chi breathing and light lymphatic drainage for people during or after cancer treatment — at home.</span><em>Learn more →</em></a>
+    <a href="vip-wellness-ritual-at-home.html"><span class="pi">☯️</span><b>VIP Wellness Ritual</b><span>Guided Tai Chi, lymphatic drainage and neck &amp; shoulder release in one private in-home ritual — for one or two.</span><em>Learn more →</em></a>
     <a href="corporate-chair-massage.html"><span class="pi">🏢</span><b>Corporate Chair Massage</b><span>On-site chair massage for offices and events — $150 per therapist hour, 4-hour minimum.</span><em>Learn more →</em></a>
     <a href="in-home-tech-professional-massage.html"><span class="pi">💻</span><b>Tech Professional Reset</b><span>Focused deep tissue work for tech neck, shoulders and low back — at home or at the office.</span><em>Learn more →</em></a>
     <a href="couples-massage-at-home.html"><span class="pi">💞</span><b>Couples Massage at Home</b><span>Two therapists, two tables, at the same time — a private couples massage in your own home.</span><em>Learn more →</em></a>
     <a href="in-home-senior-massage.html"><span class="pi">🌿</span><b>Senior Gentle Care at Home</b><span>Gentle, unhurried massage for older adults at home — family members welcome to stay.</span><em>Learn more →</em></a>
     <a href="hotel-massage-jet-lag-recovery.html"><span class="pi">✈️</span><b>Hotel & Jet-Lag Recovery</b><span>In-room massage at your hotel — lymphatic drainage for flight swelling, deep tissue or Swedish.</span><em>Learn more →</em></a>
-    <a href="vip-wellness-ritual-at-home.html"><span class="pi">☯️</span><b>VIP Wellness Ritual</b><span>Guided Tai Chi, lymphatic drainage and neck &amp; shoulder release in one private in-home ritual — for one or two.</span><em>Learn more →</em></a>
-    <a href="in-home-cancer-recovery-care.html"><span class="pi">🌸</span><b>Cancer Recovery Care at Home</b><span>Two hours of gentle Tai Chi breathing and light lymphatic drainage for people during or after cancer treatment — at home.</span><em>Learn more →</em></a>
   </div>
  </div>
 </section>
