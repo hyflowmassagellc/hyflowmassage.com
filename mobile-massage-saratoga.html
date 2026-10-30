@@ -87,14 +87,26 @@
   },
   {
    "@type": "Offer",
-   "name": "Mobile package — 10 × 90-minute sessions (travel included)",
-   "price": "2500",
+   "name": "Mobile package — 15 × 90-minute sessions ($285 per session, travel included)",
+   "price": "4275",
    "priceCurrency": "USD"
   },
   {
    "@type": "Offer",
-   "name": "Mobile package — 10 × 120-minute sessions (travel included)",
-   "price": "3400",
+   "name": "Mobile package — 20 × 90-minute sessions ($265 per session, travel included)",
+   "price": "5300",
+   "priceCurrency": "USD"
+  },
+  {
+   "@type": "Offer",
+   "name": "Mobile package — 15 × 120-minute sessions ($380 per session, travel included)",
+   "price": "5700",
+   "priceCurrency": "USD"
+  },
+  {
+   "@type": "Offer",
+   "name": "Mobile package — 20 × 120-minute sessions ($350 per session, travel included)",
+   "price": "7000",
    "priceCurrency": "USD"
   }
  ]
@@ -110,7 +122,7 @@
    "name": "How much does mobile massage cost in Saratoga?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Mobile massage in Saratoga is $300 for 90 minutes or $400 for 120 minutes, and travel is included in the price. Post-op lymphatic drainage at home is $400 (90 min) or $600 (120 min), and the Mother & Baby Bonding Package is $400 for 120 minutes — also with travel included. Prepaid 10-session packages: $2,500 (10 × 90 min) or $3,400 (10 × 120 min)."
+    "text": "Mobile massage in Saratoga is $300 for 90 minutes or $400 for 120 minutes, and travel is included in the price. Post-op lymphatic drainage at home is $400 (90 min) or $600 (120 min), and the Mother & Baby Bonding Package is $400 for 120 minutes — also with travel included. Prepaid packages: 15 sessions at $285 (90 min) or $380 (120 min) each; 20 sessions at $265 (90 min) or $350 (120 min) each."
    }
   },
   {
@@ -309,6 +321,22 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
   .city-grid{grid-template-columns:repeat(2,1fr)}
   footer{padding:30px 18px}
 }
+
+.tbl{overflow-x:auto;margin-top:22px}
+.ptab{width:100%;border-collapse:collapse;min-width:520px;background:#fff}
+.ptab th{font-size:0.66rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--forest);text-align:left;padding:12px 14px;border-bottom:2px solid var(--gold)}
+.ptab td{padding:14px;border-bottom:1px solid rgba(45,106,79,0.12);font-size:0.86rem;color:var(--mid);vertical-align:top}
+.ptab .pc{font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--forest)}
+.ptab .pc small{display:block;font-family:'Jost',sans-serif;font-size:0.7rem;color:#6b8c7a;margin-top:2px}
+.prog-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
+.prog-grid a{display:flex;flex-direction:column;gap:6px;padding:20px;background:#fff;border:1px solid rgba(45,106,79,0.15);border-top:3px solid var(--gold);text-decoration:none;color:var(--black)}
+.prog-grid a:hover{background:var(--cream)}
+.prog-grid .pi{font-size:1.5rem}
+.prog-grid b{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400}
+.prog-grid span{font-size:0.78rem;color:var(--mid);line-height:1.6;font-weight:300}
+.prog-grid em{font-style:normal;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-top:auto}
+@media(max-width:1000px){.prog-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.prog-grid{grid-template-columns:1fr}.ptab{min-width:0}.ptab th,.ptab td{padding:10px 6px;font-size:0.78rem}.ptab th{font-size:0.58rem;letter-spacing:0.06em}.ptab .pc{font-size:1.1rem}.ptab .pc small{font-size:0.62rem}}
 </style>
 <script src="tracking.js" defer></script>
 </head>
@@ -447,14 +475,33 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
 </section>
 
 
+<section class="section" id="programs" style="background:var(--cream)">
+ <div class="wrap">
+  <p class="ey">We Come to You</p>
+  <h2 class="h2">In-Home Programs in Saratoga</h2>
+  <p class="lead">Every program is delivered to your home, hotel or office, with travel included. Choose the one that fits you best.</p>
+  <div class="prog-grid">
+    <a href="in-home-post-op-recovery.html"><span class="pi">🩹</span><b>Post-Op Recovery at Home</b><span>Certified lymphatic drainage at home after BBL, liposuction, tummy tuck and other surgeries.</span><em>Learn more →</em></a>
+    <a href="in-home-mother-baby-massage.html"><span class="pi">👩‍🍼</span><b>Mother & Baby at Home</b><span>90-minute postpartum care for mom plus 30 minutes of gentle infant massage, in your own home.</span><em>Learn more →</em></a>
+    <a href="corporate-chair-massage.html"><span class="pi">🏢</span><b>Corporate Chair Massage</b><span>On-site chair massage for offices and events — $150 per therapist hour, 15-minute sessions.</span><em>Learn more →</em></a>
+    <a href="in-home-tech-professional-massage.html"><span class="pi">💻</span><b>Tech Professional Reset</b><span>Focused deep tissue work for tech neck, shoulders and low back — at home or at the office.</span><em>Learn more →</em></a>
+    <a href="couples-massage-at-home.html"><span class="pi">💞</span><b>Couples Massage at Home</b><span>Two therapists, two tables, at the same time — a private couples massage in your own home.</span><em>Learn more →</em></a>
+    <a href="in-home-senior-massage.html"><span class="pi">🌿</span><b>Senior Gentle Care at Home</b><span>Gentle, unhurried massage for older adults at home — family members welcome to stay.</span><em>Learn more →</em></a>
+    <a href="hotel-massage-jet-lag-recovery.html"><span class="pi">✈️</span><b>Hotel & Jet-Lag Recovery</b><span>In-room massage at your hotel — lymphatic drainage for flight swelling, deep tissue or Swedish.</span><em>Learn more →</em></a>
+  </div>
+ </div>
+</section>
+
+
 <div class="packages">
   <p class="ey">Save More · Travel Included</p>
   <h2 class="h2" style="color:#fff">Mobile Massage <em>Package Deals</em></h2>
-  <p style="font-size:0.87rem;color:rgba(255,255,255,0.65);max-width:560px;margin:0 auto;font-weight:300;line-height:1.85">Prepay 10 sessions and save — the best value for ongoing lymphatic drainage, post-op recovery or regular pain-relief care.</p>
+  <p style="font-size:0.87rem;color:rgba(255,255,255,0.65);max-width:600px;margin:0 auto;font-weight:300;line-height:1.85">Prepay 15 or 20 sessions for ongoing lymphatic drainage, post-op recovery or regular pain-relief care. Travel is always included.</p>
   <div class="pkg-grid">
-    <div class="pkg"><p class="ey">10 Sessions × 90 min</p><h3>90-Minute Bundle</h3><div class="big">$2,500</div><div class="s">$250 per session · travel included</div><a href="mailto:booking@hyflowmassage.com?subject=Mobile%20Package%20Inquiry%20-%2010%20x%2090%20min" class="btn-p">Inquire Now</a></div>
-    <div class="pkg"><p class="ey">10 Sessions × 120 min</p><h3>120-Minute Bundle</h3><div class="big">$3,400</div><div class="s">$340 per session · travel included</div><a href="mailto:booking@hyflowmassage.com?subject=Mobile%20Package%20Inquiry%20-%2010%20x%20120%20min" class="btn-p">Inquire Now</a></div>
+    <div class="pkg"><p class="ey">15-Session Package</p><h3>Save 5%</h3><div class="big">$285</div><div class="s">per 90-min session ($4,275) · $380 per 120-min session ($5,700)</div><a href="mailto:booking@hyflowmassage.com?subject=Mobile%20Package%20Inquiry%20-%2015%20sessions" class="btn-p">Inquire Now</a></div>
+    <div class="pkg"><p class="ey">20-Session Package</p><h3>Best Value</h3><div class="big">$265</div><div class="s">per 90-min session ($5,300) · $350 per 120-min session ($7,000)</div><a href="mailto:booking@hyflowmassage.com?subject=Mobile%20Package%20Inquiry%20-%2020%20sessions" class="btn-p">Inquire Now</a></div>
   </div>
+  <p style="font-size:0.75rem;color:rgba(255,255,255,0.5);margin-top:16px">Post-op lymphatic drainage, Mother &amp; Baby and couples packages have their own pricing — see <a href="services-mobile.html#programs" style="color:var(--gold)">In-Home Programs</a>.</p>
 </div>
 
 <section class="section" style="background:var(--cream)">
@@ -462,7 +509,7 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
   <p class="ey" style="text-align:center">FAQ</p>
   <h2 class="h2" style="text-align:center">Mobile Massage in Saratoga: <em>Questions</em></h2>
   <div class="faq">
-    <details><summary>How much does mobile massage cost in Saratoga?</summary><div class="a">Mobile massage in Saratoga is $300 for 90 minutes or $400 for 120 minutes, and travel is included in the price. Post-op lymphatic drainage at home is $400 (90 min) or $600 (120 min), and the Mother &amp; Baby Bonding Package is $400 for 120 minutes — also with travel included. Prepaid 10-session packages: $2,500 (10 × 90 min) or $3,400 (10 × 120 min).</div></details>
+    <details><summary>How much does mobile massage cost in Saratoga?</summary><div class="a">Mobile massage in Saratoga is $300 for 90 minutes or $400 for 120 minutes, and travel is included in the price. Post-op lymphatic drainage at home is $400 (90 min) or $600 (120 min), and the Mother &amp; Baby Bonding Package is $400 for 120 minutes — also with travel included. Prepaid packages: 15 sessions at $285 (90 min) or $380 (120 min) each; 20 sessions at $265 (90 min) or $350 (120 min) each.</div></details>
     <details><summary>Do you offer lymphatic drainage at home in Saratoga?</summary><div class="a">Yes. In-home manual lymphatic drainage (MLD) is our signature mobile service. Sessions are performed by Tina Zhang, a California Certified Massage Therapist trained in the Vodder method of MLD through Klose Training. For post-surgical clients (BBL, liposuction, Lipo 360, tummy tuck, mommy makeover, breast surgery, facelift and more), we require written clearance from your surgeon and follow your surgeon&#x27;s post-op timeline. Many liposuction clients benefit from a series of 15–20 sessions.</div></details>
     <details><summary>What is the Mother &amp; Baby Bonding Package?</summary><div class="a">A 120-minute session for a new mom and her baby: 90 minutes of postpartum massage or lymphatic drainage for mom, followed by 30 minutes of gentle infant massage. The infant portion is therapist-guided — Tina works with your baby while showing you simple, soothing techniques you can continue at home. It is $300 in our Mountain View studio, or $400 at home (travel included). We recommend checking with your pediatrician before your baby&#x27;s first massage.</div></details>
     <details><summary>What do I need to prepare for an in-home massage?</summary><div class="a">Just a quiet space about 8 × 10 feet (2.5 × 3 m) where a massage table can be set up, ideally in a warm room. We bring the professional table, fresh linens, pillows and bolsters, oils and lotions. Please let us know about parking, gate codes and pets in advance. Setup takes about 10–15 minutes and is not taken from your session time.</div></details>
