@@ -131,6 +131,7 @@
 
     /* RESPONSIVE */
     @media(max-width:900px){
+      .about-offer{grid-template-columns:1fr !important}
       nav{padding:13px 18px}
       .nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#f5fbf7;padding:18px;gap:16px;border-bottom:1px solid rgba(181,137,74,0.2)}
       .nav-links.open{display:flex}
@@ -160,6 +161,101 @@
   <meta property="og:description" content="Meet HyFlow Massage LLC in Mountain View: Tina Zhang, CA Certified Massage Therapist and Klose-certified lymphatic drainage specialist.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "AboutPage",
+ "@id": "https://hyflowmassage.com/about.html#page",
+ "url": "https://hyflowmassage.com/about.html",
+ "name": "About Tina Zhang & HyFlow Massage LLC",
+ "description": "HyFlow Massage LLC in Mountain View, CA, founded by Tina Zhang, a California Certified Massage Therapist trained in manual lymphatic drainage (Vodder method) through Klose Training. In-studio and in-home massage across the Bay Area.",
+ "about": {
+  "@type": "MassageTherapist",
+  "@id": "https://hyflowmassage.com/#business",
+  "name": "HyFlow Massage LLC",
+  "url": "https://hyflowmassage.com",
+  "telephone": "+14086686562",
+  "address": {
+   "@type": "PostalAddress",
+   "streetAddress": "257 Castro St, Suite 214",
+   "addressLocality": "Mountain View",
+   "addressRegion": "CA",
+   "postalCode": "94041",
+   "addressCountry": "US"
+  }
+ },
+ "mainEntity": {
+  "@id": "https://hyflowmassage.com/#tina-zhang"
+ },
+ "dateModified": "2026-11-02"
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Person",
+ "@id": "https://hyflowmassage.com/#tina-zhang",
+ "name": "Tina Zhang",
+ "jobTitle": "Founder & Lead Massage Therapist",
+ "url": "https://hyflowmassage.com/about.html",
+ "image": "https://hyflowmassage.com/photo-tina-zhang.jpeg",
+ "worksFor": {
+  "@id": "https://hyflowmassage.com/#business"
+ },
+ "knowsLanguage": [
+  "English",
+  "Mandarin Chinese",
+  "Russian"
+ ],
+ "knowsAbout": [
+  "Manual lymphatic drainage",
+  "Post-surgical lymphatic drainage",
+  "Therapeutic massage",
+  "Deep tissue massage",
+  "Prenatal and postpartum massage",
+  "Infant massage",
+  "Tai Chi",
+  "Mobile and in-home massage",
+  "Corporate chair massage"
+ ],
+ "hasCredential": [
+  {
+   "@type": "EducationalOccupationalCredential",
+   "credentialCategory": "license",
+   "name": "California Certified Massage Therapist (CMT)"
+  },
+  {
+   "@type": "EducationalOccupationalCredential",
+   "credentialCategory": "certification",
+   "name": "Manual Lymphatic Drainage (Vodder method)",
+   "recognizedBy": {
+    "@type": "Organization",
+    "name": "Klose Training"
+   }
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Home",
+   "item": "https://hyflowmassage.com/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "About",
+   "item": "https://hyflowmassage.com/about.html"
+  }
+ ]
+}
+</script>
 <script src="tracking.js" defer></script>
 </head>
 <body>
@@ -206,14 +302,14 @@
 
     <p style="font-size:0.92rem;color:#2a4535;line-height:1.9;font-weight:300;margin-bottom:28px">Beyond individual care, HyFlow Massage LLC is a trusted institutional wellness partner for senior living communities and Bay Area companies. From therapeutic <strong style="color:#2d6a4f">senior care massage programs</strong> in assisted living facilities, to professional <strong style="color:#2d6a4f">corporate wellness massage</strong>, <strong style="color:#2d6a4f">chair massage events</strong>, and <strong style="color:#2d6a4f">event massage</strong> for company health fairs and team celebrations — we bring professional-grade bodywork directly to the people and organizations that need it most.</p>
 
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+    <div class="about-offer" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
       <div style="background:#f0f9f3 !important;padding:22px;border-top:3px solid #2d6a4f">
         <div style="font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:#b5894a;font-weight:600;margin-bottom:8px">In-Studio</div>
         <div style="font-size:0.84rem;color:#1a3828;line-height:1.7;font-weight:300">Lymphatic drainage massage · Pain relief bodywork · Deep tissue · Aromatherapy · CBD therapy</div>
       </div>
       <div style="background:#f0f9f3 !important;padding:22px;border-top:3px solid #b5894a">
         <div style="font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:#b5894a;font-weight:600;margin-bottom:8px">Mobile Massage</div>
-        <div style="font-size:0.84rem;color:#1a3828;line-height:1.7;font-weight:300">In-home massage therapy throughout the Bay Area within 60km of Mountain View</div>
+        <div style="font-size:0.84rem;color:#1a3828;line-height:1.7;font-weight:300">In-home massage therapy across the Bay Area — travel included within about 60 km of Mountain View, extended areas up to about 2 hours away</div>
       </div>
       <div style="background:#f0f9f3 !important;padding:22px;border-top:3px solid #2d6a4f">
         <div style="font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:#b5894a;font-weight:600;margin-bottom:8px">B2B Programs</div>
@@ -379,7 +475,7 @@
   var obs = new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible'); }); }, {threshold:0.1});
   document.querySelectorAll('.fade-up').forEach(function(el){ obs.observe(el); });
 </script>
-<nav aria-label="Core services" style="background:#14281d;padding:14px 20px;text-align:center;font-family:'Jost',sans-serif;font-size:0.8rem;letter-spacing:0.04em">
+<nav aria-label="Core services" style="position:static;backdrop-filter:none;border:0;display:block;background:#14281d;padding:14px 20px;text-align:center;font-family:'Jost',sans-serif;font-size:0.8rem;letter-spacing:0.04em">
   <a href="services-mobile.html" style="color:#e9d3ad;text-decoration:none;margin:0 12px">Mobile Massage</a>
   <a href="lymphatic-drainage-mountain-view.html" style="color:#e9d3ad;text-decoration:none;margin:0 12px">Lymphatic Drainage Massage</a>
   <a href="services-studio.html" style="color:#e9d3ad;text-decoration:none;margin:0 12px">Therapeutic Massage</a>
