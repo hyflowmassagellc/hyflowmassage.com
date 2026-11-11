@@ -533,6 +533,33 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
 @media(max-width:1000px){.sig-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.sig-grid{grid-template-columns:1fr}}
 @media(max-width:560px){.prog-grid{grid-template-columns:1fr}.ptab{min-width:0}.ptab th,.ptab td{padding:10px 6px;font-size:0.78rem}.ptab th{font-size:0.58rem;letter-spacing:0.06em}.ptab .pc{font-size:1.1rem}.ptab .pc small{font-size:0.62rem}}
+
+/* hero slideshow + visual sections */
+.hero{position:relative;overflow:hidden;isolation:isolate}
+.hero>*:not(.hero-bg){position:relative;z-index:2}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg span{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;animation:heroFade 18s infinite;transform:scale(1.04)}
+.hero-bg span:nth-child(1){background-image:url(svc-mobile.jpg);animation-delay:0s}
+.hero-bg span:nth-child(2){background-image:url(svc-lymphatic.jpg);animation-delay:6s}
+.hero-bg span:nth-child(3){background-image:url(svc-mobile-2.jpg);animation-delay:12s}
+.hero::after{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(20,48,34,0.78),rgba(30,69,50,0.86))}
+@keyframes heroFade{0%{opacity:0;transform:scale(1.04)}6%{opacity:1}33%{opacity:1}40%{opacity:0;transform:scale(1.12)}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.hero-bg span{animation:none;opacity:0}.hero-bg span:nth-child(1){opacity:1}}
+.visit{padding:72px 80px;background:#fff}
+.visit .wrap{max-width:1150px;margin:0 auto}
+.visit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:30px}
+.vstep{background:var(--cream,#eef7f1);overflow:hidden;display:flex;flex-direction:column}
+.vstep .vimg{position:relative;aspect-ratio:4/3;overflow:hidden}
+.vstep img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.vstep:hover img{transform:scale(1.06)}
+.vstep .vnum{position:absolute;top:12px;left:12px;background:var(--gold);color:#fff;font-size:0.7rem;letter-spacing:0.12em;padding:4px 10px;font-weight:600}
+.vstep b{display:block;font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:500;color:var(--forest);padding:16px 18px 4px}
+.vstep p{font-size:0.82rem;color:var(--mid);line-height:1.7;padding:0 18px 18px;margin:0;font-weight:300}
+.card-img{margin:-32px -30px 22px;aspect-ratio:16/9;overflow:hidden}
+.card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.card:hover .card-img img{transform:scale(1.05)}
+@media(max-width:900px){.visit{padding:48px 18px}.visit-grid{grid-template-columns:1fr 1fr;gap:12px}.vstep b{font-size:1.05rem;padding:12px 12px 2px}.vstep p{padding:0 12px 14px;font-size:0.78rem}.card-img{margin:-24px -20px 18px}}
+@media(max-width:520px){.visit-grid{grid-template-columns:1fr}}
 </style>
 <script src="tracking.js" defer></script>
 </head>
@@ -551,6 +578,7 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
 </nav>
 
 <header class="hero">
+  <div class="hero-bg" aria-hidden="true"><span></span><span></span><span></span></div>
   <p class="hero-tag">Bay Area · San Francisco · Santa Cruz · Monterey · Within 2 Hours · We Come to You</p>
   <h1>Mobile Massage in the Bay Area<br><em>Lymphatic Drainage · Deep Tissue · Swedish</em></h1>
   <p>HyFlow Massage LLC brings certified lymphatic drainage, deep tissue and Swedish massage to your home, hotel or office — plus our new Mother &amp; Baby Bonding Package for new families. Ideal when you are recovering from surgery, caring for a newborn, or simply short on time.</p>
@@ -562,6 +590,20 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
 </header>
 
 <div class="crumbs"><a href="index.html">Home</a> › Mobile Massage</div>
+
+<section class="visit" aria-label="What a home visit looks like">
+ <div class="wrap">
+  <p class="ey">We Come to You</p>
+  <h2 class="h2">What a Home Visit <em>Looks Like</em></h2>
+  <p class="lead">No driving, no parking, no waiting room. We bring the full studio experience to your living room, hotel suite or office — you just relax.</p>
+  <div class="visit-grid">
+   <div class="vstep"><div class="vimg"><img src="svc-mobile.jpg" alt="HyFlow therapist setting up a professional massage table in a client's living room" loading="lazy" width="1264" height="848"><span class="vnum">STEP 1</span></div><b>We arrive &amp; set up</b><p>Professional table, bolsters and supplies — set up in about 10–15 minutes, not taken from your session.</p></div>
+   <div class="vstep"><div class="vimg"><img src="photo-hygiene.jpeg" alt="Therapist sanitizing the massage table before a session" loading="lazy" width="1200" height="961"><span class="vnum">STEP 2</span></div><b>Clean &amp; fresh</b><p>Freshly laundered linens for every client and a sanitized table and face cradle.</p></div>
+   <div class="vstep"><div class="vimg"><img src="svc-lymphatic.jpg" alt="Gentle manual lymphatic drainage massage at home" loading="lazy" width="1400" height="933"><span class="vnum">STEP 3</span></div><b>Your session</b><p>Lymphatic drainage, deep tissue, Swedish or prenatal care — 90 or 120 minutes, tailored to you.</p></div>
+   <div class="vstep"><div class="vimg"><img src="svc-swedish.jpg" alt="Client relaxing after an in-home massage" loading="lazy" width="1264" height="848"><span class="vnum">STEP 4</span></div><b>Stay relaxed</b><p>No drive home afterwards. Rest, nap or take a shower while we pack up quietly.</p></div>
+  </div>
+ </div>
+</section>
 
 <section class="section sig" id="signature">
  <div class="wrap">
@@ -606,6 +648,7 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
 
   <div class="feat">
     <div class="card hl">
+      <div class="card-img"><img src="svc-post-surgery.jpg" alt="Certified lymphatic drainage massage at home" loading="lazy" width="1264" height="848"></div>
       <div class="card-num">Mobile Specialty 01 · Signature</div>
       <h3>Lymphatic Drainage at Home</h3>
       <div class="sub">Manual Lymphatic Drainage · Post-Op Recovery</div>
@@ -623,6 +666,7 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
       <a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" rel="noopener" class="btn-g">Book Mobile Lymphatic Drainage</a>
     </div>
     <div class="card hl">
+      <div class="card-img"><img src="svc-deep-tissue.jpg" alt="Deep tissue massage for back and shoulder pain at home" loading="lazy" width="1264" height="848"></div>
       <div class="card-num">Mobile Specialty 02</div>
       <h3>Deep Tissue Massage at Home</h3>
       <div class="sub">Chronic Pain · Tech Neck · Back &amp; Shoulders</div>
@@ -636,6 +680,7 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
       <a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" rel="noopener" class="btn-g">Book Mobile Deep Tissue</a>
     </div>
     <div class="card hl">
+      <div class="card-img"><img src="svc-swedish.jpg" alt="Relaxing Swedish massage at home" loading="lazy" width="1264" height="848"></div>
       <div class="card-num">Mobile Specialty 03</div>
       <h3>Swedish Massage at Home</h3>
       <div class="sub">Relaxation · Stress Relief · Better Sleep</div>
@@ -649,6 +694,7 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
       <a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" rel="noopener" class="btn-g">Book Mobile Swedish</a>
     </div>
     <div class="card hl">
+      <div class="card-img"><img src="svc-postpartum.jpg" alt="Postpartum massage for new moms at home" loading="lazy" width="1264" height="848"></div>
       <div class="card-num">Mobile Specialty 04 · New</div>
       <h3>Mother &amp; Baby Bonding Package</h3>
       <div class="sub">120 Minutes · Mom 90 min + Baby 30 min</div>
