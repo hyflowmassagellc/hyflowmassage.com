@@ -1008,58 +1008,9 @@
       <div class="ac"><div class="ac-icon">🌸</div><div class="ac-name">Aromatherapy</div><div class="ac-desc">Customized essential oil blend for mood and relaxation</div><div class="ac-price">+$30</div></div>
       <div class="ac"><div class="ac-icon">🫙</div><div class="ac-name">Cupping</div><div class="ac-desc">Traditional cupping therapy to relieve muscle tension, improve circulation, and promote deep tissue recovery</div><div class="ac-price">+$30</div></div>
 
-      <div id="b2bFormWrap">
-        <div class="form-grid" id="b2bForm">
-          <div class="form-group">
-            <label>Organization Name *</label>
-            <input type="text" id="b2b-org" placeholder="Company or facility name">
-          </div>
-          <div class="form-group">
-            <label>Contact Name *</label>
-            <input type="text" id="b2b-name" placeholder="Your full name">
-          </div>
-          <div class="form-group">
-            <label>Email *</label>
-            <input type="email" id="b2b-email" placeholder="your@email.com">
-          </div>
-          <div class="form-group">
-            <label>Phone / WeChat / WhatsApp</label>
-            <input type="text" id="b2b-phone" placeholder="(408) 000-0000">
-          </div>
-          <div class="form-group">
-            <label>Program Type *</label>
-            <select id="b2b-type">
-              <option value="">Select program...</option>
-              <option>Corporate Wellness — Single Event</option>
-              <option>Corporate Wellness — Monthly Program</option>
-              <option>Corporate Wellness — Annual Contract</option>
-              <option>Chair Massage Event</option>
-              <option>Other / Custom</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Number of People / Residents</label>
-            <select id="b2b-size">
-              <option value="">Select size...</option>
-              <option>Under 20</option>
-              <option>20 – 50</option>
-              <option>51 – 100</option>
-              <option>100+</option>
-            </select>
-          </div>
-          <div class="form-group form-full">
-            <label>Message / Special Requirements</label>
-            <textarea id="b2b-msg" placeholder="Tell us about your needs, preferred schedule, location, or any questions..."></textarea>
-          </div>
-          <div class="form-full">
-            <button onclick="submitB2B()" style="background:var(--gold);color:#1a3828;padding:14px 36px;border:none;font-family:'Jost',sans-serif;font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;font-weight:600;transition:all .2s;width:100%">Send Inquiry →</button>
-          </div>
-        </div>
-        <div id="b2bSuccess" style="display:none;text-align:center;padding:40px 20px">
-          <div style="font-size:2rem;margin-bottom:16px">✅</div>
-          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#fff;font-weight:300;margin-bottom:10px">Thank you!</h3>
-          <p style="font-size:0.84rem;color:rgba(245,240,232,0.65);line-height:1.7">We've received your inquiry and will respond within 24 hours.<br>For urgent requests, text us at <a href="sms:4086686562" style="color:var(--gold)">(408) 668-6562</a>.</p>
-        </div>
+      <div class="ac" style="grid-column:1/-1;background:var(--forest);color:#fff;text-align:center">
+        <div class="ac-name" style="color:#fff">Company or group event?</div>
+        <div class="ac-desc" style="color:rgba(255,255,255,0.8)">On-site chair massage for offices from $600 · <a href="services-corporate.html#inquiry" style="color:var(--gold)">Get a corporate quote →</a></div>
       </div>
 
     </div>
@@ -1750,48 +1701,7 @@
   const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1});
   document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 
-  // B2B FORM
-  function submitForm(){
-    const f=document.getElementById('f-facility').value;
-    const n=document.getElementById('f-name').value;
-    const p=document.getElementById('f-phone').value;
-    const e=document.getElementById('f-email').value;
-    if(!f||!n||!p||!e){alert('Please fill in all required fields.');return;}
-    const plan=document.getElementById('f-plan').value;
-    const msg=document.getElementById('f-message').value;
-    const subject=encodeURIComponent('Corporate Partnership Inquiry – '+f);
-    const body=encodeURIComponent('Facility: '+f+'\nContact: '+n+'\nPhone: '+p+'\nEmail: '+e+'\nPlan: '+plan+'\nResidents: '+document.getElementById('f-residents').value+'\n\nMessage:\n'+msg);
-    window.location.href='mailto:booking@hyflowmassage.com?subject='+subject+'&body='+body;
-    document.getElementById('b2bForm').style.display='none';
-    document.getElementById('formSuccess').style.display='block';
-  }
 
-  function submitB2B(){
-    const org = document.getElementById('b2b-org')?.value.trim();
-    const name = document.getElementById('b2b-name')?.value.trim();
-    const email = document.getElementById('b2b-email')?.value.trim();
-    const phone = document.getElementById('b2b-phone')?.value.trim();
-    const type = document.getElementById('b2b-type')?.value;
-    const size = document.getElementById('b2b-size')?.value;
-    const msg = document.getElementById('b2b-msg')?.value.trim();
-    if(!org || !name || !email || !type){
-      alert('Please fill in Organization Name, Contact Name, Email and Program Type.');
-      return;
-    }
-    const subject = encodeURIComponent('B2B Inquiry — ' + type + ' | ' + org);
-    const body = encodeURIComponent(
-      'Organization: ' + org + '\n' +
-      'Contact: ' + name + '\n' +
-      'Email: ' + email + '\n' +
-      'Phone/WeChat/WhatsApp: ' + (phone || 'Not provided') + '\n' +
-      'Program Type: ' + type + '\n' +
-      'Organization Size: ' + (size || 'Not specified') + '\n\n' +
-      'Message:\n' + (msg || 'No additional message.')
-    );
-    window.location.href = 'mailto:booking@hyflowmassage.com?subject=' + subject + '&body=' + body;
-    document.getElementById('b2bForm').style.display = 'none';
-    document.getElementById('b2bSuccess').style.display = 'block';
-  }
 
 </script>
 </body>

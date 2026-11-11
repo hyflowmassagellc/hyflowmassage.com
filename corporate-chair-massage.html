@@ -309,7 +309,39 @@
    "name": "Which areas do you serve?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "We serve the Bay Area from our Mountain View studio, including Mountain View, Palo Alto, Sunnyvale, Cupertino, Los Altos, Santa Clara, San Jose, Saratoga, Campbell, Los Gatos, Menlo Park, Atherton, Redwood City, San Mateo, Fremont, San Francisco, Santa Cruz and nearby cities — travel included. Extended areas within about 2 hours have a travel fee per visit: +$50 for 60–100 km (Oakland, Berkeley, Walnut Creek, Pleasanton, Half Moon Bay, Gilroy) and +$80 for 100–160 km (Carmel, Monterey, Marin, Napa). Travel is included in the price."
+    "text": "We serve the Bay Area from our Mountain View studio, including Mountain View, Palo Alto, Sunnyvale, Cupertino, Los Altos, Santa Clara, San Jose, Saratoga, Campbell, Los Gatos, Menlo Park, Atherton, Redwood City, San Mateo, Fremont, San Francisco, Santa Cruz and nearby cities — travel included. Extended areas within about 2 hours have a travel fee per visit: +$50 for 60–100 km (Oakland, Berkeley, Walnut Creek, Pleasanton, Half Moon Bay, Gilroy) and +$80 for 100–160 km (Carmel, Monterey, Marin, Napa)."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can we start with a pilot event?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. Many companies start with a single 4-hour chair massage event ($600) with no contract, then move to a monthly program if the team enjoys it."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can you provide a certificate of insurance (COI) for vendor approval?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. We provide a certificate of insurance on request and can complete your company's standard vendor setup forms — mention it in your inquiry and we will send what you need with your quote."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How do invoicing and payment work?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "We invoice your company directly. You can pay by corporate card or ACH, and Net-30 payment terms are available."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Are your senior-care or gift-card prices the same as corporate prices?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. Senior-care facility programs and gift cards have their own separate price lists. Corporate pricing is $150 per therapist hour with a 4-hour minimum ($600), monthly programs from $1,200 per month and annual contracts from $9,000 per year."
    }
   }
  ]
@@ -487,8 +519,44 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
 @media(max-width:1000px){.sig-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.sig-grid{grid-template-columns:1fr}}
 @media(max-width:560px){.prog-grid{grid-template-columns:1fr}.ptab{min-width:0}.ptab th,.ptab td{padding:10px 6px;font-size:0.78rem}.ptab th{font-size:0.58rem;letter-spacing:0.06em}.ptab .pc{font-size:1.1rem}.ptab .pc small{font-size:0.62rem}}
+
+    /* Corporate summary + inquiry form (shared) */
+    .cg-sec{padding:56px 48px;scroll-margin-top:100px}
+    .cg-in{max-width:1100px;margin:0 auto}
+    .cg{display:grid;grid-template-columns:1.3fr 1fr;gap:2px}
+    .cg-col{background:#fff;padding:32px 30px;border-top:3px solid #b5894a}
+    .cg-vendor{background:#1e4532;color:#fff;border-top-color:#2d6a4f}
+    .cg-ey{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:#b5894a;font-weight:500;margin:0 0 10px}
+    .cg-h{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:400;color:#1e4532;line-height:1.25;margin:0 0 16px}
+    .cg-vendor .cg-h{color:#fff}
+    .cg-list{list-style:none;margin:0 0 14px;padding:0}
+    .cg-list li{padding:12px 0;border-bottom:1px solid #e3eee7;display:flex;flex-direction:column;gap:3px}
+    .cg-list b{font-size:.95rem;color:#1a2e20;font-weight:600}
+    .cg-list span{font-size:.8rem;color:#4a6a5a;line-height:1.6}
+    .cg-note{font-size:.8rem;color:#4a6a5a;line-height:1.7;margin:0}
+    .cg-checks{list-style:none;padding:0;margin:0 0 20px}
+    .cg-checks li{font-size:.86rem;padding:7px 0 7px 26px;position:relative;color:rgba(255,255,255,.92);line-height:1.5}
+    .cg-checks li::before{content:'\2713';position:absolute;left:0;color:#b5894a;font-weight:700}
+    .cg-btn{display:inline-block;padding:12px 20px;background:#b5894a;color:#fff!important;text-decoration:none;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase}
+    .inq-box{display:grid;grid-template-columns:1fr 1.3fr;gap:40px;background:#fff;padding:36px;border-top:3px solid #2d6a4f}
+    .inq-box p.inq-lead{font-size:.86rem;color:#3d5c4a;line-height:1.8;margin:0 0 14px}
+    .inq-box .inq-direct{font-size:.84rem;color:#3d5c4a;line-height:2}
+    .inq-box .inq-direct a{color:#2d6a4f}
+    .inq-form{display:grid;grid-template-columns:1fr 1fr;gap:12px;position:relative}
+    .inq-form label{display:flex;flex-direction:column;gap:5px;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#3d5c4a;font-weight:500}
+    .inq-form input,.inq-form select,.inq-form textarea{font-family:'Jost',sans-serif;font-size:.9rem;letter-spacing:0;text-transform:none;padding:10px 12px;border:1px solid #cfe0d5;background:#f9fcfa;color:#1a2e20;width:100%;border-radius:0}
+    .inq-form textarea{min-height:90px;resize:vertical}
+    .inq-form .full{grid-column:1/-1}
+    .inq-form button{grid-column:1/-1;padding:14px;background:#2d6a4f;color:#fff;border:0;font-family:'Jost',sans-serif;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+    .inq-form button:disabled{opacity:.6;cursor:wait}
+    .inq-status{display:none;grid-column:1/-1;background:#fff8ec;border-left:3px solid #b5894a;padding:12px 14px;font-size:.84rem;line-height:1.7;color:#1a2e20}
+    .inq-ok{grid-column:1/-1;color:#1a2e20}
+    .inq-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+    .inq-small{grid-column:1/-1;font-size:.72rem;color:#6b8c7a;margin:0}
+    @media(max-width:800px){.cg-sec{padding:40px 16px}.cg,.inq-box,.inq-form{grid-template-columns:1fr}.inq-box{padding:24px 18px;gap:20px}.cg-col{padding:24px 18px}}
 </style>
 <script src="tracking.js" defer></script>
+<script src="inquiry.js" defer></script>
 </head>
 <body>
 <nav>
@@ -509,7 +577,7 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
   <h1>Corporate Chair Massage<br><em>On-Site at Your Office or Event</em></h1>
   <p>Give your team a real break without anyone leaving the building. We bring professional massage chairs to your office, conference or company event and run back-to-back 15-minute chair massages focused on neck, shoulders, back and arms — fully clothed, no oils, no disruption to the workday.</p>
   <div class="btns">
-    <a href="mailto:booking@hyflowmassage.com?subject=Corporate%20Chair%20Massage%20Quote"  class="btn-p">Request a Quote</a>
+    <a href="#inquiry" class="btn-p">Request a Quote</a>
     <a href="sms:+14086686562" class="btn-o">Text (408) 668-6562</a>
   </div>
   <div class="trust"><span>✓ California Certified Massage Therapist (CMT)</span><span>✓ Klose Training–certified MLD</span><span>✓ English · 中文 · Русский</span><span>✓ Travel included</span></div>
@@ -527,7 +595,7 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
     <div><dt>Travel</dt><dd>Included within about 60 km; +$50 (60–100 km) or +$80 (100–160 km) per visit</dd></div>
     <div><dt>Book</dt><dd>Online 24/7, or text (408) 668-6562 · open daily 9 AM–9 PM · 24 hours' notice</dd></div>
    </dl>
-   <p class="upd">Last updated October 30, 2026</p>
+   <p class="upd">Last updated November 11, 2026</p>
   </div>
  </div>
 </section>
@@ -545,7 +613,37 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
   <p class="ey">Pricing · Travel Included</p>
   <h2 class="h2">Corporate Chair Massage <em>Pricing</em></h2>
   <div class="tbl"><table class="ptab"><thead><tr><th>Group size</th><th>Massage time</th><th>Plan about</th><th>Estimate</th></tr></thead><tbody><tr><td><strong>Up to 16 employees</strong></td><td>up to 4 hrs</td><td>4 hrs (minimum)</td><td class="pc">$600</td></tr><tr><td><strong>20 employees</strong></td><td>5 hrs</td><td>5.5 hrs</td><td class="pc">$825</td></tr><tr><td><strong>24 employees</strong></td><td>6 hrs</td><td>6.5 hrs</td><td class="pc">$975</td></tr></tbody></table></div><p style="font-size:0.8rem;color:#6b8c7a;margin-top:10px"><strong>$150 per therapist hour · 4-hour minimum per booking</strong> · 15-minute sessions · setup and changeovers included in the estimate. Larger groups can be served by two therapists at once. For monthly and annual programs, see <a href="services-corporate.html" style="color:var(--forest)">corporate wellness</a>.</p>
-  <p style="margin-top:22px"><a href="mailto:booking@hyflowmassage.com?subject=Corporate%20Chair%20Massage%20Quote"  class="btn-g">Request a Quote</a></p>
+  <p style="margin-top:22px"><a href="#inquiry" class="btn-g">Request a Quote</a></p>
+ </div>
+</section>
+
+<section class="cg-sec" id="corporate-pricing" aria-label="Corporate pricing at a glance">
+ <div class="cg-in">
+  <div class="cg">
+   <div class="cg-col">
+    <p class="cg-ey">Corporate pricing at a glance</p>
+    <h2 class="cg-h">One simple rate: $150 per therapist hour</h2>
+    <ul class="cg-list">
+     <li><b>Pilot or single event — from $600</b><span>4-hour minimum per booking · about 14–16 employees at 15 minutes each · no contract</span></li>
+     <li><b>Monthly program — from $1,200/month</b><span>Starter: 2 visits a month · 8 employees × 30 minutes</span></li>
+     <li><b>Annual contract — from $9,000/year</b><span>Basic: monthly visits · 10 employees × 30 minutes</span></li>
+    </ul>
+    <p class="cg-note">Example: 20 employees × 15 minutes ≈ 5.5 hours with setup ≈ <strong>$825</strong>. No travel fee within about 60 km of Mountain View (San Jose, Sunnyvale, Santa Clara, Palo Alto, Cupertino and more). Senior-care facility programs and gift cards have their own price lists — they are not corporate rates.</p>
+   </div>
+   <div class="cg-col cg-vendor">
+    <p class="cg-ey">Vendor approval made easy</p>
+    <h2 class="cg-h">Everything your HR or finance team needs</h2>
+    <ul class="cg-checks">
+     <li>Certificate of insurance (COI) on request</li>
+     <li>Vendor setup forms completed on request</li>
+     <li>Invoices issued to your company</li>
+     <li>Pay by corporate card or ACH</li>
+     <li>Net-30 payment terms available</li>
+     <li>California-licensed massage therapists · female or male on request</li>
+    </ul>
+    <a href="#inquiry" class="cg-btn">Request a quote or vendor documents →</a>
+   </div>
+  </div>
  </div>
 </section>
 
@@ -554,14 +652,14 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
   <p class="ey">How It Works</p>
   <h2 class="h2">Studio-Quality Massage, <em>Set Up in Your Space</em></h2>
   <div class="steps">
-    <div class="step"><b>1 · Book online</b><p>Choose your service and time on our booking page (at least 24 hours ahead), or text (408) 668-6562.</p></div>
-    <div class="step"><b>2 · Confirm details</b><p>We confirm your address, parking and any post-op clearance before your visit.</p></div>
-    <div class="step"><b>3 · We set up</b><p>Professional table, fresh linens, bolsters, oils — set up in about 10–15 minutes, not taken from your time.</p></div>
-    <div class="step"><b>4 · Relax &amp; recover</b><p>Enjoy your full session, then stay right where you are. We pack up quietly when you're done.</p></div>
+    <div class="step"><b>1 · Send an inquiry</b><p>Use the quote form below, or call or text (408) 668-6562. Tell us your headcount, date and office address.</p></div>
+    <div class="step"><b>2 · Get a written quote</b><p>We reply within 1 business day with a quote, available dates and — if you need them — our COI and vendor setup forms.</p></div>
+    <div class="step"><b>3 · We set up</b><p>We arrive early with the massage chair and supplies and set up in a quiet corner or small room. You share a simple sign-up sheet with your team.</p></div>
+    <div class="step"><b>4 · Back-to-back sessions</b><p>Employees get 15-minute seated sessions, fully clothed, and go straight back to work. We invoice your company afterwards.</p></div>
   </div>
   <div class="two">
-    <div class="box"><h3>What we bring</h3><ul class="ul"><li>Professional massage table, face cradle and bolsters</li><li>Fresh, laundered linens for every client</li><li>Hypoallergenic oils and lotions (unscented on request)</li><li>Intake and post-op clearance forms</li></ul></div>
-    <div class="box"><h3>What you need</h3><ul class="ul"><li>A space about 8 × 10 ft (2.5 × 3 m), ideally warm and quiet</li><li>Parking information or gate code</li><li>Pets settled in another room</li><li>For post-op sessions: your surgeon's clearance and garments</li></ul></div>
+    <div class="box"><h3>What we bring</h3><ul class="ul"><li>Professional massage chair(s)</li><li>Face-cradle covers and sanitizing supplies, cleaned between every employee</li><li>A simple sign-up schedule template</li><li>Invoice, and COI on request</li></ul></div>
+    <div class="box"><h3>What you need</h3><ul class="ul"><li>A quiet corner or small room about 6 × 8 ft</li><li>A power outlet nearby if possible</li><li>Parking or building check-in details</li><li>A sign-up list for your team</li></ul></div>
   </div>
  </div>
 </section>
@@ -577,9 +675,13 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
     <details><summary>What do you need from us?</summary><div class="a">A quiet corner or small room about 6 × 8 ft, close to a power outlet if possible, and a sign-up list. We bring the chair and all supplies.</div></details>
     <details><summary>Do employees need to undress?</summary><div class="a">No. Chair massage is done fully clothed and without oils, so employees can return straight to work.</div></details>
     <details><summary>Who will my therapist be?</summary><div class="a">Sessions are delivered by Tina Zhang, HyFlow&#x27;s owner and lead therapist, or a California-licensed therapist on her team. Female and male therapists are available — just tell us your preference when you book.</div></details>
-    <details><summary>Which areas do you serve?</summary><div class="a">We serve the Bay Area from our Mountain View studio, including Mountain View, Palo Alto, Sunnyvale, Cupertino, Los Altos, Santa Clara, San Jose, Saratoga, Campbell, Los Gatos, Menlo Park, Atherton, Redwood City, San Mateo, Fremont, San Francisco, Santa Cruz and nearby cities — travel included. Extended areas within about 2 hours have a travel fee per visit: +$50 for 60–100 km (Oakland, Berkeley, Walnut Creek, Pleasanton, Half Moon Bay, Gilroy) and +$80 for 100–160 km (Carmel, Monterey, Marin, Napa). Travel is included in the price.</div></details>
+    <details><summary>Which areas do you serve?</summary><div class="a">We serve the Bay Area from our Mountain View studio, including Mountain View, Palo Alto, Sunnyvale, Cupertino, Los Altos, Santa Clara, San Jose, Saratoga, Campbell, Los Gatos, Menlo Park, Atherton, Redwood City, San Mateo, Fremont, San Francisco, Santa Cruz and nearby cities — travel included. Extended areas within about 2 hours have a travel fee per visit: +$50 for 60–100 km (Oakland, Berkeley, Walnut Creek, Pleasanton, Half Moon Bay, Gilroy) and +$80 for 100–160 km (Carmel, Monterey, Marin, Napa).</div></details>
+    <details><summary>Can we start with a pilot event?</summary><div class="a">Yes. Many companies start with a single 4-hour chair massage event ($600) with no contract, then move to a monthly program if the team enjoys it.</div></details>
+    <details><summary>Can you provide a certificate of insurance (COI) for vendor approval?</summary><div class="a">Yes. We provide a certificate of insurance on request and can complete your company's standard vendor setup forms — mention it in your inquiry and we will send what you need with your quote.</div></details>
+    <details><summary>How do invoicing and payment work?</summary><div class="a">We invoice your company directly. You can pay by corporate card or ACH, and Net-30 payment terms are available.</div></details>
+    <details><summary>Are your senior-care or gift-card prices the same as corporate prices?</summary><div class="a">No. Senior-care facility programs and gift cards have their own separate price lists. Corporate pricing is $150 per therapist hour with a 4-hour minimum ($600), monthly programs from $1,200 per month and annual contracts from $9,000 per year.</div></details>
   </div>
-  <p class="lead" style="margin:28px auto 0;text-align:center">Serving Mountain View, Palo Alto, Sunnyvale, Cupertino, Los Altos, Santa Clara, San Jose, Saratoga, Campbell, Los Gatos, Menlo Park, Atherton, Redwood City, San Mateo, Fremont, San Francisco, Santa Cruz and nearby cities. <a href="services-mobile.html#areas" style="color:var(--forest)">See all service areas →</a></p>
+  <p class="lead" style="margin:28px auto 0;text-align:center">Serving Mountain View, Palo Alto, Sunnyvale, Cupertino, Los Altos, Santa Clara, San Jose, Saratoga, Campbell, Los Gatos, Menlo Park, Atherton, Redwood City, San Mateo, Fremont, San Francisco, Santa Cruz and nearby cities. <a href="services-mobile.html#areas" style="color:var(--forest)">See all service areas →</a><br>Corporate chair massage by city: <a href="corporate-massage-san-jose.html" style="color:var(--forest)">San Jose</a> · <a href="corporate-massage-sunnyvale.html" style="color:var(--forest)">Sunnyvale</a> · <a href="corporate-massage-santa-clara.html" style="color:var(--forest)">Santa Clara</a></p>
  </div>
 </section>
 
@@ -601,10 +703,37 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
  </div>
 </section>
 
+<section class="cg-sec" id="inquiry" aria-label="Request a corporate quote">
+ <div class="cg-in">
+  <div class="inq-box">
+   <div>
+    <p class="cg-ey">Request a quote</p>
+    <h2 class="cg-h">Tell us about your team</h2>
+    <p class="inq-lead">Send this short form and we will reply within 1 business day with a written quote and available dates. Need our COI or vendor setup forms? Just mention it in the message.</p>
+    <div class="inq-direct">Prefer to talk? Call or text <a href="tel:+14086686562">(408) 668-6562</a><br>Email <a href="mailto:booking@hyflowmassage.com">booking@hyflowmassage.com</a></div>
+   </div>
+   <form class="inq-form" data-inquiry="Corporate Chair Massage Inquiry">
+    <label>Company *<input name="Company" required autocomplete="organization"></label>
+    <label>Your name *<input name="Name" required autocomplete="name"></label>
+    <label>Work email *<input type="email" name="Email" required autocomplete="email"></label>
+    <label>Phone<input type="tel" name="Phone" autocomplete="tel"></label>
+    <label>Office city<input name="Office city"></label>
+    <label>Number of employees<select name="Employees"><option value="">Select…</option><option>Up to 16</option><option>17–30</option><option>31–60</option><option>60+</option></select></label>
+    <label class="full">Interested in<select name="Interested in"><option>Pilot / single event (from $600)</option><option>Monthly program (from $1,200/month)</option><option>Annual contract (from $9,000/year)</option><option>Not sure yet — please advise</option></select></label>
+    <label class="full">Preferred date(s) and message<textarea name="Message" placeholder="e.g. Wellness day in early December, about 20 people, 15-minute chair massages. Please send your COI."></textarea></label>
+    <label class="inq-hp" aria-hidden="true">Leave empty<input name="_honey" tabindex="-1" autocomplete="off"></label>
+    <button type="submit">Send Inquiry</button>
+    <div class="inq-status" role="alert"></div>
+    <p class="inq-small">We only use your details to reply to this inquiry.</p>
+   </form>
+  </div>
+ </div>
+</section>
+
 <div class="cta">
   <h2 class="h2" style="color:#fff">Book Corporate Chair Massage</h2>
   <p style="font-size:0.88rem;color:rgba(255,255,255,0.7);max-width:560px;margin:0 auto 26px;font-weight:300;line-height:1.85">Open daily 9 AM – 9 PM · Book at least 24 hours ahead · Travel included.</p>
-  <div class="btns"><a href="mailto:booking@hyflowmassage.com?subject=Corporate%20Chair%20Massage%20Quote"  class="btn-p">Request a Quote</a><a href="tel:+14086686562" class="btn-o">Call (408) 668-6562</a></div>
+  <div class="btns"><a href="#inquiry" class="btn-p">Request a Quote</a><a href="tel:+14086686562" class="btn-o">Call (408) 668-6562</a></div>
 </div>
 
 <footer>
