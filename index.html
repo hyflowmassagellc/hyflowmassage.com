@@ -253,6 +253,15 @@
     .lang-btn:hover{background:var(--gold);color:#fff}
     .nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px}
     .nav-toggle span{display:block;width:22px;height:1.5px;background:var(--forest)}
+    .nd{position:relative;padding:12px 0;margin:-12px 0}
+    .nd>a:first-child::after{content:' \25BE';font-size:0.6rem;opacity:.7}
+    .nd-solo>a:first-child::after{content:none}
+    .nd-menu{display:none;position:absolute;top:100%;left:-16px;min-width:250px;background:var(--warm);border:1px solid rgba(181,137,74,0.25);box-shadow:0 10px 28px rgba(26,46,32,0.10);padding:10px 0;z-index:200}
+    .nd:hover .nd-menu,.nd:focus-within .nd-menu{display:block}
+    .nd-solo .nd-menu{display:none!important}
+    .nd-menu a{display:block;padding:8px 18px;text-transform:none!important;letter-spacing:0.02em!important;font-size:0.82rem!important}
+    .nd-menu a:hover{background:var(--cream)}
+    .nd-note{display:block;padding:6px 18px 2px;font-size:0.68rem;color:var(--light)}
     /* BTNS */
     .btn-p{display:inline-block;padding:13px 30px;background:var(--forest);color:var(--cream);font-family:'Jost',sans-serif;font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;transition:all .25s}
     .btn-p:hover{background:var(--gold);color:var(--forest)}
@@ -498,6 +507,12 @@
       .top-bar span[style*="font-size:0.6rem"]{display:none}
       .nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--warm);padding:18px;gap:16px;border-bottom:1px solid rgba(181,137,74,0.2)}
       .nav-links.open{display:flex}
+      .nav-links{max-height:calc(100vh - 110px);overflow-y:auto}
+      .nd{padding:0;margin:0;text-align:center}
+      .nd-menu{display:flex;flex-direction:column;position:static;min-width:0;box-shadow:none;border:0;background:none;padding:6px 0 0;gap:0}
+      .nd-menu a{padding:5px 8px;font-size:0.78rem!important;color:var(--light)!important}
+      .nd-menu a:hover{background:none}
+      .nd-note{padding:2px 8px 0}
       .nav-toggle{display:flex}
       .hero{padding-top:16px!important}
       .hero{grid-template-columns:1fr;min-height:auto}
@@ -581,12 +596,14 @@
     <span class="nav-logo-text">HyFlow <span>Massage LLC</span></span>
   </a>
   <div class="nav-links" id="navLinks">
-    <a href="services-mobile.html"><span class="en">Mobile Massage</span><span class="zh">上门按摩</span></a>
-    <a href="lymphatic-drainage-mountain-view.html"><span class="en">Lymphatic Drainage</span><span class="zh">淋巴引流</span></a>
-    <a href="services-studio.html"><span class="en">Therapeutic Massage</span><span class="zh">治疗性按摩</span></a>
-    <a href="post-surgery-massage-bay-area.html"><span class="en">Post-Op Recovery</span><span class="zh">术后恢复</span></a>
+    <div class="nd"><a href="services-studio.html"><span class="en">In-Studio Massage</span><span class="zh">在店按摩</span></a>
+      <div class="nd-menu"><a href="lymphatic-drainage-mountain-view.html"><span class="en">Lymphatic Drainage</span><span class="zh">淋巴引流</span></a><a href="services-studio.html"><span class="en">Therapeutic Massage</span><span class="zh">理疗按摩</span></a></div>
+    </div>
+    <div class="nd"><a href="services-mobile.html"><span class="en">Mobile Massage</span><span class="zh">上门按摩</span></a>
+      <div class="nd-menu"><a href="services-mobile.html"><span class="en">Standard Massage at Home</span><span class="zh">标准上门按摩</span></a><a href="services-mobile.html#signature"><span class="en">Lymphatic Drainage at Home</span><span class="zh">上门淋巴引流</span></a><a href="in-home-post-op-recovery.html"><span class="en">Post-Op Lymphatic Drainage</span><span class="zh">上门术后淋巴引流</span></a><a href="in-home-tech-professional-massage.html"><span class="en">Deep Tissue &amp; Therapeutic</span><span class="zh">深层与理疗按摩</span></a><a href="in-home-mother-baby-massage.html"><span class="en">Prenatal, Postpartum &amp; Mother-Baby</span><span class="zh">产前产后 · 母婴</span></a><a href="vip-wellness-ritual-at-home.html"><span class="en">VIP Wellness Ritual</span><span class="zh">VIP 养生仪式</span></a><span class="nd-note"><span class="en">90 or 120 min · 15- &amp; 20-visit packages</span><span class="zh">90 或 120 分钟 · 15/20 次套餐</span></span></div>
+    </div>
+    <div class="nd nd-solo"><a href="services-corporate.html"><span class="en">Corporate Chair Massage</span><span class="zh">企业椅子按摩</span></a></div>
     <a href="#pricing"><span class="en">Pricing</span><span class="zh">价格</span></a>
-    <a href="services-corporate.html"><span class="en">Corporate Chair Massage</span><span class="zh">企业椅子按摩</span></a>
     <a href="about.html"><span class="en">About</span><span class="zh">关于我们</span></a>
     <a href="blog/index.html"><span class="en">Blog</span><span class="zh">博客</span></a>
     <a href="#visit"><span class="en">Contact</span><span class="zh">联系我们</span></a>
@@ -914,10 +931,8 @@
   </div>
     <div id="tab-r" class="ppanel active">
     <table class="ptable"><thead><tr><th>Service</th><th>Duration</th><th>Price</th><th></th></tr></thead><tbody>
-
-      <!-- CATEGORY 1 -->
-      <tr><td colspan="4" style="padding:22px 0 8px;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:400;color:var(--forest);letter-spacing:0.04em;border-bottom:2px solid var(--gold)">Category 01 — Lymphatic Drainage &amp; Recovery</td></tr>
-
+      <tr><td colspan="4" style="padding:22px 0 8px;font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400;color:var(--forest);letter-spacing:0.04em;border-bottom:2px solid var(--gold)">Part 1 — In-Studio Massage · Mountain View</td></tr>
+      <tr><td colspan="4" style="padding:14px 0 4px;font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);font-weight:600">Lymphatic Drainage</td></tr>
       <tr><td class="pcat" colspan="4">★ 01 · Manual Lymphatic Drainage</td></tr>
       <tr class="sr"><td>Manual Lymphatic Drainage</td><td>60 min</td><td class="pc">$150</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
       <tr class="sr"><td>Manual Lymphatic Drainage <span style="background:var(--gold);color:#fff;font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;padding:2px 7px;border-radius:2px;margin-left:6px;vertical-align:middle">Most Popular</span></td><td>90 min</td><td class="pc">$230</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
@@ -928,73 +943,54 @@
       <tr class="sr"><td>Post-Op Lymphatic Drainage</td><td>90 min</td><td class="pc">$375</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
       <tr class="sr"><td>Post-Op Lymphatic Drainage</td><td>120 min</td><td class="pc">$500</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
 
-      <tr><td class="pcat" colspan="4">★ 03 · Prenatal & Postpartum Massage</td></tr>
-      <tr class="sr"><td>Prenatal &amp; Postpartum Massage</td><td>60 min</td><td class="pc">$150</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
-      <tr class="sr"><td>Prenatal &amp; Postpartum Massage</td><td>90 min</td><td class="pc">$230</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
-      <tr class="sr"><td>Prenatal &amp; Postpartum Massage</td><td>120 min</td><td class="pc">$300</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
-      <tr class="sr"><td>Mother &amp; Baby Bonding Package <span style="background:var(--gold);color:#fff;font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;padding:2px 7px;border-radius:2px;margin-left:6px;vertical-align:middle">New</span> <span style="font-size:0.68rem;color:var(--light)">(Mom 90 min + infant massage 30 min)</span></td><td>120 min</td><td class="pc">$300</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
+      <tr><td class="pcat" colspan="4">★ 03 · Lymphatic Drainage + Compression or Red Light Therapy</td></tr>
+      <tr class="sr"><td>Lymphatic Drainage + Compression or Red Light</td><td>60 min</td><td class="pc">$200</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
+      <tr class="sr"><td>Lymphatic Drainage + Compression or Red Light</td><td>90 min</td><td class="pc">$300</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
+      <tr class="sr"><td>Lymphatic Drainage + Compression or Red Light</td><td>120 min</td><td class="pc">$400</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
 
-      <tr><td class="pcat" colspan="4">★ 04 · Lymphatic Drainage + Compression Therapy</td></tr>
-      <tr class="sr"><td>Lymphatic Drainage + Compression Therapy</td><td>60 min</td><td class="pc">$200</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
-      <tr class="sr"><td>Lymphatic Drainage + Compression Therapy</td><td>90 min</td><td class="pc">$300</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
-      <tr class="sr"><td>Lymphatic Drainage + Compression Therapy</td><td>120 min</td><td class="pc">$400</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
-
-      <tr><td class="pcat" colspan="4">★ 05 · Lymphatic Drainage + Red Light Therapy</td></tr>
-      <tr class="sr"><td>Lymphatic Drainage + Red Light Therapy</td><td>60 min</td><td class="pc">$200</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
-      <tr class="sr"><td>Lymphatic Drainage + Red Light Therapy</td><td>90 min</td><td class="pc">$300</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
-      <tr class="sr"><td>Lymphatic Drainage + Red Light Therapy</td><td>120 min</td><td class="pc">$400</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
-
-<!-- CATEGORY 2 -->
-      <tr><td colspan="4" style="padding:28px 0 8px;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:400;color:var(--forest);letter-spacing:0.04em;border-bottom:2px solid var(--forest)">Category 02 — Therapeutic &amp; Wellness Massage</td></tr>
-
-      <tr><td class="pcat" colspan="4">★ 06 · Deep Tissue Massage</td></tr>
-      <tr class="sr"><td>Deep Tissue Massage</td><td>60 min</td><td class="pc">$150</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
-      <tr class="sr"><td>Deep Tissue Massage <span style="background:var(--gold);color:#fff;font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;padding:2px 7px;border-radius:2px;margin-left:6px;vertical-align:middle">Most Popular</span></td><td>90 min</td><td class="pc">$230</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
-      <tr class="sr"><td>Deep Tissue Massage</td><td>120 min</td><td class="pc">$300</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
-
-      <tr><td class="pcat" colspan="4">★ 07 · Therapeutic Massage</td></tr>
-      <tr class="sr"><td>Therapeutic Massage</td><td>60 min</td><td class="pc">$150</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
+      <tr><td colspan="4" style="padding:14px 0 4px;font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);font-weight:600">Therapeutic Massage</td></tr>
+      <tr><td class="pcat" colspan="4">★ 04 · Therapeutic Massage · Any Style</td></tr>
+      <tr class="sr"><td>Therapeutic Massage <span style="font-size:0.68rem;color:var(--light)">(choose your style: therapeutic, deep tissue, sports, Swedish, Lomi Lomi, prenatal or postpartum)</span></td><td>60 min</td><td class="pc">$150</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
       <tr class="sr"><td>Therapeutic Massage <span style="background:var(--gold);color:#fff;font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;padding:2px 7px;border-radius:2px;margin-left:6px;vertical-align:middle">Most Popular</span></td><td>90 min</td><td class="pc">$230</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
       <tr class="sr"><td>Therapeutic Massage</td><td>120 min</td><td class="pc">$300</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
+      <tr class="sr"><td>Mother &amp; Baby Bonding Package <span style="font-size:0.68rem;color:var(--light)">(Mom 90 min postpartum massage + infant massage 30 min)</span></td><td>120 min</td><td class="pc">$300</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
 
-      <tr><td class="pcat" colspan="4">★ 08 · Sports Massage</td></tr>
-      <tr class="sr"><td>Sports Massage</td><td>60 min</td><td class="pc">$150</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
-      <tr class="sr"><td>Sports Massage</td><td>90 min</td><td class="pc">$230</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
-      <tr class="sr"><td>Sports Massage</td><td>120 min</td><td class="pc">$300</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
-
-      <tr><td class="pcat" colspan="4">★ 09 · Lomi Lomi Massage</td></tr>
-      <tr class="sr"><td>Lomi Lomi Massage</td><td>60 min</td><td class="pc">$150</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
-      <tr class="sr"><td>Lomi Lomi Massage</td><td>90 min</td><td class="pc">$230</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
-      <tr class="sr"><td>Lomi Lomi Massage</td><td>120 min</td><td class="pc">$300</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
-
-      <tr><td class="pcat" colspan="4">★ 10 · Swedish Massage</td></tr>
-      <tr class="sr"><td>Swedish Massage</td><td>60 min</td><td class="pc">$150</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
-      <tr class="sr"><td>Swedish Massage</td><td>90 min</td><td class="pc">$230</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
-      <tr class="sr"><td>Swedish Massage</td><td>120 min</td><td class="pc">$300</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
-
-<!-- MOBILE & PACKAGES -->
-      <tr><td colspan="4" style="padding:28px 0 8px;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:400;color:var(--forest);letter-spacing:0.04em;border-bottom:2px solid rgba(181,137,74,0.4)">Mobile Massage &amp; Package Deals · Travel Included</td></tr>
-
-      <tr><td class="pcat" colspan="4">★ 11 · Mobile Massage — In-Home · Travel Included within 60 km (+$50 / +$80 extended areas) · <a href="services-mobile.html" style="color:var(--gold)">Details &amp; service areas →</a></td></tr>
-      <tr class="sr"><td>Mobile Massage <span style="background:var(--gold);color:#fff;font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;padding:2px 7px;border-radius:2px;margin-left:6px;vertical-align:middle">Most Popular</span> <span style="font-size:0.68rem;color:var(--light)">(Lymphatic Drainage, Deep Tissue, Swedish, Therapeutic, Sports, Lomi Lomi, Prenatal &amp; Postpartum)</span></td><td>90 min</td><td class="pc">$300</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
-      <tr class="sr"><td>Mobile Massage</td><td>120 min</td><td class="pc">$400</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
-
-      <tr><td class="pcat" colspan="4">★ 12 · Mobile Post-Op Lymphatic Drainage — Travel Included</td></tr>
-      <tr class="sr"><td>Mobile Post-Op Lymphatic Drainage <span style="font-size:0.68rem;color:var(--light)">(Physician clearance required)</span></td><td>90 min</td><td class="pc">$400</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
-      <tr class="sr"><td>Mobile Post-Op Lymphatic Drainage</td><td>120 min</td><td class="pc">$600</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
-
-      <tr><td class="pcat" colspan="4">★ 13 · Mobile Mother &amp; Baby Bonding Package — Travel Included</td></tr>
-      <tr class="sr"><td>Mother &amp; Baby Bonding Package at Home <span style="font-size:0.68rem;color:var(--light)">(Mom 90 min + infant massage 30 min)</span></td><td>120 min</td><td class="pc">$400</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
-
-      <tr><td class="pcat" colspan="4">★ 14 · In-Studio Package Deals</td></tr>
+      <tr><td class="pcat" colspan="4">★ 05 · In-Studio Packages</td></tr>
       <tr class="sr"><td>In-Studio Package</td><td>600 min total</td><td class="pc">$1,250</td><td><a href="mailto:booking@hyflowmassage.com?subject=Package Inquiry" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Inquire →</a></td></tr>
       <tr class="sr"><td>In-Studio Package</td><td>1,200 min total</td><td class="pc">$2,200</td><td><a href="mailto:booking@hyflowmassage.com?subject=Package Inquiry" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Inquire →</a></td></tr>
 
-      <tr><td class="pcat" colspan="4">★ 15 · Mobile Massage Package Deals — Travel Included · <a href="services-mobile.html#programs" style="color:var(--gold)">9 in-home programs →</a></td></tr>
-      <tr class="sr"><td>Mobile Package — 15 × 90 min <span style="font-size:0.68rem;color:var(--light)">($285 per session)</span></td><td>1,350 min total</td><td class="pc">$4,275</td><td><a href="mailto:booking@hyflowmassage.com?subject=Package Inquiry" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Inquire →</a></td></tr>
-      <tr class="sr"><td>Mobile Package — 20 × 90 min <span style="font-size:0.68rem;color:var(--light)">($265 per session)</span></td><td>1,800 min total</td><td class="pc">$5,300</td><td><a href="mailto:booking@hyflowmassage.com?subject=Package Inquiry" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Inquire →</a></td></tr>
-      <tr class="sr"><td>Mobile Package — 15 × 120 min <span style="font-size:0.68rem;color:var(--light)">($380 per session)</span></td><td>1,800 min total</td><td class="pc">$5,700</td><td><a href="mailto:booking@hyflowmassage.com?subject=Package Inquiry" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Inquire →</a></td></tr>
-      <tr class="sr"><td>Mobile Package — 20 × 120 min <span style="font-size:0.68rem;color:var(--light)">($350 per session)</span></td><td>2,400 min total</td><td class="pc">$7,000</td><td><a href="mailto:booking@hyflowmassage.com?subject=Package Inquiry" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Inquire →</a></td></tr>
+      <tr><td colspan="4" style="padding:30px 0 8px;font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400;color:var(--forest);letter-spacing:0.04em;border-bottom:2px solid var(--forest)">Part 2 — Mobile Massage · We Come to You · 90 or 120 min</td></tr>
+      <tr><td colspan="4" style="padding:8px 0 4px;font-size:0.74rem;color:var(--light)">Travel included within about 60 km of Mountain View · +$50 (60–100 km) or +$80 (100–160 km) per visit · 15- and 20-visit packages lower the per-visit price · <a href="services-mobile.html" style="color:var(--gold)">Mobile details &amp; areas →</a></td></tr>
+      <tr><td class="pcat" colspan="4">★ 06 · Standard Massage at Home</td></tr>
+      <tr class="sr"><td>Standard Massage at Home <span style="font-size:0.68rem;color:var(--light)">(full-body Swedish / relaxation massage)</span> <span style="font-size:0.68rem;color:var(--light)">(15 visits $285 · 20 visits $265 per visit)</span></td><td>90 min</td><td class="pc">$300</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
+      <tr class="sr"><td>Standard Massage at Home <span style="font-size:0.68rem;color:var(--light)">(15 visits $380 · 20 visits $350 per visit)</span></td><td>120 min</td><td class="pc">$400</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
+
+      <tr><td class="pcat" colspan="4">★ 07 · Lymphatic Drainage at Home</td></tr>
+      <tr class="sr"><td>Lymphatic Drainage at Home <span style="font-size:0.68rem;color:var(--light)">(15 visits $285 · 20 visits $265 per visit)</span></td><td>90 min</td><td class="pc">$300</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
+      <tr class="sr"><td>Lymphatic Drainage at Home <span style="font-size:0.68rem;color:var(--light)">(15 visits $380 · 20 visits $350 per visit)</span></td><td>120 min</td><td class="pc">$400</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
+
+      <tr><td class="pcat" colspan="4">★ 08 · Post-Op Lymphatic Drainage at Home · <a href="in-home-post-op-recovery.html" style="color:var(--gold)">Details →</a></td></tr>
+      <tr class="sr"><td>Post-Op Lymphatic Drainage at Home <span style="font-size:0.68rem;color:var(--light)">(Physician clearance required)</span> <span style="font-size:0.68rem;color:var(--light)">(15 visits $380 · 20 visits $350 per visit)</span></td><td>90 min</td><td class="pc">$400</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
+      <tr class="sr"><td>Post-Op Lymphatic Drainage at Home <span style="font-size:0.68rem;color:var(--light)">(15 visits $570 · 20 visits $525 per visit)</span></td><td>120 min</td><td class="pc">$600</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
+
+      <tr><td class="pcat" colspan="4">★ 09 · Deep Tissue &amp; Therapeutic at Home · <a href="in-home-tech-professional-massage.html" style="color:var(--gold)">Details →</a></td></tr>
+      <tr class="sr"><td>Deep Tissue · Therapeutic at Home <span style="font-size:0.68rem;color:var(--light)">(15 visits $285 · 20 visits $265 per visit)</span></td><td>90 min</td><td class="pc">$300</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
+      <tr class="sr"><td>Deep Tissue · Therapeutic at Home <span style="font-size:0.68rem;color:var(--light)">(15 visits $380 · 20 visits $350 per visit)</span></td><td>120 min</td><td class="pc">$400</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
+
+      <tr><td class="pcat" colspan="4">★ 10 · Prenatal &amp; Postpartum · Mother &amp; Baby at Home · <a href="in-home-mother-baby-massage.html" style="color:var(--gold)">Details →</a></td></tr>
+      <tr class="sr"><td>Prenatal &amp; Postpartum at Home <span style="font-size:0.68rem;color:var(--light)">(15 visits $285 · 20 visits $265 per visit)</span></td><td>90 min</td><td class="pc">$300</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
+      <tr class="sr"><td>Prenatal &amp; Postpartum at Home <span style="font-size:0.68rem;color:var(--light)">(15 visits $380 · 20 visits $350 per visit)</span></td><td>120 min</td><td class="pc">$400</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
+      <tr class="sr"><td>Mother &amp; Baby Bonding at Home <span style="font-size:0.68rem;color:var(--light)">(Mom 90 min + infant massage 30 min)</span> <span style="font-size:0.68rem;color:var(--light)">(15 visits $380 · 20 visits $350 per visit)</span></td><td>120 min</td><td class="pc">$400</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
+
+      <tr><td class="pcat" colspan="4">★ 11 · VIP Wellness Ritual at Home · <a href="vip-wellness-ritual-at-home.html" style="color:var(--gold)">Details →</a></td></tr>
+      <tr class="sr"><td>VIP Wellness Ritual <span style="font-size:0.68rem;color:var(--light)">(Tai Chi + lymphatic drainage + neck &amp; shoulders · 150 min and couples options on the VIP page)</span> <span style="font-size:0.68rem;color:var(--light)">(15 visits $475 · 20 visits $440 per visit)</span></td><td>120 min</td><td class="pc">$500</td><td><a href="https://app.squareup.com/appointments/book/5xww3j31p4meck/LFR1TX70W4FF0/start" target="_blank" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Book →</a></td></tr>
+
+      <tr><td colspan="4" style="padding:6px 0 4px;font-size:0.74rem;color:var(--light)">Also at home: couples massage, senior gentle care, hotel &amp; jet-lag recovery and cancer recovery care — <a href="services-mobile.html#programs" style="color:var(--gold)">All in-home programs →</a></td></tr>
+
+      <tr><td colspan="4" style="padding:30px 0 8px;font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400;color:var(--forest);letter-spacing:0.04em;border-bottom:2px solid var(--gold)">Part 3 — Corporate Chair Massage · On-Site</td></tr>
+      <tr><td class="pcat" colspan="4">★ 12 · Corporate Chair Massage · <a href="services-corporate.html" style="color:var(--gold)">Corporate pricing &amp; quote →</a></td></tr>
+      <tr class="sr"><td>On-site chair massage <span style="font-size:0.68rem;color:var(--light)">($150 per therapist hour · 4-hour minimum · about 14–16 employees at 15 min)</span></td><td>4 hrs</td><td class="pc">$600</td><td><a href="services-corporate.html#inquiry" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Quote →</a></td></tr>
+      <tr class="sr"><td>Monthly and annual programs <span style="font-size:0.68rem;color:var(--light)">(from $1,200/month · from $9,000/year)</span></td><td>Recurring</td><td class="pc">from $1,200</td><td><a href="services-corporate.html#inquiry" style="font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Quote →</a></td></tr>
 
     </tbody></table>
   </div>
