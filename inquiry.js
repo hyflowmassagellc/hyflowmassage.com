@@ -25,22 +25,30 @@
     data._captcha = 'false';
     data['Page'] = location.href;
     if (replyTo) data._replyto = replyTo;
-    return fetch(ENDPOINT, {
+    // Never leave the visitor stuck on "Sending…": give up after 20 seconds
+    // and show the call / text / email fallback instead.
+    var ctrl = (typeof AbortController === 'function') ? new AbortController() : null;
+    var timedOut = false;
+    var timer = setTimeout(function () { timedOut = true; if (ctrl) ctrl.abort(); }, 20000);
+    var req = fetch(ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
+      signal: ctrl ? ctrl.signal : undefined
     }).then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) {
       var ok = r.ok && (j.success === true || j.success === 'true');
       if (ok) track();
       return ok;
     }); }).catch(function () { return false; });
+    var guard = new Promise(function (res) { setTimeout(function () { res(false); }, 21000); });
+    return Promise.race([req, guard]).then(function (ok) { clearTimeout(timer); return ok && !timedOut; });
   };
 
   /* Builds the fallback message shown when sending fails. */
   window.hyflowInquiryFallbackHTML = function (subject, fields) {
     var body = Object.keys(fields).map(function (k) { return k + ': ' + (fields[k] || '—'); }).join('\n');
     var mail = 'mailto:booking@hyflowmassage.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-    return '<strong>Sorry — your inquiry could not be sent automatically.</strong><br>' +
+    return '<strong>Sorry — we could not confirm that your inquiry was sent.</strong><br>' +
       'Please reach us directly and we will reply within 1 business day: ' +
       '<a href="sms:4086686562" style="color:inherit;text-decoration:underline">text (408) 668-6562</a>, ' +
       '<a href="tel:4086686562" style="color:inherit;text-decoration:underline">call</a>, or ' +
