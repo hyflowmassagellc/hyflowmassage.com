@@ -47,10 +47,11 @@
   /* Builds the fallback message shown when sending fails. */
   window.hyflowInquiryFallbackHTML = function (subject, fields) {
     var body = Object.keys(fields).map(function (k) { return k + ': ' + (fields[k] || '—'); }).join('\n');
+    var sms = 'sms:+14086686562?&body=' + encodeURIComponent(subject + '\n' + body);
     var mail = 'mailto:booking@hyflowmassage.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
     return '<strong>Sorry — we could not confirm that your inquiry was sent.</strong><br>' +
       'Please reach us directly and we will reply within 1 business day: ' +
-      '<a href="sms:4086686562" style="color:inherit;text-decoration:underline">text (408) 668-6562</a>, ' +
+      '<a href="' + sms + '" style="color:inherit;text-decoration:underline">text (408) 668-6562</a> (your details are filled in), ' +
       '<a href="tel:4086686562" style="color:inherit;text-decoration:underline">call</a>, or ' +
       '<a href="' + mail + '" style="color:inherit;text-decoration:underline">email booking@hyflowmassage.com</a>.';
   };
