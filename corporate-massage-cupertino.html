@@ -73,7 +73,7 @@
    "name": "How much does corporate massage cost?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "All corporate programs use one rate: $150 per therapist hour with a 4-hour minimum per booking ($600), which covers about 14–16 employees at 15 minutes each. 20 employees take about 5.5 hours, or roughly $825. Monthly programs start at $1,200 per month and annual contracts at $9,000 per year."
+    "text": "All corporate programs use one rate: $150 per therapist hour. Each visit is 4–7 hours ($600–$1,050) with 15–30 minutes per employee; a 4-hour visit covers about 14–16 employees at 15 minutes each. Recurring visits once or twice a month cost $600–$2,100 per month, and weekly visits (one to three times a week) cost $2,600–$13,650 per month — $7,200 to $163,800 per year."
    }
   },
   {
@@ -129,7 +129,7 @@
    "name": "Are gift card amounts the same as corporate prices?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "No. Gift cards are a separate product. Corporate pricing is $150 per therapist hour with a 4-hour minimum ($600), monthly programs from $1,200 per month and annual contracts from $9,000 per year."
+    "text": "No. Gift cards are a separate product. Corporate pricing is $150 per therapist hour, 4–7 hours per visit ($600–$1,050), with recurring programs from $600 per month or $7,200 per year."
    }
   }
  ]
@@ -341,6 +341,23 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
     .inq-ok{grid-column:1/-1;color:#1a2e20}
     .inq-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
     .inq-small{grid-column:1/-1;font-size:.72rem;color:#6b8c7a;margin:0}
+    .rp{background:#f5fbf7}
+    .rp-lead{font-size:.9rem;color:#3d5c4a;line-height:1.8;margin:0 0 18px;max-width:820px}
+    .rp-two{display:grid;grid-template-columns:1fr 1.25fr;gap:18px}
+    .rp-tbl{overflow-x:auto;background:#fff;border-top:3px solid #b5894a}
+    .rp-tbl table{width:100%;border-collapse:collapse;font-size:.84rem}
+    .rp-tbl th{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:#2d6a4f;text-align:left;padding:11px 12px;border-bottom:1px solid #e3eee7;font-weight:600}
+    .rp-tbl td{padding:10px 12px;border-bottom:1px solid #eef4f0;color:#3d5c4a;white-space:nowrap}
+    .rp-tbl td strong{color:#1a2e20}
+    .rp-note{font-size:.78rem;color:#6b8c7a;line-height:1.7;margin:12px 0 18px}
+    .rp-calc{background:#1e4532;color:#fff;padding:20px 22px;display:grid;grid-template-columns:auto auto 1fr;gap:16px;align-items:end}
+    .rp-calc label{display:flex;flex-direction:column;gap:6px;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:#e9d3ad}
+    .rp-calc select{font-family:'Jost',sans-serif;font-size:.9rem;padding:9px 10px;border:0;min-width:140px;color:#1a2e20}
+    .rp-out{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .rp-out div{display:flex;flex-direction:column;gap:3px}
+    .rp-out span{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.65)}
+    .rp-out b{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:500;color:#fff;line-height:1.1}
+    @media(max-width:900px){.rp-two{grid-template-columns:1fr}.rp-tbl td{white-space:normal;padding:9px 8px}.rp-tbl th{padding:9px 8px;letter-spacing:.06em}.rp-calc{grid-template-columns:1fr 1fr}.rp-out{grid-column:1/-1;grid-template-columns:1fr 1fr}.rp-out b{font-size:1.2rem}}
     @media(max-width:800px){.cg-sec{padding:40px 16px}.cg,.inq-box,.inq-form{grid-template-columns:1fr}.inq-box{padding:24px 18px;gap:20px}.cg-col{padding:24px 18px}}
 </style>
 <script src="tracking.js" defer></script>
@@ -361,7 +378,7 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
 </nav>
 
 <header class="hero">
-  <p class="hero-tag">Corporate · On-Site · Cupertino, CA · No Travel Fee</p>
+  <p class="hero-tag">In-Home &amp; On-Site · Bay Area · Travel Included Within 60 km</p>
   <h1>Corporate Chair Massage in Cupertino<br><em>On-Site at Your Office or Event</em></h1>
   <p>For Cupertino companies: give your team a real break without anyone leaving the building. We bring professional massage chairs to your office, conference or company event and run back-to-back 15-minute chair massages focused on neck, shoulders, back and arms — fully clothed, no oils, no disruption to the workday.</p>
   <div class="btns">
@@ -421,9 +438,9 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
     <p class="cg-ey">Corporate pricing at a glance</p>
     <h2 class="cg-h">One simple rate: $150 per therapist hour</h2>
     <ul class="cg-list">
-     <li><b>Pilot or single event — from $600</b><span>4-hour minimum per booking · about 14–16 employees at 15 minutes each · no contract</span></li>
-     <li><b>Monthly program — from $1,200/month</b><span>Starter: 2 visits a month · 8 employees × 30 minutes</span></li>
-     <li><b>Annual contract — from $9,000/year</b><span>Basic: monthly visits · 10 employees × 30 minutes</span></li>
+     <li><b>Pilot or single event — from $600</b><span>Each visit 4–7 hours ($600–$1,050) · 15–30 minutes per employee · a 4-hour visit covers about 14–16 employees at 15 minutes · no contract</span></li>
+     <li><b>Monthly visits (1× or 2× a month) — $600–$2,100/month</b><span>4–7 hours per visit · $7,200–$25,200 per year</span></li>
+     <li><b>Weekly visits (1×, 2× or 3× a week) — $2,600–$13,650/month</b><span>4–7 hours per visit · $31,200–$163,800 per year · <a href="services-corporate.html#recurring" style="color:#2d6a4f">full price table →</a></span></li>
     </ul>
     <p class="cg-note">Example: 20 employees × 15 minutes ≈ 5.5 hours with setup ≈ <strong>$825</strong>. No travel fee within about 60 km of Mountain View (San Jose, Sunnyvale, Santa Clara, Palo Alto, Cupertino and more). Gift card amounts are not corporate rates.</p>
    </div>
@@ -466,14 +483,14 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
   <p class="ey" style="text-align:center">FAQ</p>
   <h2 class="h2" style="text-align:center">Corporate Massage in Cupertino: <em>Questions</em></h2>
   <div class="faq">
-    <details><summary>How much does corporate massage cost?</summary><div class="a">All corporate programs use one rate: $150 per therapist hour with a 4-hour minimum per booking ($600), which covers about 14–16 employees at 15 minutes each. 20 employees take about 5.5 hours, or roughly $825. Monthly programs start at $1,200 per month and annual contracts at $9,000 per year.</div></details>
+    <details><summary>How much does corporate massage cost?</summary><div class="a">All corporate programs use one rate: $150 per therapist hour. Each visit is 4–7 hours ($600–$1,050) with 15–30 minutes per employee; a 4-hour visit covers about 14–16 employees at 15 minutes each. Recurring visits once or twice a month cost $600–$2,100 per month, and weekly visits (one to three times a week) cost $2,600–$13,650 per month — $7,200 to $163,800 per year.</div></details>
     <details><summary>Do you come to offices in Cupertino?</summary><div class="a">Yes. We provide on-site chair massage at offices, offsites and events throughout Cupertino, including Stevens Creek Boulevard, De Anza Boulevard, Tantau Avenue, Bubb Road and the Main Street Cupertino area. There is no travel fee — Cupertino is within our core service area, about 12 km from our Mountain View studio.</div></details>
     <details><summary>Can we start with a pilot event?</summary><div class="a">Yes. Many companies start with a single 4-hour chair massage event ($600) with no contract, then move to a monthly program if the team enjoys it.</div></details>
     <details><summary>Can you provide a certificate of insurance (COI) for vendor approval?</summary><div class="a">Yes. We provide a certificate of insurance on request and can complete your company's standard vendor setup forms — mention it in your inquiry and we will send what you need with your quote.</div></details>
     <details><summary>How do invoicing and payment work?</summary><div class="a">We invoice your company directly. You can pay by corporate card or ACH, and Net-30 payment terms are available.</div></details>
     <details><summary>What do you need from us on the day?</summary><div class="a">A quiet corner or small room about 6 × 8 ft, close to a power outlet if possible, and a sign-up list. We bring the massage chair and all supplies; employees stay fully clothed and go straight back to work.</div></details>
     <details><summary>Who will the therapists be?</summary><div class="a">Sessions are delivered by Tina Zhang, HyFlow's owner and lead therapist, or a California-licensed therapist on her team. Female and male therapists are available on request.</div></details>
-    <details><summary>Are gift card amounts the same as corporate prices?</summary><div class="a">No. Gift cards are a separate product. Corporate pricing is $150 per therapist hour with a 4-hour minimum ($600), monthly programs from $1,200 per month and annual contracts from $9,000 per year.</div></details>
+    <details><summary>Are gift card amounts the same as corporate prices?</summary><div class="a">No. Gift cards are a separate product. Corporate pricing is $150 per therapist hour, 4–7 hours per visit ($600–$1,050), with recurring programs from $600 per month or $7,200 per year.</div></details>
   </div>
   <p class="lead" style="margin:28px auto 0;text-align:center">Serving Mountain View, Palo Alto, Sunnyvale, Cupertino, Los Altos, Santa Clara, San Jose, Saratoga, Campbell, Los Gatos, Menlo Park, Atherton, Redwood City, San Mateo, Fremont, San Francisco, Santa Cruz and nearby cities. <a href="services-mobile.html#areas" style="color:var(--forest)">See all service areas →</a><br>Corporate chair massage by city: <a href="corporate-massage-mountain-view.html" style="color:var(--forest)">Mountain View</a> · <a href="corporate-massage-palo-alto.html" style="color:var(--forest)">Palo Alto</a> · <a href="corporate-massage-los-altos.html" style="color:var(--forest)">Los Altos</a> · <a href="corporate-massage-los-altos-hills.html" style="color:var(--forest)">Los Altos Hills</a> · <a href="corporate-massage-sunnyvale.html" style="color:var(--forest)">Sunnyvale</a> · <a href="corporate-massage-cupertino.html" style="color:var(--forest)">Cupertino</a> · <a href="corporate-massage-santa-clara.html" style="color:var(--forest)">Santa Clara</a> · <a href="corporate-massage-san-jose.html" style="color:var(--forest)">San Jose</a> · <a href="corporate-massage-campbell.html" style="color:var(--forest)">Campbell</a> · <a href="corporate-massage-saratoga.html" style="color:var(--forest)">Saratoga</a> · <a href="corporate-massage-los-gatos.html" style="color:var(--forest)">Los Gatos</a> · <a href="corporate-massage-morgan-hill.html" style="color:var(--forest)">Morgan Hill</a> · <a href="corporate-massage-milpitas.html" style="color:var(--forest)">Milpitas</a> · <a href="corporate-massage-fremont.html" style="color:var(--forest)">Fremont</a> · <a href="corporate-massage-newark.html" style="color:var(--forest)">Newark</a> · <a href="corporate-massage-union-city.html" style="color:var(--forest)">Union City</a> · <a href="corporate-massage-east-palo-alto.html" style="color:var(--forest)">East Palo Alto</a> · <a href="corporate-massage-menlo-park.html" style="color:var(--forest)">Menlo Park</a> · <a href="corporate-massage-atherton.html" style="color:var(--forest)">Atherton</a> · <a href="corporate-massage-woodside.html" style="color:var(--forest)">Woodside</a> · <a href="corporate-massage-redwood-city.html" style="color:var(--forest)">Redwood City</a> · <a href="corporate-massage-san-carlos.html" style="color:var(--forest)">San Carlos</a> · <a href="corporate-massage-belmont.html" style="color:var(--forest)">Belmont</a> · <a href="corporate-massage-san-mateo.html" style="color:var(--forest)">San Mateo</a> · <a href="corporate-massage-foster-city.html" style="color:var(--forest)">Foster City</a> · <a href="corporate-massage-burlingame.html" style="color:var(--forest)">Burlingame</a> · <a href="corporate-massage-millbrae.html" style="color:var(--forest)">Millbrae</a> · <a href="corporate-massage-san-bruno.html" style="color:var(--forest)">San Bruno</a> · <a href="corporate-massage-south-san-francisco.html" style="color:var(--forest)">South San Francisco</a> · <a href="corporate-massage-san-francisco.html" style="color:var(--forest)">San Francisco</a></p>
  </div>
@@ -513,7 +530,7 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
     <label>Phone<input type="tel" name="Phone" autocomplete="tel"></label>
     <label>Office city<input name="Office city" value="Cupertino"></label>
     <label>Number of employees<select name="Employees"><option value="">Select…</option><option>Up to 16</option><option>17–30</option><option>31–60</option><option>60+</option></select></label>
-    <label class="full">Interested in<select name="Interested in"><option>Pilot / single event (from $600)</option><option>Monthly program (from $1,200/month)</option><option>Annual contract (from $9,000/year)</option><option>Not sure yet — please advise</option></select></label>
+    <label class="full">Interested in<select name="Interested in"><option>Pilot / single event (from $600)</option><option>Monthly visits (1× or 2× a month)</option><option>Weekly visits (1×, 2× or 3× a week)</option><option>Not sure yet — please advise</option></select></label>
     <label class="full">Preferred date(s) and message<textarea name="Message" placeholder="e.g. Wellness day in early December, about 20 people, 15-minute chair massages. Please send your COI."></textarea></label>
     <label class="inq-hp" aria-hidden="true">Leave empty<input name="_honey" tabindex="-1" autocomplete="off"></label>
     <button type="submit">Send Inquiry</button>
@@ -526,7 +543,7 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
 
 <div class="cta">
   <h2 class="h2" style="color:#fff">Book Corporate Massage in Cupertino</h2>
-  <p style="font-size:0.88rem;color:rgba(255,255,255,0.7);max-width:560px;margin:0 auto 26px;font-weight:300;line-height:1.85">Open daily 9 AM – 9 PM · No travel fee in Cupertino · Insurance certificate and invoicing available.</p>
+  <p style="font-size:0.88rem;color:rgba(255,255,255,0.7);max-width:560px;margin:0 auto 26px;font-weight:300;line-height:1.85">Open daily 9 AM – 9 PM · Book at least 24 hours ahead · Travel included within about 60 km (+$50 / +$80 farther out).</p>
   <div class="btns"><a href="#inquiry" class="btn-p">Request a Quote</a><a href="tel:+14086686562" class="btn-o">Call (408) 668-6562</a></div>
 </div>
 

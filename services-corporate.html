@@ -112,6 +112,23 @@ footer p{font-size:0.75rem;color:rgba(255,255,255,0.35)}
     .inq-ok{grid-column:1/-1;color:#1a2e20}
     .inq-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
     .inq-small{grid-column:1/-1;font-size:.72rem;color:#6b8c7a;margin:0}
+    .rp{background:#f5fbf7}
+    .rp-lead{font-size:.9rem;color:#3d5c4a;line-height:1.8;margin:0 0 18px;max-width:820px}
+    .rp-two{display:grid;grid-template-columns:1fr 1.25fr;gap:18px}
+    .rp-tbl{overflow-x:auto;background:#fff;border-top:3px solid #b5894a}
+    .rp-tbl table{width:100%;border-collapse:collapse;font-size:.84rem}
+    .rp-tbl th{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:#2d6a4f;text-align:left;padding:11px 12px;border-bottom:1px solid #e3eee7;font-weight:600}
+    .rp-tbl td{padding:10px 12px;border-bottom:1px solid #eef4f0;color:#3d5c4a;white-space:nowrap}
+    .rp-tbl td strong{color:#1a2e20}
+    .rp-note{font-size:.78rem;color:#6b8c7a;line-height:1.7;margin:12px 0 18px}
+    .rp-calc{background:#1e4532;color:#fff;padding:20px 22px;display:grid;grid-template-columns:auto auto 1fr;gap:16px;align-items:end}
+    .rp-calc label{display:flex;flex-direction:column;gap:6px;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:#e9d3ad}
+    .rp-calc select{font-family:'Jost',sans-serif;font-size:.9rem;padding:9px 10px;border:0;min-width:140px;color:#1a2e20}
+    .rp-out{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .rp-out div{display:flex;flex-direction:column;gap:3px}
+    .rp-out span{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.65)}
+    .rp-out b{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:500;color:#fff;line-height:1.1}
+    @media(max-width:900px){.rp-two{grid-template-columns:1fr}.rp-tbl td{white-space:normal;padding:9px 8px}.rp-tbl th{padding:9px 8px;letter-spacing:.06em}.rp-calc{grid-template-columns:1fr 1fr}.rp-out{grid-column:1/-1;grid-template-columns:1fr 1fr}.rp-out b{font-size:1.2rem}}
     @media(max-width:800px){.cg-sec{padding:40px 16px}.cg,.inq-box,.inq-form{grid-template-columns:1fr}.inq-box{padding:24px 18px;gap:20px}.cg-col{padding:24px 18px}}
 
     .cfaq{max-width:820px;margin:0 auto}
@@ -194,76 +211,67 @@ footer p{font-size:0.75rem;color:rgba(255,255,255,0.35)}
    },
    {
     "@type": "OfferCatalog",
-    "name": "Monthly employee wellness benefit (per month)",
+    "name": "Recurring corporate programs (monthly or weekly visits)",
     "itemListElement": [
      {
       "@type": "Offer",
-      "name": "Starter — 2×/month, 8 employees × 30 min",
-      "price": "1200",
-      "priceCurrency": "USD",
-      "description": "Per month"
+      "name": "1× a month — 4–7 hours per visit, $150 per therapist hour",
+      "priceSpecification": {
+       "@type": "UnitPriceSpecification",
+       "minPrice": 7200,
+       "maxPrice": 12600,
+       "priceCurrency": "USD",
+       "unitText": "year"
+      },
+      "description": "12 visits per year; $600–$1,050 per month; 15–30 minutes per employee"
      },
      {
       "@type": "Offer",
-      "name": "Standard — 4×/month, 10 employees × 45 min",
-      "price": "4500",
-      "priceCurrency": "USD",
-      "description": "Per month"
+      "name": "2× a month — 4–7 hours per visit, $150 per therapist hour",
+      "priceSpecification": {
+       "@type": "UnitPriceSpecification",
+       "minPrice": 14400,
+       "maxPrice": 25200,
+       "priceCurrency": "USD",
+       "unitText": "year"
+      },
+      "description": "24 visits per year; $1,200–$2,100 per month; 15–30 minutes per employee"
      },
      {
       "@type": "Offer",
-      "name": "Premium — 4×/month, 15 employees × 60 min",
-      "price": "9000",
-      "priceCurrency": "USD",
-      "description": "Per month"
-     }
-    ]
-   },
-   {
-    "@type": "OfferCatalog",
-    "name": "Annual corporate wellness contracts (per year)",
-    "itemListElement": [
-     {
-      "@type": "Offer",
-      "name": "Basic — monthly, 10 × 30 min",
-      "price": "9000",
-      "priceCurrency": "USD",
-      "description": "Per year"
+      "name": "1× a week — 4–7 hours per visit, $150 per therapist hour",
+      "priceSpecification": {
+       "@type": "UnitPriceSpecification",
+       "minPrice": 31200,
+       "maxPrice": 54600,
+       "priceCurrency": "USD",
+       "unitText": "year"
+      },
+      "description": "52 visits per year; $2,600–$4,550 per month; 15–30 minutes per employee"
      },
      {
       "@type": "Offer",
-      "name": "Standard — bi-weekly, 12 × 45 min",
-      "price": "35100",
-      "priceCurrency": "USD",
-      "description": "Per year"
+      "name": "2× a week — 4–7 hours per visit, $150 per therapist hour",
+      "priceSpecification": {
+       "@type": "UnitPriceSpecification",
+       "minPrice": 62400,
+       "maxPrice": 109200,
+       "priceCurrency": "USD",
+       "unitText": "year"
+      },
+      "description": "104 visits per year; $5,200–$9,100 per month; 15–30 minutes per employee"
      },
      {
       "@type": "Offer",
-      "name": "Premium — weekly, 15 × 45 min",
-      "price": "87750",
-      "priceCurrency": "USD",
-      "description": "Per year"
-     },
-     {
-      "@type": "Offer",
-      "name": "Elite — weekly, 20 × 60 min",
-      "price": "156000",
-      "priceCurrency": "USD",
-      "description": "Per year"
-     },
-     {
-      "@type": "Offer",
-      "name": "Platinum — weekly, 25 × 60 min",
-      "price": "195000",
-      "priceCurrency": "USD",
-      "description": "Per year"
-     },
-     {
-      "@type": "Offer",
-      "name": "Diamond — 2×/week, 20 × 60 min",
-      "price": "312000",
-      "priceCurrency": "USD",
-      "description": "Per year"
+      "name": "3× a week — 4–7 hours per visit, $150 per therapist hour",
+      "priceSpecification": {
+       "@type": "UnitPriceSpecification",
+       "minPrice": 93600,
+       "maxPrice": 163800,
+       "priceCurrency": "USD",
+       "unitText": "year"
+      },
+      "description": "156 visits per year; $7,800–$13,650 per month; 15–30 minutes per employee"
      }
     ]
    }
@@ -301,7 +309,7 @@ footer p{font-size:0.75rem;color:rgba(255,255,255,0.35)}
    "name": "How much does corporate massage cost?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "All corporate programs use one rate: $150 per therapist hour with a 4-hour minimum per booking ($600), which covers about 14–16 employees at 15 minutes each. 20 employees take about 5.5 hours, or roughly $825. Monthly programs start at $1,200 per month and annual contracts at $9,000 per year."
+    "text": "All corporate programs use one rate: $150 per therapist hour. Each visit is 4–7 hours ($600–$1,050) with 15–30 minutes per employee; a 4-hour visit covers about 14–16 employees at 15 minutes each. Recurring visits once or twice a month cost $600–$2,100 per month, and weekly visits (one to three times a week) cost $2,600–$13,650 per month — $7,200 to $163,800 per year."
    }
   },
   {
@@ -341,7 +349,7 @@ footer p{font-size:0.75rem;color:rgba(255,255,255,0.35)}
    "name": "Are gift card amounts the same as corporate prices?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "No. Gift cards are a separate product. Corporate pricing is $150 per therapist hour with a 4-hour minimum ($600), monthly programs from $1,200 per month and annual contracts from $9,000 per year."
+    "text": "No. Gift cards are a separate product. Corporate pricing is $150 per therapist hour, 4–7 hours per visit ($600–$1,050), with recurring programs from $600 per month or $7,200 per year."
    }
   }
  ]
@@ -383,9 +391,9 @@ footer p{font-size:0.75rem;color:rgba(255,255,255,0.35)}
     <p class="cg-ey">Corporate pricing at a glance</p>
     <h2 class="cg-h">One simple rate: $150 per therapist hour</h2>
     <ul class="cg-list">
-     <li><b>Pilot or single event — from $600</b><span>4-hour minimum per booking · about 14–16 employees at 15 minutes each · no contract</span></li>
-     <li><b>Monthly program — from $1,200/month</b><span>Starter: 2 visits a month · 8 employees × 30 minutes</span></li>
-     <li><b>Annual contract — from $9,000/year</b><span>Basic: monthly visits · 10 employees × 30 minutes</span></li>
+     <li><b>Pilot or single event — from $600</b><span>Each visit 4–7 hours ($600–$1,050) · 15–30 minutes per employee · a 4-hour visit covers about 14–16 employees at 15 minutes · no contract</span></li>
+     <li><b>Monthly visits (1× or 2× a month) — $600–$2,100/month</b><span>4–7 hours per visit · $7,200–$25,200 per year</span></li>
+     <li><b>Weekly visits (1×, 2× or 3× a week) — $2,600–$13,650/month</b><span>4–7 hours per visit · $31,200–$163,800 per year · <a href="services-corporate.html#recurring" style="color:#2d6a4f">full price table →</a></span></li>
     </ul>
     <p class="cg-note">Example: 20 employees × 15 minutes ≈ 5.5 hours with setup ≈ <strong>$825</strong>. No travel fee within about 60 km of Mountain View (San Jose, Sunnyvale, Santa Clara, Palo Alto, Cupertino and more). Gift card amounts are not corporate rates.</p>
    </div>
@@ -493,45 +501,57 @@ footer p{font-size:0.75rem;color:rgba(255,255,255,0.35)}
       <!-- Program 02 -->
       <div class="prog prog-forest">
         <p class="prog-tag" style="color:var(--gold)">Program 02</p>
-        <h3 class="prog-title" style="color:#fff">Monthly Employee<br>Wellness Benefit</h3>
-        <p style="font-size:0.82rem;color:rgba(255,255,255,0.65);margin-bottom:20px;line-height:1.7;font-weight:300">Recurring monthly massage as a standard employee benefit. Fixed schedule, same team, consistent results. Cancel or pause with 30-day notice.</p>
+        <h3 class="prog-title" style="color:#fff">Monthly<br>Visits</h3>
+        <p style="font-size:0.82rem;color:rgba(255,255,255,0.65);margin-bottom:20px;line-height:1.7;font-weight:300">We come once or twice a month. Each visit is 4–7 hours, with 15–30 minutes per employee. Cancel or pause with 30-day notice.</p>
         <div class="price-row" style="background:rgba(0,0,0,0.15) !important;margin-bottom:8px">
-          <div><div class="pr-name" style="color:#fff">Starter</div><div class="pr-detail" style="color:rgba(255,255,255,0.55)">2×/month · 8 employees × 30 min</div></div>
-          <div class="pr-price">$1,200<span style="font-size:0.7rem;color:rgba(255,255,255,0.5)">/mo</span></div>
-        </div>
-        <div class="price-row" style="background:rgba(0,0,0,0.15) !important;margin-bottom:8px">
-          <div><div class="pr-name" style="color:#fff">Standard</div><div class="pr-detail" style="color:rgba(255,255,255,0.55)">4×/month · 10 employees × 45 min</div></div>
-          <div class="pr-price">$4,500<span style="font-size:0.7rem;color:rgba(255,255,255,0.5)">/mo</span></div>
+          <div><div class="pr-name" style="color:#fff">1× a month</div><div class="pr-detail" style="color:rgba(255,255,255,0.55)">12 visits/yr · $7,200–$12,600/yr</div></div>
+          <div class="pr-price">$600–$1,050<span style="font-size:0.7rem;color:rgba(255,255,255,0.5)">/mo</span></div>
         </div>
         <div class="price-row" style="background:rgba(0,0,0,0.15) !important;margin-bottom:20px">
-          <div><div class="pr-name" style="color:#fff">Premium</div><div class="pr-detail" style="color:rgba(255,255,255,0.55)">4×/month · 15 employees × 60 min</div></div>
-          <div class="pr-price">$9,000<span style="font-size:0.7rem;color:rgba(255,255,255,0.5)">/mo</span></div>
+          <div><div class="pr-name" style="color:#fff">2× a month</div><div class="pr-detail" style="color:rgba(255,255,255,0.55)">24 visits/yr · $14,400–$25,200/yr</div></div>
+          <div class="pr-price">$1,200–$2,100<span style="font-size:0.7rem;color:rgba(255,255,255,0.5)">/mo</span></div>
         </div>
-        <a href="#inquiry" class="btn-p">Inquire Now</a>
+        <a href="#recurring" class="btn-p">See full price table</a>
       </div>
 
       <!-- Program 03 -->
       <div class="prog prog-light">
         <p class="prog-tag" style="color:var(--forest)">Program 03</p>
-        <h3 class="prog-title" style="color:var(--black)">Annual Corporate<br>Wellness Contract</h3>
-        <p style="font-size:0.82rem;color:#2a4535;margin-bottom:20px;line-height:1.7;font-weight:300">Year-round dedicated therapist team. Priority scheduling, quarterly wellness reports for HR/leadership, and priority fixed weekly slots.</p>
+        <h3 class="prog-title" style="color:var(--black)">Weekly<br>Visits</h3>
+        <p style="font-size:0.82rem;color:#2a4535;margin-bottom:20px;line-height:1.7;font-weight:300">One, two or three visits a week for a consistent team. Each visit is 4–7 hours, with 15–30 minutes per employee.</p>
         <table class="annual-table">
-          <thead><tr><th>Plan</th><th>Schedule</th><th>Annual</th></tr></thead>
+          <thead><tr><th>How often</th><th>Per month</th><th>Per year</th></tr></thead>
           <tbody>
-            <tr><td><strong>Basic</strong></td><td style="font-size:0.78rem;color:#4a6a5a">Monthly · 10 × 30min</td><td class="price-cell">$9,000</td></tr>
-            <tr><td><strong>Standard</strong></td><td style="font-size:0.78rem;color:#4a6a5a">Bi-weekly · 12 × 45min</td><td class="price-cell">$35,100</td></tr>
-            <tr><td><strong>Premium</strong></td><td style="font-size:0.78rem;color:#4a6a5a">Weekly · 15 × 45min</td><td class="price-cell">$87,750</td></tr>
-            <tr><td><strong>Elite</strong></td><td style="font-size:0.78rem;color:#4a6a5a">Weekly · 20 × 60min</td><td class="price-cell">$156,000</td></tr>
-            <tr><td><strong>Platinum</strong></td><td style="font-size:0.78rem;color:#4a6a5a">Weekly · 25 × 60min</td><td class="price-cell">$195,000</td></tr>
-            <tr><td><strong>Diamond</strong></td><td style="font-size:0.78rem;color:#4a6a5a">2×/wk · 20 × 60min</td><td class="price-cell">$312,000</td></tr>
+            <tr><td><strong>1× a week</strong></td><td style="font-size:0.78rem;color:#4a6a5a">$2,600–$4,550</td><td class="price-cell">$31,200–$54,600</td></tr>
+            <tr><td><strong>2× a week</strong></td><td style="font-size:0.78rem;color:#4a6a5a">$5,200–$9,100</td><td class="price-cell">$62,400–$109,200</td></tr>
+            <tr><td><strong>3× a week</strong></td><td style="font-size:0.78rem;color:#4a6a5a">$7,800–$13,650</td><td class="price-cell">$93,600–$163,800</td></tr>
           </tbody>
         </table>
-        <a href="#inquiry" style="display:inline-block;margin-top:20px;padding:10px 22px;background:var(--forest);color:#fff;font-family:'Jost',sans-serif;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none">Inquire</a>
+        <a href="#recurring" style="display:inline-block;margin-top:20px;padding:10px 22px;background:var(--forest);color:#fff;font-family:'Jost',sans-serif;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none">Price calculator</a>
       </div>
 
     </div>
   </div>
 </div>
+
+<section class="cg-sec rp" id="recurring" aria-label="Recurring corporate massage pricing">
+ <div class="cg-in">
+  <p class="cg-ey">Recurring on-site programs</p>
+  <h2 class="cg-h">Weekly or monthly visits — priced by the hour</h2>
+  <p class="rp-lead"><strong>$150 per therapist hour · each visit 4–7 hours · 15–30 minutes per employee.</strong> Choose how often we come; the price per visit depends only on how many hours you book.</p>
+  <div class="rp-two">
+   <div class="rp-tbl"><table><thead><tr><th>Visit length</th><th>Per visit</th><th>Employees at 15 min</th><th>Employees at 30 min</th></tr></thead><tbody><tr><td>4 hours</td><td>$600</td><td>about 14–16</td><td>about 7–8</td></tr><tr><td>5 hours</td><td>$750</td><td>about 18–20</td><td>about 9–10</td></tr><tr><td>6 hours</td><td>$900</td><td>about 22–24</td><td>about 11–12</td></tr><tr><td>7 hours</td><td>$1,050</td><td>about 26–28</td><td>about 13–14</td></tr></tbody></table></div>
+   <div class="rp-tbl"><table><thead><tr><th>How often</th><th>Visits / year</th><th>Per month</th><th>Per year</th></tr></thead><tbody><tr><td><strong>1× a month</strong></td><td>12</td><td>$600 – $1,050</td><td>$7,200 – $12,600</td></tr><tr><td><strong>2× a month</strong></td><td>24</td><td>$1,200 – $2,100</td><td>$14,400 – $25,200</td></tr><tr><td><strong>1× a week</strong></td><td>52</td><td>$2,600 – $4,550</td><td>$31,200 – $54,600</td></tr><tr><td><strong>2× a week</strong></td><td>104</td><td>$5,200 – $9,100</td><td>$62,400 – $109,200</td></tr><tr><td><strong>3× a week</strong></td><td>156</td><td>$7,800 – $13,650</td><td>$93,600 – $163,800</td></tr></tbody></table></div>
+  </div>
+  <p class="rp-note">Ranges run from 4-hour to 7-hour visits. Monthly cost = yearly cost ÷ 12 (weekly plans average about 4.3 visits a month). Example: weekly 5-hour visits = $750 per visit ≈ $3,250 per month ≈ $39,000 per year.</p>
+  <div class="rp-calc">
+   <label>How often<select id="rpF"><option value="12">1× a month</option><option value="24">2× a month</option><option value="52" selected>1× a week</option><option value="104">2× a week</option><option value="156">3× a week</option></select></label>
+   <label>Hours per visit<select id="rpH"><option>4</option><option selected>5</option><option>6</option><option>7</option></select></label>
+   <div class="rp-out"><div><span>Per visit</span><b id="rpV">$750</b></div><div><span>Per month</span><b id="rpM">$3,250</b></div><div><span>Per year</span><b id="rpY">$39,000</b></div><div><span>Employees per visit</span><b id="rpE">18–20 (15 min)</b></div></div>
+  </div>
+  <script>(function(){var f=document.getElementById('rpF'),h=document.getElementById('rpH');if(!f)return;function m(n){return '$'+Math.round(n).toLocaleString('en-US')}function u(){var v=+f.value,x=+h.value,p=x*150;document.getElementById('rpV').textContent=m(p);document.getElementById('rpM').textContent=m(p*v/12);document.getElementById('rpY').textContent=m(p*v);document.getElementById('rpE').textContent=(x*4-2)+'–'+(x*4)+' (15 min) · '+(x*2-1)+'–'+(x*2)+' (30 min)'}f.onchange=h.onchange=u;u()})();</script>
+ </div>
+</section>
 
 <!-- BEST FOR -->
 <div class="section section-alt">
@@ -553,12 +573,12 @@ footer p{font-size:0.75rem;color:rgba(255,255,255,0.35)}
  <div class="cfaq">
   <p class="cg-ey" style="text-align:center">FAQ for HR, office and finance teams</p>
   <h2 class="cg-h" style="text-align:center">Corporate Massage: Common Questions</h2>
-    <details><summary>How much does corporate massage cost?</summary><div class="a">All corporate programs use one rate: $150 per therapist hour with a 4-hour minimum per booking ($600), which covers about 14–16 employees at 15 minutes each. 20 employees take about 5.5 hours, or roughly $825. Monthly programs start at $1,200 per month and annual contracts at $9,000 per year.</div></details>
+    <details><summary>How much does corporate massage cost?</summary><div class="a">All corporate programs use one rate: $150 per therapist hour. Each visit is 4–7 hours ($600–$1,050) with 15–30 minutes per employee; a 4-hour visit covers about 14–16 employees at 15 minutes each. Recurring visits once or twice a month cost $600–$2,100 per month, and weekly visits (one to three times a week) cost $2,600–$13,650 per month — $7,200 to $163,800 per year.</div></details>
     <details><summary>Can we start with a pilot event?</summary><div class="a">Yes. Many companies start with a single 4-hour chair massage event ($600) with no contract, then move to a monthly program if the team enjoys it.</div></details>
     <details><summary>Can you provide a certificate of insurance (COI) for vendor approval?</summary><div class="a">Yes. We provide a certificate of insurance on request and can complete your company's standard vendor setup forms — mention it in your inquiry and we will send what you need with your quote.</div></details>
     <details><summary>How do invoicing and payment work?</summary><div class="a">We invoice your company directly. You can pay by corporate card or ACH, and Net-30 payment terms are available.</div></details>
     <details><summary>What do you need from us on the day?</summary><div class="a">A quiet corner or small room about 6 × 8 ft, close to a power outlet if possible, and a sign-up list. We bring the massage chair and all supplies; employees stay fully clothed and go straight back to work.</div></details>
-    <details><summary>Are gift card amounts the same as corporate prices?</summary><div class="a">No. Gift cards are a separate product. Corporate pricing is $150 per therapist hour with a 4-hour minimum ($600), monthly programs from $1,200 per month and annual contracts from $9,000 per year.</div></details>
+    <details><summary>Are gift card amounts the same as corporate prices?</summary><div class="a">No. Gift cards are a separate product. Corporate pricing is $150 per therapist hour, 4–7 hours per visit ($600–$1,050), with recurring programs from $600 per month or $7,200 per year.</div></details>
  </div>
 </section>
 
@@ -578,7 +598,7 @@ footer p{font-size:0.75rem;color:rgba(255,255,255,0.35)}
     <label>Phone<input type="tel" name="Phone" autocomplete="tel"></label>
     <label>Office city<input name="Office city"></label>
     <label>Number of employees<select name="Employees"><option value="">Select…</option><option>Up to 16</option><option>17–30</option><option>31–60</option><option>60+</option></select></label>
-    <label class="full">Interested in<select name="Interested in"><option>Pilot / single event (from $600)</option><option>Monthly program (from $1,200/month)</option><option>Annual contract (from $9,000/year)</option><option>Not sure yet — please advise</option></select></label>
+    <label class="full">Interested in<select name="Interested in"><option>Pilot / single event (from $600)</option><option>Monthly visits (1× or 2× a month)</option><option>Weekly visits (1×, 2× or 3× a week)</option><option>Not sure yet — please advise</option></select></label>
     <label class="full">Preferred date(s) and message<textarea name="Message" placeholder="e.g. Wellness day in early December, about 20 people, 15-minute chair massages. Please send your COI."></textarea></label>
     <label class="inq-hp" aria-hidden="true">Leave empty<input name="_honey" tabindex="-1" autocomplete="off"></label>
     <button type="submit">Send Inquiry</button>
