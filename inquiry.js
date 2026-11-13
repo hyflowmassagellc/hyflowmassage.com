@@ -1,10 +1,11 @@
 /* HyFlow Massage — inquiry form sender.
-   Sends form fields to booking@hyflowmassage.com through FormSubmit
-   (https://formsubmit.co). The visitor never needs an email program.
+   Sends form fields to hyflowmassagellc@gmail.com through Web3Forms
+   (https://web3forms.com; the access key is public by design). The visitor never needs an email program.
    Success is only shown when the message was really accepted; otherwise
    the visitor sees a clear fallback (call / text / email). */
 (function () {
-  var ENDPOINT = 'https://formsubmit.co/ajax/booking@hyflowmassage.com';
+  var ENDPOINT = 'https://api.web3forms.com/submit';
+  var ACCESS_KEY = '58bcb798-1a19-4ab4-9a4b-74891d6bbcbc';
   var CONTACT_CONVERSION = 'AW-18235170342/TP5tCP2jhsUcEKa8mvdD';
 
   function track() {
@@ -20,11 +21,11 @@
   window.hyflowSendInquiry = function (subject, fields, replyTo) {
     var data = {};
     Object.keys(fields).forEach(function (k) { data[k] = fields[k] || '—'; });
-    data._subject = subject;
-    data._template = 'table';
-    data._captcha = 'false';
+    data.access_key = ACCESS_KEY;
+    data.subject = subject;
+    data.from_name = 'HyFlow Website';
     data['Page'] = location.href;
-    if (replyTo) data._replyto = replyTo;
+    if (replyTo) data.replyto = replyTo;
     // Never leave the visitor stuck on "Sending…": give up after 20 seconds
     // and show the call / text / email fallback instead.
     var ctrl = (typeof AbortController === 'function') ? new AbortController() : null;
