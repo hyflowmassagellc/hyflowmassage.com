@@ -1,8 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /soap.html
-Disallow: /index%20(1).html
-Disallow: /privacy%20(1).html
 
 # AI search and assistant crawlers are welcome
 User-agent: OAI-SearchBot
